@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI;
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+  .header-line
+  {
+    height: 50px;
+    width: auto;
+    background: #5A0808;
+    border: 1px solid #707070;
+  }
+
+
+  /* Welcome.html */
+  #welcome-text
+  {
+    text-align: center;
+    color: #000000;
+  }
+
+  /* Login Form */
+  .login-form
+  {
+    margin: 20%;
+  }
+
+
+  /* btn-style */
+
+  .btn-black
+  {
+    background: #000000;
+    border: 1px solid #707070;
+    color: #FFFFFF;
+    padding: 5px 10px 5px;
+  }
+
+  .welcome-btn
+  {
+    width: 133px;
+    height: 42px;
+    font-size: larger;
+  }
+
+  .btn-login, .btn-welcome-login
+  {
+    margin-left: 5%;
+  }
+
+  .btn-welcome-register
+  {
+    margin-right: 5%;
+  }
