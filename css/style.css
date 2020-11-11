@@ -11,12 +11,91 @@
 
   .header-line
   {
-    height: 50px;
+    height: 70px;
     width: auto;
     background: #5A0808;
     border: 1px solid #707070;
   }
 
+  /* Navbar */
+  .nav-bg {
+    height: 70px;
+    width: auto;
+    background: #5A0808;
+    border: 1px solid #707070;
+    /* -webkit-box-shadow: 0 0.3rem 1rem #15aa22;
+            box-shadow: 0 0.3rem 1rem #15aa22; */
+  }
+  
+  .nav-link   /* for links with in nav bar */
+  {
+    color: white;   /* nav-link */
+  }
+  
+  .navbar {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    
+    text-align: center;
+    
+    /* navbar background color */
+    border-color:#1D8B94;
+    color: white; 
+    line-height:50px;
+  }
+  
+  .nav-link:hover {
+    /* color: #15aa22; */
+    /* color:#000000; */
+    color:white; 
+    /* background-color:white;  */
+    border-color:#FFFFFF;
+    
+    border-bottom: 2px solid white; 
+    font-style: italic;
+  }
+  
+  .navbar .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .navbar .navbar-toggler {
+    margin-right: 2rem;
+    border-color: white;
+  }
+
+  .nav-link {
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    color: white;
+    /* padding: 0.5rem 10rem;   */    /* 0.3 rem is padding of bar under nav-link */
+    margin: 0 1rem;         /* margin b/w nav-items */
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  
+  .navbar-nav .active {
+    border-bottom: 2px solid white; 
+    color: white;
+    font-weight: bold;
+    /* background-color:#1D8B94;  */
+    /* padding-left: 20px;
+    padding-right: 2px; */
+    border-color:#FFFFFF;
+  }
+  /* .active {
+    font-weight: bold;
+    border-bottom: 3px solid #15aa22;
+  } */
+  
+  #collapsibleNavbar {
+    text-align: center;
+  
+    margin-right: 15px;
+  }
+  
+  
 
   /* Welcome.html */
   #welcome-text
@@ -31,6 +110,9 @@
     margin: 20%;
   }
 
+
+  /* Alignment */
+  text-right{text-align:left!important}
 
   /* btn-style */
 
