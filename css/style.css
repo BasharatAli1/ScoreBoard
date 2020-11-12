@@ -47,10 +47,9 @@
     /* color: #15aa22; */
     /* color:#000000; */
     color:white; 
-    background-color:#5A0808;; 
-    border-color:#FFFFFF;
+    background-color:#5A0808;
     
-    border-bottom: 2px solid white; 
+    /* border-bottom: 2px solid white;  */
     font-style: italic;
     
   }
@@ -88,6 +87,29 @@
     margin-right: 15px;
   }
   
+  /* User Game Menu */
+
+  .game-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .game-menu-item {
+    float: left;
+  }
+  
+  .game-menu-item a {
+    display: block;
+    padding: 8px;
+    color: black;
+  }
+
+  .game-menu .active {
+    font-weight: bold;
+  }
+
   /* Welcome.html */
   #welcome-text
   {
@@ -125,6 +147,34 @@
     padding: 5px 10px 5px;
   }
 
+  .btn-submit
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60%;
+  }
+
+  .btn-submit-style
+  {
+    width: 30%;
+    color: white;
+    margin-left: 80%;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .main-container
+  {
+    border-color: red;;
+    border-style: solid;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   .welcome-btn
   {
     width: 133px;
@@ -140,4 +190,13 @@
   .btn-welcome-register
   {
     margin-right: 5%;
+  }
+
+  
+  .avatarCorners {
+    border:1px solid black;
+    border-radius: 110px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
   }

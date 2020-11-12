@@ -9,95 +9,95 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- JavaScript -->
-    <script src="../js/jquery/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <title>Signup</title>
+
 </head>
 <body>
   <div class="header-line"></div>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5 pr-5">
+      <form action="" method="post">
         <div class="row">
-            <div class="col-lg-8">
-              <form>
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">First Name</label>
-                    <div class="col-xs-3">
-                      <input type="text" class="form-control " id="firstName" placeholder="First Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Last Name</label>
-                    <div class="col-xs-3">
-                      <input type="text" class="form-control " id="lastName" placeholder="Last Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Street Name</label>
-                    <div class="col-xs-3">
-                      <input type="text" class="form-control " id="streetname" placeholder="Street Name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">City</label>
-                    <div class="col-xs-3">
-                      <input type="text" class="form-control " id="city" placeholder="City">
-                    </div>
-                </div>
-                <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                  </div>
-                </div>
-                <fieldset class="form-group">
-                  <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                          First radio
-                        </label>
+                <div class="col-lg-6 mb-5">
+                  <div class="border border-dark rounded pl-3 pr-3 pt-3">
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>First Name</b></h5> </label>
+                        <div class="float-right col-sm-7">
+                          <input type="text" class="form-control " id="firstName" placeholder="First Name">
+                        </div>
                       </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                        <label class="form-check-label" for="gridRadios2">
-                          Second radio
-                        </label>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>Last Name</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control " id="lastName" placeholder="Last Name">
+                        </div>
                       </div>
-                      <div class="form-check disabled">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                        <label class="form-check-label" for="gridRadios3">
-                          Third disabled radio
-                        </label>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>Street Name</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control " id="streetname" placeholder="Street Name">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>City</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control " id="city" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-5 col-form-label"> <b><h5>Country</b></h5> </label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control " id="country" placeholder="Country">
                       </div>
                     </div>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>Password</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>E-mail</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="email" class="form-control" id="emai" placeholder="E-mail">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>Company</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control" id="company" placeholder="Company">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h5>Phone Number</b></h5> </label>
+                        <div class="col-sm-7">
+                          <input type="tel" class="form-control" id="phoneNumber" placeholder="">
+                        </div>
+                      </div>
+                    
+                    </div>  <!-- Form Fields Dive -->
+                </div>  <!-- End of Col 1 -->
+                <div class="col-lg-2"> </div>  <!-- End of Col 2 -->
+                <div class="col-lg-4 text-center ">
+                  <span>
+                    <svg class="avatarCorners mx-auto d-block" width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                  </span>
+                  <button class="btn btn-dark mx-auto btn-black px-3 mt-2"> Upload Photo </button>
+                  <div class="btn-submit">
+                    <button  class="btn-submit-style btn-black float-right">Register</button>
                   </div>
-                </fieldset>
-                <div class="form-group row">
-                  <div class="col-sm-2">Checkbox</div>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck1">
-                      <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="col-lg-4" style="border: 1px solid red;">
+                </div>    <!-- End of Col 3 -->
+        </div>  <!-- End of Row -->
+      </form> <!-- End of Form-->
+    </div>  <!-- End of Container -->
 
-            </div>
-        </div>
-    </div>
+
+    
+    <!-- JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <title>Signup</title>
 
 </body>
 </html>
