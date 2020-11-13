@@ -18,6 +18,10 @@
     border: 1px solid #707070;
   }
 
+  .upcoming-game-text
+  {
+    font-size: larger;
+  }
   /* Navbar */
   .nav-bg {
     background: #5A0808;
@@ -105,6 +109,11 @@
     padding: 8px;
     color: black;
   }
+  
+  .game-menu-item a:hover{
+    text-decoration: none;
+    font-style: italic;
+  }
 
   .game-menu .active {
     font-weight: bold;
@@ -127,7 +136,7 @@
   /* Alignment */
   text-right{text-align:left!important}
 
-  /* bimage style */
+  /* image style */
 
   .games-icons
   {
@@ -136,6 +145,11 @@
     margin-right: 5%;
   }
 
+  .upcoming-game-img
+  {
+    height: 30px;
+    width: 30px;
+  }
 
   /* btn-style */
 
@@ -192,6 +206,17 @@
     margin-right: 5%;
   }
 
+  .upcoming-game-btn
+  {
+    font-size: larger;
+    color: black;
+  }
+
+  .upcoming-game-btn:hover
+  {
+    text-decoration: none;
+    color: black;
+  }
   
   .avatarCorners {
     border:1px solid black;
