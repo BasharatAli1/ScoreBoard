@@ -11,7 +11,7 @@
 
   .header-line
   {
-    height: 70px;
+    height: 70px;   /* height is for those pages, which don't have navbar */
     width: 100%;
     margin: 0px -10px 0px 0px;
     background: #5A0808;
@@ -21,6 +21,22 @@
   .upcoming-game-text
   {
     font-size: larger;
+  }
+
+  .dashboard-text
+  {
+    color: #707070;
+  }
+
+  .card-header
+  {
+    color: #707070;
+  }
+
+  .card-text
+  {
+    color: #707070;
+    font-size: small;
   }
   /* Navbar */
   .nav-bg {
@@ -32,7 +48,7 @@
   
   .nav-link   /* for links with in nav bar */
   {
-    color: white;   /* nav-link */
+    color: #FFFFFF;   /* nav-link */
   }
   
   .navbar {
@@ -43,14 +59,14 @@
     
     /* navbar background color */
     border-color:#5A0808;
-    color: white; 
+    /* color: white;  */
     line-height:34px; /* Height of navbar */
   }
   
   .nav-link:hover {
     /* color: #15aa22; */
     /* color:#000000; */
-    color:white; 
+    color:#FFFFFF; 
     background-color:#5A0808;
     
     /* border-bottom: 2px solid white;  */
@@ -71,7 +87,7 @@
     text-align: center;
     display: inline-block;
     font-size:18px;
-    color: white;
+    color: #FFFFFF;
     padding: 0.8rem 10rem 0.2rem;      /* 0.3 rem is padding of bar under nav-link */
     margin: 0 1rem;         /* margin b/w nav-items */
     -webkit-transition: all .3s;
@@ -107,7 +123,7 @@
   .game-menu-item a {
     display: block;
     padding: 8px;
-    color: black;
+    color: #707070;
   }
   
   .game-menu-item a:hover{
@@ -150,6 +166,14 @@
     height: 30px;
     width: 30px;
   }
+  
+  .avatarCorners {
+    border:1px solid black;
+    border-radius: 110px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+  }
 
   /* btn-style */
 
@@ -179,7 +203,7 @@
     border-radius: 4px;
   }
 
-  .main-container
+  /* .main-container
   {
     border-color: red;;
     border-style: solid;
@@ -187,7 +211,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-  }
+  } */
 
   .welcome-btn
   {
@@ -209,19 +233,17 @@
   .upcoming-game-btn
   {
     font-size: larger;
-    color: black;
+    color: #000000;
   }
 
   .upcoming-game-btn:hover
   {
     text-decoration: none;
-    color: black;
+    color: #000000;
   }
-  
-  .avatarCorners {
-    border:1px solid black;
-    border-radius: 110px;
-    padding: 20px;
-    width: 150px;
-    height: 150px;
+
+  .more-btn, .more-btn:hover
+  {
+    text-decoration: none;
+    color: #707070;
   }
