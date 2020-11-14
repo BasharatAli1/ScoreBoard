@@ -70,7 +70,7 @@
   .nav-link {
     text-align: center;
     display: inline-block;
-    font-size: 1rem;
+    font-size:18px;
     color: white;
     padding: 0.8rem 10rem 0.2rem;      /* 0.3 rem is padding of bar under nav-link */
     margin: 0 1rem;         /* margin b/w nav-items */
