@@ -208,6 +208,22 @@
 
   /* btn-style */
 
+  .btn-link
+  {
+    color: #000000;
+  }
+
+  .btn-link:hover
+  {
+    text-decoration: none;;
+    color: #000000;
+  }
+
+  .badge-link border
+  {
+    border: 1px solid ;
+  }
+
   .btn-black
   {
     background: #000000;
@@ -285,6 +301,12 @@
   .upcoming-game-btn:hover
   {
     text-decoration: none;
+    color: #000000;
+  }
+
+  .user-btn
+  {
+    font-size: larger;
     color: #000000;
   }
 

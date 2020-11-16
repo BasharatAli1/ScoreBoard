@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <title>Users</title>
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-xl nav-bg">
+            <a class="navbar-brand" href="">
+                <p style="color: white; font-weight: bold; font-size:larger;"></p>
+            </a>
+            
+            <button class="navbar-toggler mt-2" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-auto" class="topnav-right">
+                  <a  class="nav-link" href="">  Home </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> Run Games </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> Games </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> Teams </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> My Account </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> logout </a>
+                </li>
+              </ul>
+          </div>
+        </nav>  <!-- End of Navbar -->
+                   
+        <div class="container mt-4">      <!-- Main Container -->
+
+            <div class="row">
+                <div class="col-lg-1 mt-4 mb-4">
+                    <h3><span class="badge badge-link border">Users</span></h3>
+                </div>
+            </div>
+
+            <!-- User's Row -->
+            <div class="row mb-3">
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-link user-btn border mr-4"> <h5>Nick Gers</h5> </button> 
+                    <a href="#" type="button" class="btn btn-link user-btn border-left border-right">ACTIVE</a>
+                    <a href="#" type="button" class="btn btn-link user-btn border-right">INACTIVE</a>
+                    <a href="#" type="button" class="btn btn-link user-btn border-right">EDIT</a>
+                    <a href="#" type="button" class="btn btn-link user-btn border-right">DELETE</a>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-link user-btn border mr-4"> <h5>Dave Cooper</h5> </button> 
+                    <a href="#" type="button" class="btn btn-link user-btn border-left border-right">ACTIVE</a>
+                    <a href="#" type="button" class="btn btn-link user-btn border-right">INACTIVE</a>
+                    <a href="#" type="button" class="btn btn-link user-btn border-right">EDIT</a>
+                    <a href="#" type="button" class="btn btn-link user-btn border-right">DELETE</a>
+                </div>
+            </div>
+
+            <!-- Add User Btn -->
+            <div class="row" style="margin-top:12%;">
+                <div class="col-lg-12">
+                    <a href="#" type="button" class="btn btn-link user-btn border">Add New User</a>
+                </div>
+            </div>
+        </div>  <!-- End of main container -->
+    
+</body>
+</html>
