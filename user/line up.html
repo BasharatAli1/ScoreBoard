@@ -60,16 +60,53 @@
         </div>
     </div>
     
-    <div class="container-fluid mt-4 mb-5">      <!-- Gaems Details -->
-        <div class="row">
-            <div class="col-lg-3">
-                <h3 class="text-center">Team 1</h3>
-            </div>
-            <div class="col-lg-6">
+    <div class="container-fluid d-flex justify-content-center mt-4 mb-5 pl-3">      <!-- Gaems Details -->
+        <div class="row">   <!-- Main Row -->
+            <div class="col-lg-3 ml-3">  <!-- Column 1 -->
+                <div class="row">   <!-- Column 1 Row 1-->
+                    <div class="col-8 text-center">
+                        <h3 class="text-center">Team 1</h3>
+                    </div>
+                    <div class="col-1 pt-2">
+                        <span style="font-size: small">Main</span>
+                    </div>
+                    <div class="col-1 pt-2 ml-1">
+                        <span style="font-size: small">Sub</span>
+                    </div>
+                </div>
+                <div class="row mb-1">  <!-- Column 1 Row 2-->
+                    <div class="col-8 team-player text-center">
+                        <span style="font-size: large;">Player</span>
+                        <span style="font-size: x-small;">Point Guard</span>
+                        <img src="../images/player.png" class="player-pic3" alt="">
+                    </div>
+                    <div class="col-1">
+                        <span class="rounded active-player"></span>
+                    </div>
+                    <div class="col-1">
+                        <span class="rounded non-active-player"></span>
+                    </div>
+                </div>
+                <div class="row">   <!-- Column 1 Row 2-->
+                    <div class="col-8 team-player text-center">
+                        <span style="font-size: large;">Player</span>
+                        <span style="font-size: x-small;">Point Guard</span>
+                        <img src="../images/player.png" class="player-pic3" alt="">
+                    </div>
+                    <div class="col-1">
+                        <span class="rounded non-active-player"></span>
+                    </div>
+                    <div class="col-1">
+                        <span class="rounded active-player"></span>
+                    </div>
+                </div>
+            </div>  <!-- Column 1 End -->
+            <div class="col-lg-5">  <!-- Column 2 -->
                 <div class="field-container">
-                    <img src="../images/field.png" alt="Snow" style="width:100%;">
+                    <img src="../images/field.png" alt="Snow" class="field-img">
                     
                     <!-- Team 1 Players -->
+
                     <div class="team1-keeper"> <img src="../images/player.png" class="player-pic" alt=""> <br> <p class="player-name"> player 11</p> </div>
 
                     <div class="team1-leftMost1"> <img src="../images/player.png" class="player-pic" alt=""> <br> <p class="player-name"> player 1</p> </div>
@@ -104,44 +141,102 @@
 
                 </div>
                 <h4 class="text-center mt-1">SUBSTITUTES</h4>
-                <div class="sibstitutes">
-                    <div class="row ml-4">
-                        <div class="column1 mr-4">
+                    <div class="sibstitutes text-center row d-flex justify-content-center ml-1 mr-1">
+                        <div class="column1 mr-2">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 1</span>
                         </div>
-                        <div class="column1 mr-4">
+                        <div class="column1 mr-2">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 2</span>
                         </div>
-                        <div class="column1 mr-4">
+                        <div class="column1 mr-2">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 3</span>
                         </div>
-                        <div class="column1 mr-4">
+                        <div class="column1 mr-1">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 4</span>
                         </div>
                         
-                        <span class="border-right border-dark mt-1 mb-1 mr-3"></span>
+                        <span class="border-right border-dark mt-1 mb-1 mr-2"></span>
 
-                        <div class="column1 mr-4">
+                        <div class="column1 mr-2">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 1</span>
                         </div>
-                        <div class="column1 mr-4">
+                        <div class="column1 mr-2">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 2</span>
                         </div>
-                        <div class="column1 mr-4">
+                        <div class="column1 mr-2">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 3</span>
                         </div>
-                        <div class="column1 mr-4">
+                        <div class="column1">
                             <img src="../images/player.png" class="player-pic2" alt=""> <br> <span class="player-name"> player 4</span>
                         </div>
                     </div>
+            </div>  <!-- Column 2 End -->
+            <div class="col-lg-3">  <!-- Column 3 -->
+                <div class="row">   <!-- Column 3 Row 1-->
+                    <div class="col-1 pt-2">
+                        <span style="font-size: small">Main</span>
+                    </div>
+                    <div class="col-1 pt-2 ml-1">
+                        <span style="font-size: small">Sub</span>
+                    </div>
+                    <div class="col-8 text-center">
+                        <h3 class="text-center">Team 2</h3>
+                    </div>
+                </div>
+                <div class="row mb-1">  <!-- Column 3 Row 2-->
+                    <div class="col-1">
+                        <span class="rounded active-player"></span>
+                    </div>
+                    <div class="col-1 ml-1">
+                        <span class="rounded non-active-player"></span>
+                    </div>
+                    <div class="col-8 team-player text-center ml-3">
+                        <span style="font-size: large;">Player</span>
+                        <span style="font-size: x-small;">Point Guard</span>
+                        <img src="../images/player.png" class="player-pic3" alt="">
+                    </div>
+                </div>
+                <div class="row">   <!-- Column 3 Row 2-->
+                    <div class="col-1">
+                        <span class="rounded non-active-player"></span>
+                    </div>
+                    <div class="col-1 ml-1">
+                        <span class="rounded active-player"></span>
+                    </div>
+                    <div class="col-8 team-player text-center ml-3">
+                        <span style="font-size: large;">Player</span>
+                        <span style="font-size: x-small;">Point Guard</span>
+                        <img src="../images/player.png" class="player-pic3" alt="">
+                    </div>
+
+                    <div class="col-lg-4">
+                    </div>  
+                    <div class="column1">
+                        
+                        <svg></svg>
+                        <div class="btnHeight1 btn-height   ">
+                                <div class="btn-group float-right pl-3 pb-3">
+                                    <button type="button" class="btn btn-danger rounded mr-3">
+                                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                          </svg>
+                                    </button>
+                                    <button type="button" class="btn btn-success rounded">
+                                        <svg class="btn-add" width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg></button>
+                                  </div>
+                        </div>
+                    </div> 
+
+                </div>                
+                <div class="row">
+
 
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <h3 class="text-center">Team 2</h3>
-            </div>
-        </div>
-    </div>
+            </div>  <!-- Column 3 End -->
+        </div>  <!-- Main Row -->
+    </div>  <!-- Main Container -->
     
 </body>
 </html>

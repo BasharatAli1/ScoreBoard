@@ -170,15 +170,22 @@
   
   .player-pic
   {
-    width: 10%;
-    height: 10%;
+    width: 20px;
+    height: 20px;
   }
   
   .player-pic2
   {
     margin-right: 1px;
-    width: 60%;
+    width: 50%;
     height: 30%;
+  }
+  
+  .player-pic3
+  {
+    margin-right: 1px;
+    width: 15px;
+    height: 15px;
   }
 
   .upcoming-game-img
@@ -187,6 +194,10 @@
     width: 30px;
   }
   
+  .field-img
+  {
+    width:100%;
+  }
   .avatarCorners {
     border:1px solid black;
     border-radius: 110px;
@@ -223,15 +234,30 @@
     border-radius: 4px;
   }
 
-  /* .main-container
+  .btn-height
   {
-    border-color: red;;
-    border-style: solid;
-  
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  } */
+    flex-direction: column;
+    justify-content: flex-end;
+    
+  }
+
+  .btnHeight1 {height: 90%;}
+
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  [class*="btnHeight1"] {
+    height: 0%;
+  }
+}
+  .btn-add
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 90%;
+    float: inherit;
+  }
 
   .welcome-btn
   {
@@ -301,154 +327,170 @@
 
 .team1-keeper {
   position: absolute;
-  top: 50%;
-  left: 55%;
-  transform: translate(55%, -50%);
+  top: 45%;
+  right: 4%;
 }
 
 .team1-centered1 {
   position: absolute;
   top: 25%;
-  left: 50%;
-  transform: translate(-65%, -50%);
+  left: 40%;
 }
 
 .team1-centered2 {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-65%, -50%);
+  top: 45%;
+  left: 40%;
 }
 
 .team1-centered3 {
   position: absolute;
   top: 75%;
-  left: 50%;
-  transform: translate(-65%, -50%);
+  left: 40%;
 }
 
 .team1-left1 {
   position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-90%, -50%);
+  top: 10%;
+  left: 30%;
 }
 
 .team1-left2 {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-90%, -50%);
+  top: 35%;
+  left: 30%;
 }
 
 .team1-left3 {
   position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-90%, -50%);
+  top: 60%;
+  left: 30%;
 }
 
 .team1-left4 {
   position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-90%, -50%);
+  top: 80%;
+  left: 30%;
 }
 
 .team1-leftMost1 {
   position: absolute;
-  top: 14%;
-  left: 1%;
+  top: 20%;
+  left: 17%;
 }
 
 .team1-leftMost2 {
   position: absolute;
-  top: 45%;
-  left: 5%;
+  top: 44%;
+  left: 20%;
 }
 
 .team1-leftMost3 {
   position: absolute;
-  bottom: 14%;
-  left: 1%;
+  bottom: 20%;
+  left: 17%;
 }
 
 .team2-keeper {
   position: absolute;
-  top: 50%;
-  left: 45%;
-  transform: translate(-155%, -50%);
+  top: 45%;
+  left: 4%;
 }
 
 .team2-rightMost1 {
   position: absolute;
-  top: 14%;
-  right: 1%;
+  top: 20%;
+  right: 17%;
 }
 
 .team2-rightMost2 {
   position: absolute;
-  top: 45%;
-  right: 5%;
+  top: 44%;
+  right: 20%;
 }
 
 .team2-rightMost3 {
   position: absolute;
-  bottom: 14%;
-  right: 1%;
+  bottom: 20%;
+  right: 17%;
 }
 
 .team2-right1 {
   position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-8%, -50%);
+  top: 10%;
+  left: 65%;
 }
 
 .team2-right2 {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-8%, -50%);
+  top: 35%;
+  left: 65%;
 }
 
 .team2-right3 {
   position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-8%, -50%);
+  top: 60%;
+  left: 65%;
 }
 
 .team2-right4 {
   position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-8%, -50%);
+  top: 80%;
+  left: 65%;
 }
 
 .team2-centered1 {
+  
   position: absolute;
   top: 25%;
-  left: 50%;
-  transform: translate(-35%, -50%);
+  right: 40%;
 }
 
 .team2-centered2 {
+
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-35%, -50%);
+  top: 45%;
+  right: 40%;
 }
 
 .team2-centered3 {
+
   position: absolute;
   top: 75%;
-  left: 50%;
-  transform: translate(-35%, -50%);
+  right: 40%;
 }
 
+/* div styling */
 .sibstitutes
 {
   border: 1px solid #707070;
-  line-height: 45px;
+  line-height: 40px;
+  border-radius: 3%;
+}
+
+.team-player
+{
+  border: 1px solid #707070;
+  line-height: 35px;
+  border-radius: 3%;
+}
+
+.active-player
+{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 6px;
+  background-color: #F90D0D;
+  border: 1px solid #000000;
+}
+
+.non-active-player
+{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
 }
