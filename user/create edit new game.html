@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <title>Create Edit Game</title>
+    <style>
+        label
+        {
+            font-weight: bold;
+        }
+        .mine-border, .form-control
+        {
+            border: 1px solid #707070;
+        }
+    </style>
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-xl nav-bg">
+            <a class="navbar-brand" href="">
+                <p style="color: white; font-weight: bold; font-size:larger;"></p>
+            </a>
+            
+            <button class="navbar-toggler mt-2" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-auto" class="topnav-right">
+                  <a  class="nav-link" href="">  Home </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> Run Games </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> Games </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> Teams </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> My Account </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href=""> logout </a>
+                </li>
+              </ul>
+          </div>
+        </nav>  <!-- End of Navbar -->
+
+    <div class="container-fluid pl-5 mt-2">     <!-- User Game Menu -->
+        <div class="row">
+            <div class="col-lg-12 px-0">
+                <ul class="game-menu">
+                    <li class="game-menu-item"><a href="">Back</a></li>
+                    <li class="game-menu-item"><a href="news.asp">Create new game</a></li>
+                    <li class="game-menu-item"><a href="contact.asp">All games</a></li>
+                    <li class="game-menu-item"><a href="about.asp">Referee</a></li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pr-5 pl-5 pb-5"> <!-- Main Container -->
+        <div class="row">   <!-- Row 1 -->
+            <div class="col-lg-12">
+                <div class="btn-group float-right pl-3 pb-3">
+                    <button type="button" class="btn btn-success disabled rounded mr-3">
+                        <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn-danger disabled rounded">
+                        <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                    </button>
+                  </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">   <!-- Row 2 -->
+            <div class="upload-img  mr-2 mt-2"> <!-- Row 2, Col 1 -->
+                <div class="mine-border rounded">
+                    <div class="row d-flex justify-content-center pt-2 pb-2">
+                        <h5>Add Game Cover</h5>
+                    </div>
+                    <div class="row d-flex justify-content-center pb-2">
+                        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                        <div class="col-lg-12 d-flex justify-content-center pb-2">
+                            <img id="uploaded-img" src="../images/game.PNG"/>
+                        </div>
+                        <label for="file" class="mine-border rounded upload-img-btn mt-2" >Upload</label>
+                    </div>
+                </div>
+            </div>              
+                
+            <div class="col-10"> <!-- Row 2, Col 2 -->
+                <div class="row mine-border rounded mt-2 pb-2">   <!-- Row 2, Col 2, Row 1 -->
+                    <div  class="col-lg-3 mt-2">
+                        <label for="Beggining" class="align-items-center">Beggining</label>
+                    </div>
+                    <div  class="col-lg-3 mt-2">
+                        <input type="datetime-local" class="form-control form-control-sm rounded" id="game-beggining" name="game-beggining">
+                    </div>
+                    <div  class="col-lg-3 mt-2">
+                        <label for="End">End</label>
+                    </div>
+                    <div  class="col-lg-3 mt-2">
+                        <input type="datetime-local" class="form-control form-control-sm rounded" id="game-end" name="game-end">
+                    </div>
+                  </div>
+                  <div class="row mine-border rounded mt-2 pb-2">    <!-- Row 2, Col 2, Row 2 -->
+                    <div class="col-md-6">
+                        <label for="game">Name of The Game</label>
+                        <input type="text" class="form-control form-control-sm" id="game">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="game">Sponsor</label>
+                        <input type="text" class="form-control form-control-sm" id="sponser">
+                    </div>
+                  </div>
+                  <div class="row mine-border rounded mt-2 pt-2 h-40 justify-content-center align-items-center">    <!-- Row 2, Col 2, Row 3 -->
+                    <div class="col-lg-2">    <!-- Row 2, Col 2, Row 3, Col 1 -->
+                        <label for="stream" class="align-items-center">Stream Key</label>
+                    </div>
+                    <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 2 -->
+                        <div class="input-group mb-2  input-group-sm">
+                            <div class="input-group-prepend">
+                              <span class="input-group-btn btn btn-danger disabled rounded">
+                                <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                              </span>
+                              <span class="input-group-text bg-transparent">YouTube</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="https://youtube.com" id="youtube" name="youtube">
+                          </div>
+                    </div>
+                    <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 3 -->
+                        <div class="input-group mb-2  input-group-sm">
+                            <div class="input-group-prepend">
+                              <span class="input-group-btn btn btn-success disabled rounded">
+                                <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                              </span>
+                              <span class="input-group-text bg-transparent">Facebook</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="https://facebook.com" id="facebook" name="facebook">
+                          </div>
+                    </div>
+                    <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 4 -->
+                        <div class="input-group mb-2  input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-btn btn btn-success disabled rounded">
+                                    <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                  </span>
+                              <span class="input-group-text bg-transparent">Vimeo</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="https://vimeo.com" id="vimeo" name="vimeo">
+                          </div>
+                    </div>
+                  </div>    <!-- Row 2, Col 2, Row 3 -->
+                  <div class="row mine-border rounded mt-2 pt-2 h-50 justify-content-center align-items-center">    <!-- Row 2, Col 2, Row 4 -->
+                    <div class="col-lg-4">
+                        <div class="row">
+                            <label for="home-team" class="align-items-center pl-3">Home Team</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <select id="home-team" name="home-team" class="form-control form-control-sm">
+                                    <option value="team-1">Team 1</option>
+                                    <option value="team-2">Team 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="media border p-3 d-flex justify-content-center">
+                            <img src="../images/logo/Australia.png" class="games-icons2" alt="">
+                            <label for="guest-team" class="align-items-center pl-3 pl-3">VS</label>
+                            <img src="../images/logo/pak.png" class="games-icons2" alt="">  
+                        </div>
+                        <div class="media-body"> </div>
+                    </div>
+                    <div class="col-lg-4">
+                        
+                        <div class="row">
+                            <label for="guest-team" class="align-items-center pl-3">Guest Team</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <select id="guest-team" name="guest-team" class="form-control form-control-sm pl-0">
+                                    <option value="team-1">Team 1</option>
+                                    <option value="team-2">Team 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <label for="guest-team-id" class="align-items-center pl-3">Guest Team ID</label>
+                        </div>
+                        
+                        <div class="row">                            
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control form-control-sm" id="guest-team-id">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mine-border rounded mt-2 pt-2 pb-2">    <!-- Row 2, Col 2, Row 5 -->
+                    <div class="col-lg-4">
+                        <select id="guest-team" name="guest-team" class="form-control form-control-sm pl-0">
+                            <option value="team-1"  style="background-image:url(../images/player.png);">Team 1 </option>
+                            <option value="team-2">Team 2</option>
+                        </select>
+                    </div>                        
+                    <div class="col-lg-4">
+                        <select id="guest-team" name="guest-team" class="form-control form-control-sm pl-0">
+                            <option value="team-1">Team 1</option>
+                            <option value="team-2">Team 2</option>
+                        </select>
+                    </div>     
+                    <div class="col-lg-1">
+                        <span class="input-group-btn btn btn-secondary btn-sm disabled rounded">
+                            <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                          </span>
+                    </div>                   
+                    <div class="col-lg-4"> </div>
+                  </div>
+            </div>      <!-- Row 2, Col 2 End -->
+        </div>  <!-- Row 2 End -->
+
+    </div>  <!-- Main Container End -->
+
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('uploaded-img');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+
+</body>
+</html>
