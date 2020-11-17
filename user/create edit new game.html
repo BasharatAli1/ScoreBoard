@@ -9,6 +9,11 @@
     <!-- JavaScript -->
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin for images in select list -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js" ></script>
+
     <title>Create Edit Game</title>
     <style>
         label
@@ -70,7 +75,7 @@
         </div>
     </div>
 
-    <div class="container-fluid pr-5 pl-5 pb-5"> <!-- Main Container -->
+    <div class="container-fluid pr-5 pl-5"> <!-- Main Container -->
         <div class="row">   <!-- Row 1 -->
             <div class="col-lg-12">
                 <div class="btn-group float-right pl-3 pb-3">
@@ -124,7 +129,7 @@
                         <input type="text" class="form-control form-control-sm" id="game">
                     </div>
                     <div class="col-md-6">
-                        <label for="game">Sponsor</label>
+                        <label for="sponsor">Sponsor</label>
                         <input type="text" class="form-control form-control-sm" id="sponser">
                     </div>
                   </div>
@@ -135,11 +140,11 @@
                     <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 2 -->
                         <div class="input-group mb-2  input-group-sm">
                             <div class="input-group-prepend">
-                              <span class="input-group-btn btn btn-danger disabled rounded">
+                              <button  type="button" class="input-group-btn btn btn-danger disabled rounded">
                                 <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
-                              </span>
+                              </button>
                               <span class="input-group-text bg-transparent">YouTube</span>
                             </div>
                             <input type="text" class="form-control" placeholder="https://youtube.com" id="youtube" name="youtube">
@@ -148,11 +153,11 @@
                     <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 3 -->
                         <div class="input-group mb-2  input-group-sm">
                             <div class="input-group-prepend">
-                              <span class="input-group-btn btn btn-success disabled rounded">
+                              <button  type="button" class="input-group-btn btn btn-success disabled rounded">
                                 <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                 </svg>
-                              </span>
+                              </button>
                               <span class="input-group-text bg-transparent">Facebook</span>
                             </div>
                             <input type="text" class="form-control" placeholder="https://facebook.com" id="facebook" name="facebook">
@@ -161,11 +166,11 @@
                     <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 4 -->
                         <div class="input-group mb-2  input-group-sm">
                             <div class="input-group-prepend">
-                                <span class="input-group-btn btn btn-success disabled rounded">
+                                <button  type="button" class="input-group-btn btn btn-success disabled rounded">
                                     <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                     </svg>
-                                  </span>
+                                </button>
                               <span class="input-group-text bg-transparent">Vimeo</span>
                             </div>
                             <input type="text" class="form-control" placeholder="https://vimeo.com" id="vimeo" name="vimeo">
@@ -187,7 +192,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="media border p-3 d-flex justify-content-center">
+                        <div class="media p-3 d-flex justify-content-center">
                             <img src="../images/logo/Australia.png" class="games-icons2" alt="">
                             <label for="guest-team" class="align-items-center pl-3 pl-3">VS</label>
                             <img src="../images/logo/pak.png" class="games-icons2" alt="">  
@@ -219,25 +224,32 @@
                         </div>
                     </div>
                   </div>
-                  <div class="row mine-border rounded mt-2 pt-2 pb-2">    <!-- Row 2, Col 2, Row 5 -->
-                    <div class="col-lg-4">
-                        <select id="guest-team" name="guest-team" class="form-control form-control-sm pl-0">
-                            <option value="team-1"  style="background-image:url(../images/player.png);">Team 1 </option>
-                            <option value="team-2">Team 2</option>
-                        </select>
+                  <div class="row mine-border rounded mt-2 mb-5 pb-5">    <!-- Row 2, Col 2, Row 5 -->
+                    <div class="col-lg-12 h-50">
+                        <label for="referee" class="align-items-center pl-3">Referee</label>
+                    </div>
+                    <div class="col-lg-4 pt-2">
+                        <div id="referee-image-dropdown" onmouseleave="hideee();" class="form-control form-control-sm">
+                            <div class="img_holder" onclick="myfuunc(this);" onmouseover="showww();">
+                                <span class="iTEXT">Pranas Klizmauskas</span> <img class="flagimgs first float-right" src="../images/referee.jpg" /> 
+                            </div>                            
+                            <div class="img_holder" onclick="myfuunc(this);" onmouseover="showww();">
+                                <span class="iTEXT">Pranas Klizmauskas</span> <img class="flagimgs second float-right" src="../images/referee.jpg" /> 
+                            </div>
+                        </div>
                     </div>                        
-                    <div class="col-lg-4">
-                        <select id="guest-team" name="guest-team" class="form-control form-control-sm pl-0">
-                            <option value="team-1">Team 1</option>
-                            <option value="team-2">Team 2</option>
+                    <div class="col-lg-4 pt-2">
+                        <select id="main-referee" name="main-referee" class="form-control form-control-sm pl-0">
+                            <option value="main-referee1">Main Referee</option>
+                            <option value="main-referee1">Main Referee</option>
                         </select>
                     </div>     
-                    <div class="col-lg-1">
-                        <span class="input-group-btn btn btn-secondary btn-sm disabled rounded">
-                            <svg class="btn-add" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <div class="col-lg-1 pt-2">
+                        <button  type="button" class="input-group-btn btn btn-link mine-border rounded btn-sm rounded">
+                            <svg class="btn-add" width="0.7em" height="1em" viewBox="4.5 4.5 7 7" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                             </svg>
-                          </span>
+                        </button>
                     </div>                   
                     <div class="col-lg-4"> </div>
                   </div>
@@ -247,10 +259,35 @@
     </div>  <!-- Main Container End -->
 
     <script>
+        // Upload Image 
         var loadFile = function(event) {
             var image = document.getElementById('uploaded-img');
             image.src = URL.createObjectURL(event.target.files[0]);
         };
+
+        // referee-image-dropdown
+        var shownnn = "yes";
+        var dropd = document.getElementById("referee-image-dropdown");
+
+        function showww() {
+        dropd.style.height = "auto";
+        dropd.style.overflow = "y-scroll";
+        }
+
+        function hideee() {
+            dropd.style.height = "30px";
+            dropd.style.overflow = "hidden";
+        }
+        //dropd.addEventListener('mouseover', showOrHide, false);
+        //dropd.addEventListener('click',showOrHide , false);
+
+
+        function myfuunc(imgParent) {
+        hideee();
+        var mainDIVV = document.getElementById("referee-image-dropdown");
+        imgParent.parentNode.removeChild(imgParent);
+        mainDIVV.insertBefore(imgParent, mainDIVV.childNodes[0]);
+        }
     </script>
 
 </body>

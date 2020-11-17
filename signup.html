@@ -322,21 +322,30 @@
                     </div>  <!-- Form Fields Dive -->
                 </div>  <!-- End of Col 1 -->
                 <div class="col-lg-2"> </div>  <!-- End of Col 2 -->
+
                 <div class="col-lg-4 text-center ">
-                  <span>
-                    <svg class="avatarCorners mx-auto d-block" width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                    </svg>
-                  </span>
-                  <button class="btn btn-dark mx-auto btn-black px-3 mt-2"> Upload Photo </button>
+                  <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                  <div class="col-lg-12 d-flex justify-content-center pb-2">
+                      <img id="register-uploaded-img" class="avatarCorners mx-auto d-block" src="images/person.png"/>
+                  </div>
+                  <label for="file" class="btn btn-dark mx-auto btn-black px-3 mt-2" >Upload Photo</label>
+
                   <div class="btn-submit">
                     <button  class="btn-submit-style btn-black float-right">Register</button>
                   </div>
+                  
                 </div>    <!-- End of Col 3 -->
         </div>  <!-- End of Row -->
       </form> <!-- End of Form-->
     </div>  <!-- End of Container -->
 
+    <script>
+              // Upload Image 
+          var loadFile = function(event) {
+          var image = document.getElementById('register-uploaded-img');
+          image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
 
     
     <!-- JavaScript -->

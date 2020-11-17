@@ -174,8 +174,8 @@
 
   .games-icons2
   {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     margin-right: 5%;
   }
   
@@ -212,7 +212,7 @@
   .avatarCorners {
     border:1px solid black;
     border-radius: 110px;
-    padding: 20px;
+    padding: 5px;
     width: 150px;
     height: 150px;
   }
@@ -220,6 +220,11 @@
   #uploaded-img
   {
     width:90%;
+  }
+
+  #register-uploaded-img
+  {
+    width:50%;
   }
   /* btn-style */
 
@@ -550,4 +555,27 @@
 .upload-img
 {
   width: 200px;
+}
+
+/* Dropdown with image */
+
+#referee-image-dropdown {
+  display: inline-block;
+  border: 1px solid;
+}
+#referee-image-dropdown {
+  height: 30px;
+  overflow: hidden;
+}
+
+#referee-image-dropdown .img_holder {
+  cursor: pointer;
+  margin-top: 1%;
+  margin-bottom: 4px;
+}
+#referee-image-dropdown img.flagimgs {
+  height: 25px;
+}
+#referee-image-dropdown span.iTEXT {
+  position: relative;
 }
