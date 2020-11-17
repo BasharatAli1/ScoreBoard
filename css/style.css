@@ -274,12 +274,29 @@
     height: 60%;
   }
 
+  .btn-edit
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60%;
+  }
+
   .btn-register-style
   {
     width: 30%;
     color: white;
     margin-left: 80%;
     font-size: larger;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .btn-edit-style
+  {
+    width: 140px;
+    color: white;
+    margin: auto;
     font-weight: bold;
     border-radius: 4px;
   }
@@ -549,6 +566,11 @@
 }
 
 /* div styling */
+.div-active
+{
+  height: 150px;
+}
+
 .sibstitutes
 {
   border: 1px solid #707070;

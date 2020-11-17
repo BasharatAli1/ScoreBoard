@@ -10,7 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Edit User</title>
+    <title>Edit Profile</title>
 
 </head>
 <body>
@@ -50,56 +50,12 @@
           </div>
         </nav>  <!-- End of Navbar -->
 
-    <div class="container-fluid mt-5 mb-5 px-auto">  <!-- Main Container-->
+    <div class="container mt-5 mb-5 px-auto">  <!-- Main Container-->
       <form action="" method="post">
-        <div class="row ">  <!-- Main Row, which contain all fields -->
+        <div class="row d-flex justify-content-center">  <!-- Main Row, which contain all fields -->
                 <div class="col-lg-6 mb-5"> <!-- Col 1 -->
-                  <div class="border border-dark rounded pr-2 pt-3">   <!-- Form Fields Dive 1 -->
 
-                    <div class="row pl-3">
-                      <div class="col-6 ">
-                        <h4><span class="badge badge-link border rounded">User Rights</span></h4>   
-                      </div>
-                      <div class="column5">
-                        <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>Add/Edit Referees</b></h6> </label>
-                      </div>
-                      <div class="column1">
-                        <input type="checkbox" class="form-check-input" id="referees" name="referees" value="referees">
-                      </div>
-                    </div>
-                                        
-                    <div class="row pl-3">
-                      <div class="column5">
-                        <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>Admin</b></h6> </label>
-                      </div>
-                      <div class="column1">
-                        <input type="checkbox" class="form-check-input" id="admin" name="admin" value="admin">
-                      </div>
-                      <div class="column5">
-                        <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>Add/Edit Teams</b></h6> </label>
-                      </div>
-                      <div class="column1">
-                        <input type="checkbox" class="form-check-input" id="teams" name="teams" value="teams">
-                      </div>
-                    </div>
-                                        
-                    <div class="row pl-3">
-                      <div class="column5">
-                        <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>Start/End Games</b></h6> </label>
-                      </div>
-                      <div class="column1">
-                        <input type="checkbox" class="form-check-input" id="s-e-game" name="s-e-game" value="s-e-game">
-                      </div>
-                      <div class="column5">
-                        <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>Add/Edit Games</b></h6> </label>
-                      </div>
-                      <div class="column1">
-                        <input type="checkbox" class="form-check-input" id="a-e-game" name="a-e-game" value="a-e-game">
-                      </div>
-                    </div>
-                    
-                  </div>   <!-- End of Form Fields Dive 1 -->
-                  <div class="border border-dark rounded pl-3 pr-3 pt-3 mt-2">   <!-- Form Fields Dive 2 -->
+                  <div class="border border-dark rounded pl-3 pr-3 pt-3 mt-2">   <!-- Form Fields -->
                       <div class="form-group row">
                         <label class="col-sm-5 col-form-label"> <b><h6>First/Last Name</b></h6> </label>
                         <div class="float-right col-sm-7">
@@ -371,6 +327,19 @@
 
                       </div>
                     </div>
+                      
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h6>Change Password</b></h6> </label>
+                        <div class="col-sm-7">
+                          <input type="password" class="form-control form-control-sm" id="password" placeholder="Type in your new password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label"> <b><h6>Change E-mail</b></h6> </label>
+                        <div class="col-sm-7">
+                          <input type="email" class="form-control form-control-sm" id="emai" placeholder="Type in your new E-mail">
+                        </div>
+                      </div>
                       <div class="form-group row">
                         <label class="col-sm-5 col-form-label"> <b><h6>Company</b></h6> </label>
                         <div class="col-sm-7">
@@ -384,141 +353,9 @@
                         </div>
                       </div>
                     
-                    </div>  <!-- End of Form Fields Dive 2 -->
-                    <div class="border border-dark rounded pl-3 pr-3 pt-3 mt-2">   <!-- Form Fields Dive 3 -->
-                      <div class="form-group row">
-                        <label class="col-sm-5 col-form-label"> <b><h6>Change E-mail</b></h6> </label>
-                        <div class="col-sm-7">
-                          <input type="email" class="form-control form-control-sm" id="emai" placeholder="Type in your new E-mail">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-sm-5 col-form-label"> <b><h6>Change Password</b></h6> </label>
-                        <div class="col-sm-7">
-                          <input type="password" class="form-control form-control-sm" id="password" placeholder="Type in your new password">
-                        </div>
-                      </div>
-                    </div>   <!-- End of Form Fields Dive 3 -->
+                    </div>  <!-- End of Form Fields -->
                 </div>  <!-- End of Col 1 -->
-                <div class="col-lg-3">  <!-- Col 2 -->
-                    <div class="border border-dark rounded pr-2 pt-3">   <!-- Form Fields Dive 4 -->
-
-                        <div class="row pl-3">
-                          <div class="col-12 text-center">
-                            <h4><span class="badge badge-link border rounded">User Rights</span></h4>   
-                          </div>
-                        </div>
-                                        
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>FC Jonava</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="fc-jonava" name="fc-jonava" value="fc-jonava">
-                          </div>
-                        </div>
-                                        
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>BC Rivile</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="bc-rivile" name="bc-rivile" value="bc-rivile">
-                          </div>
-                        </div>
-                                        
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>FC Klaipeda</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="fc-klaipeda" name="fc-klaipeda" value="fc-klaipeda">
-                          </div>
-                        </div>
-                                            
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>BC Bangenė</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="bc-bangenė" name="bc-bangenė" value="bc-bangenė">
-                          </div>
-                        </div>
-                                            
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>FC Manchester United</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="fc-manchester-united" name="fc-manchester-united" value="fc-manchester-united">
-                          </div>
-                        </div>
-                                                  
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>BC Lietuvos Rytas</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="bc-lietuvos-rytas" name="bc-lietuvos-rytas" value="bc-lietuvos-rytas">
-                          </div>
-                        </div>
-                                                  
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>FC Banga</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="fc-banga" name="fc-banga" value="fc-banga">
-                          </div>
-                        </div>
-                                                  
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>BC Tauro Tradicinis</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="bc-tauro-tradicinis" name="bc-tauro-tradicinis" value="bc-tauro-tradicinis">
-                          </div>
-                        </div>
-                                                  
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>FC Norfa</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="fc-norfa" name="fc-norfa" value="fc-norfa">
-                          </div>
-                        </div>
-                                
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>BC Rivile</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="bc-rivile" name="bc-rivile" value="bc-rivile">
-                          </div>
-                        </div>
-                                
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>FC Jonava</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="fc-jonava" name="fc-jonava" value="fc-jonava">
-                          </div>
-                        </div>
-                                          
-                        <div class="row pl-3">
-                          <div class="column10">
-                            <label class="col-md-10 col-form-label border-right border-dark"> <b><h6>BC Rivile</b></h6> </label>
-                          </div>
-                          <div class="column1">
-                            <input type="checkbox" class="form-check-input" id="bc-rivile" name="bc-rivile" value="bc-rivile">
-                          </div>
-                        </div>
-                    
-                  </div>   <!-- End of Form Fields Dive 4 -->
-                </div>  <!-- End of Col 2 -->
+                
 
                 <div class="col-lg-3 text-center"> <!-- Col 3 -->
                   <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
@@ -526,11 +363,9 @@
                       <img id="register-uploaded-img" class="avatarCorners mx-auto d-block" src="../images/person.png"/>
                   </div>
                   <div class="col-lg-12">
-                    <h4 class="mx-auto">Nick Gers</h4>
+                    <h4 class="mx-auto">John Smith</h4>
                   </div>
-                  <div class="col-lg-12">
-                    <button type="button" class="btn btn-link border mr-4 mx-auto"> <h5>Remove User</h5> </button> 
-                  </div>
+
                   <div class="col-lg-12 btn-edit pr-3">
                     <button type="submit" class="btn-edit-style btn-black">Save Changes</button>
                   </div>
