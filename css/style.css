@@ -22,6 +22,13 @@
   {
     width: 90%;
   }
+
+  
+  .mine-border
+  {
+      border: 1px solid #707070;
+  }
+
   /* Text Design */
   .upcoming-game-text
   {
@@ -198,6 +205,13 @@
     width: 15px;
     height: 15px;
   }
+  
+  .referee-pic
+  {
+    margin-right: 1px;
+    width: 25px;
+    height: 25px;
+  }
 
   .upcoming-game-img
   {
@@ -252,7 +266,7 @@
     padding: 5px 10px 5px;
   }
 
-  .btn-submit
+  .btn-register
   {
     display: flex;
     flex-direction: column;
@@ -260,7 +274,7 @@
     height: 60%;
   }
 
-  .btn-submit-style
+  .btn-register-style
   {
     width: 30%;
     color: white;
@@ -292,7 +306,6 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 90%;
-    float: inherit;
   }
 
   .welcome-btn
@@ -532,6 +545,13 @@
   border-radius: 3%;
 }
 
+.referee
+{
+  border: 1px solid #707070;
+  line-height: 35px;
+  border-radius: 3%;
+}
+
 .active-player
 {
   display: inline-block;
@@ -552,9 +572,14 @@
   border: 1px solid #000000;
 }
 
-.upload-img
+.upload-img-field
 {
   width: 200px;
+}
+
+.upload-img-referee
+{
+  width: 250px;
 }
 
 /* Dropdown with image */
