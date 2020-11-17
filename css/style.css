@@ -607,14 +607,14 @@
   border: 1px solid;
 }
 #referee-image-dropdown {
-  height: 30px;
+  height: 35px;
   overflow: hidden;
 }
 
 #referee-image-dropdown .img_holder {
   cursor: pointer;
-  margin-top: 1%;
   margin-bottom: 4px;
+  height: 25px;
 }
 #referee-image-dropdown img.flagimgs {
   height: 25px;
