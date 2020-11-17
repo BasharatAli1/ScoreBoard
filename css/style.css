@@ -238,7 +238,7 @@
 
   #register-uploaded-img
   {
-    width:50%;
+    width:150px;
   }
   /* btn-style */
 
@@ -300,12 +300,30 @@
     height: 0%;
   }
 }
+
+.btn-height-referee
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+}
+
+.btnHeight-referee1 {height: 30%;}
+
+@media only screen and (max-width: 1000px) {
+/* For mobile phones: */
+[class*="btnHeight-referee1"] {
+  height: 0%;
+}
+}
   .btn-add
   {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 90%;
+    float: inherit;
   }
 
   .welcome-btn
