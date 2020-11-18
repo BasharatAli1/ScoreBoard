@@ -10,13 +10,12 @@
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-    <title>Add Edit Players</title>
+    <title>Add Edit Teams</title>
     <style>
         label
         {
             font-weight: bold;
             color: #000000;
-            font-size: small;
         }
         .mine-border, .form-control
         {
@@ -80,161 +79,172 @@
             <div class="col-lg-3">  <!-- Main Row, Col 1 -->
                 <h4>Your Teams</h4>
                 <div class="row mb-1">  <!-- Column 1 Row 1-->
-                    <div class="col-lg-8 referee">
+                    <div class="col-lg-8 player-div rounded">
                         <span>Team 1</span>
                         <img src="../images/logo/pak.png" class="team-logo float-right mt-1" alt="team 1">
                     </div>
                 </div>
                 <div class="row mb-1">  <!-- Column 1 Row 2-->
-                    <div class="col-lg-8 referee">
+                    <div class="col-lg-8 player-div rounded">
                         <span>Team 2</span>
-                        <img src="../images/logo/team-logo.PNG" class="referee-pic float-right mt-1" alt="team 2">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">  <!-- Main Row, Col 2 -->
-                <div class="row mb-2">  <!-- Main Row, Col 2, Row 1 -->
-                    <div class="col-lg-7">
-                        <h4>Add/Edit Teams</h4>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="row mine-border rounded mt-2 pt-1 pb-1">
-                            <div class="col-sm-4">
-                                <label for="team id" class="align-items-center">Team ID </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control form-control-sm rounded" id="team-id" name="team-id" placeholder="Team ID">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">  <!-- Main Row, Col 2, Row 2 -->
-                    <div class="col-sm-3">
-                        <label for="team name" class="align-items-center">Full Team Name </label>
-                    </div>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control form-control-sm rounded" id="full-team-name" name="full-team-name" placeholder="Full Team Name">
+                        <img src="../images/logo/team-logo.PNG" class="team-logo float-right mt-1" alt="team 2">
                     </div>
                 </div>
                 
-                <div class="row mb-2">  <!-- Main Row, Col 2, Row 3 -->
-                    <div class="col-lg-4">
+                <h4 class="mt-5">Players</h4>
+                <div class="row mb-1">  <!-- Column 1 Row 1-->
+                    <div class="col-lg-10 player-div rounded text-center">
+                        <span style="font-size: large;">Player</span>
+                        <span style="font-size: x-small; font-weight: bold;">88</span>
+                        <span style="font-size: x-small;">Point Guard</span>
+                        <img src="../images/player.png" class="player-pic3" alt="player">
+                    </div>
+                </div>
+            </div>  <!-- End of Main Row, Col 1 -->
+
+            <div class="col-lg-8">  <!-- Main Row, Col 2 -->
+                <div class="row mb-2">   <!-- Main Row, Col 2, Row 1 -->
+                    <div class="col-lg-7">
+                        <h4>Add/Edit Players</h4>
+                    </div>
+                </div>
+                
+                <div class="row mb-2">  <!-- Main Row, Col 2, Row 2 -->
+                    <div class="col-lg-5">
                         <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
-                            <div class="col-sm-6">
-                                <label for="team name" class="align-items-center">Team Name </label>
+                            <div class="col-sm-4">
+                                <label for="team name" class="align-items-center">First Name </label>
                             </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm rounded" id="team-name" name="team-name" placeholder="Team Name">
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm rounded" id="first-name" name="first-name" placeholder="First Name">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2"> </div>
+                    <div class="col-lg-1"> </div>
                     <div class="col-lg-6">
                         <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
-                            <div class="col-sm-8">
-                                <label for="team name" class="align-items-center">Short Team Name (max 4 characters) </label>
+                            <div class="col-sm-4">
+                                <label for="team name" class="align-items-center">Last Name </label>
                             </div>
-                            <div class="col-sm-4 float-right">
-                                <input type="text" class="form-control form-control-sm rounded" id="short-team-name" name="short-team-name" placeholder="XXXX">
+                            <div class="col-sm-8 float-right">
+                                <input type="text" class="form-control form-control-sm rounded" id="last-name" name="last-name" placeholder="Last Name">
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="row">     <!-- Main Row, Col 2, Row 4 -->
-                    <div class="col-lg-5">     <!-- Main Row, Col 2, Row 4, Col 1 -->
-                        <div class="upload-team-logo mt-3 mb-3">
-                            <div class="mine-border rounded float-left">
-                                <div class="row d-flex justify-content-center pt-2 pb-2">
-                                    <h5>Team Logo</h5>
-                                </div>
-                                <div class="row d-flex justify-content-center pb-2">
-                                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-                                    <div class="col-lg-12 d-flex justify-content-center pb-2">
-                                        <img id="uploaded-img" src="../images/logo/team-logo.PNG"/>
-                                    </div>
-                                    <label for="file" class="mine-border rounded upload-img-btn mt-2" >Upload</label>
-                                </div>
+                <div class="row pb-2">   <!-- Main Row, Col 2, Row 3 -->
+                    <div class="col-lg-6">
+                        <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
+                            <div  class="col-lg-4 ">
+                                <label for="dob" class="align-items-center">Date Of Birth</label>
                             </div>
-                        </div> 
+                            <div  class="col-lg-8 mt-2">
+                                <input type="date" class="form-control form-control-sm rounded" id="dob" name="dob">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-7">   <!-- Main Row, Col 2, Row 4, Col 2 -->
-                        <div class="row">   <!-- Main Row, Col 2, Row 4, Col 1, Row 1 -->
-                            <div class="col-lg-12 pt-2">
-                            <div class="mine-border rounded ml-1">  <!-- Main Row, Col 2, Row 4, Col 1, Row 1, Col 2 -->
-                                <div class="row d-flex justify-content-center pt-2 pb-2">
-                                    <h5>Team Colors</h5>
-                                </div>
-                                <div class="row d-flex justify-content-center pt-2 pb-2">
-                                    <div class="col-lg-1"> </div>
-                                    <div class="col-lg-2 d-flex justify-content-center">
-                                        <p>Color A</p>
-                                    </div>
-                                    <div class="col-lg-3 d-flex justify-content-center">
-                                        <div class="color-a"></div>
-                                    </div>
-                                    <div class="col-lg-2 d-flex justify-content-center">
-                                        <p>Color B</p>
-                                    </div>
-                                    <div class="col-lg-3 d-flex justify-content-center">
-                                        <div class="color-b"></div>
-                                    </div>
-                                    <div class="col-lg-1"> </div>
-                                </div>
+                    <div class="col-lg-1"> </div>
+                    <div class="col-lg-5">
+                        <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
+                            <div class="col-sm-6">
+                                <label for="country" class="align-items-center">Country Of Origin</label>
                             </div>
-                            <div class="row mine-border rounded mt-2 ml-1 mb-5 pb-5">  
-                                <div class="col-lg-12 d-flex justify-content-center pt-2 pb-2">
-                                    <h5>Players</h5>
-                                </div>
-                                
-                                    <div class="col-lg-5">
-                                        <h6>Select Team Players:</h6>
-                                    </div>
-                                    <div class="col-lg-6 pt-2">
-                                        <select id="players" name="players" class="form-control form-control-sm pl-0">
-                                            <option value="player1">Player1</option>
-                                            <option value="player2">Player2</option>
-                                        </select>
-                                    </div>   
-                                    <div class="col-lg-5">
-                                        <h6>Add A New Player::</h6>
-                                    </div>
-                                    <div class="col-lg-6 pt-2">
-                                        <button  type="submit" class="input-group-btn btn btn-link mine-border rounded btn-sm rounded">
-                                            <svg width="0.7em" height="0.5em" viewBox="4.5 4.5 7 7" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                            </svg>
-                                        </button>
-                                    </div>   
-                                <div class="row">    
-                                    <div class="col-lg-6 pt-2">
-
-                                    </div> 
-                                </div>
-
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-sm rounded" id="country" name="country" placeholder="Last Name">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                
+                  <div class="row mb-2">    <!-- Main Row, Col 2, Row 4 -->
+                      <div class="col-lg-4">
+                          <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
+                              <div class="col-sm-2">
+                                  <label for="team name" class="align-items-center">City </label>
                               </div>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control form-control-sm rounded" id="city" name="city" placeholder="City">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3"> </div>
+                      <div class="col-lg-5">
+                          <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
+                              <div class="col-sm-4">
+                                  <label for="email" class="align-items-center">E-Mail </label>
+                              </div>
+                              <div class="col-sm-8 float-right">
+                                  <input type="text" class="form-control form-control-sm rounded" id="email" name="email" placeholder="E-Mail">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
-                                <div class="row">
-                                    <div class="col-12">
-                                            <div class="btn-group pl-3 pb-3 float-right">
-                                                <button type="button" class="btn btn-success disabled rounded mr-3">
-                                                    <svg class="" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                                    </svg>
-                                                </button>
-                                                <button type="button" class="btn btn-danger disabled rounded">
-                                                    <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                    </div>
-                                </div>
+                  <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">  <!-- Main Row, Col 2, Row 5 -->
+                    <div class="col-sm-3">
+                        <label for="team name" class="align-items-center">Additional Info </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-sm rounded" id="additional-info" name="additional-info" placeholder="Additional Info">
+                    </div>
+                </div>
+
+                <div class="row">     <!-- Main Row, Col 2, Row 6 -->
+                    <div class="col-lg-6">
+                        <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2">
+                            <div class="col-sm-6">
+                                <label for="number" class="align-items-center">Number/Position </label>
                             </div>
-                        </div>   <!-- Main Row, Col 2, Row 4, Col 1, Row 1 -->
-                    </div>  <!-- End of Main Row, Col 2, Row 4, Col 2 -->
-                </div>   <!-- End of Main Row, Col 2, Row 4 -->
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-sm rounded" id="number" name="number" placeholder="Number/Position">
+                            </div>
+                        </div>
+                        <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2 mr-5">
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="role" name="players" class="form-control form-control-sm pl-0">
+                                    <option value="role1">Point Guard</option>
+                                    <option value="role2">Point Guard</option>
+                                </select>                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 pt-2"> </div>
+                            
+                        <div class="upload-player-pic mine-border rounded">
+                            <div class="row d-flex justify-content-center pt-2 pb-2">
+                                <h5>Avatar</h5>
+                            </div>
+                            <div class="row d-flex justify-content-center pb-2">
+                                <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                                <div class="col-lg-12 d-flex justify-content-center pb-2">
+                                    <img id="uploaded-img" src="../images/player.png" class="px-auto"/>
+                                </div>
+                                <label for="file" class="mine-border rounded upload-img-btn mt-2" class="float-right">Upload</label>
+                            </div>
+                        </div>
+                </div>   <!-- End of Main Row, Col 2, Row 6 -->
+                
+                <div class="row">   <!-- Main Row, Col 2, Row 7 -->
+                    <div class="col-12 mt-2">
+                            <div class="btn-group pl-3 pb-3 float-right">
+                                <button type="button" class="btn btn-success disabled rounded mr-3">
+                                    <svg class="" width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-danger disabled rounded">
+                                    <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+
             </div>  <!-- End of Main Row, Col 2 -->
         </div>  <!-- End of Main Row -->
         </form>
