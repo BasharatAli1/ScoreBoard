@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+    <title>Add New User</title>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl nav-bg">
+        <a class="navbar-brand" href="">
+            <p style="color: white; font-weight: bold; font-size:larger;"></p>
+        </a>
+        
+        <button class="navbar-toggler mt-2" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mx-auto" class="topnav-right">
+                <a style="font-size:18px;" class="nav-link" href="dashboard.html">  Home </a>
+              </li>
+              <li class="nav-item">
+                  <a style="font-size:18px;" class="nav-link" href="run game 1.html"> Run Games </a>
+              </li>
+              <li class="nav-item">
+                  <a style="font-size:18px;" class="nav-link" href="upcoming games.html"> Games </a>
+              </li>
+              <li class="nav-item">
+                  <a style="font-size:18px;" class="nav-link" href="add edit teams 1.html"> Teams </a>
+              </li>
+              <li class="nav-item">
+                  <a style="font-size:18px;" class="nav-link" href="my account.html"> My Account </a>
+              </li>
+              <li class="nav-item">
+                  <a style="font-size:18px;" class="nav-link" href=""> logout </a>
+              </li>
+            </ul>
+        </div>
+    </nav>  <!-- End of Navbar -->
+
+    <div class=""></div>
+
+    <div class="container pl-5 pr-5 pb-5 mt-5">
+    <form action="" method="post">
+        <div class="row add-user">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="row"></div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h4><span class="badge badge-link border rounded">User E-Mail</span></h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control form-control-sm " id="email" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h4><span class="badge badge-link border rounded">Message</span></h4>
+                        </div>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" rows="5" id="message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+        </div>  <!-- Row 1 End -->
+
+        <div class="row mt-5">
+            <div class="col-lg-9"> </div>
+            <div class="col-lg-3">
+                <a type="submit" class="btn btn-link border border-dark float-right pr-3 pl-3" href="#" class=""><b>Send</b></a>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

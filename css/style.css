@@ -9,6 +9,7 @@
       text-decoration: none;
   }
 
+  /* for Those pages, which dont have navbar */
   .header-line
   {
     height: 70px;   /* height is for those pages, which don't have navbar */
@@ -23,13 +24,13 @@
     width: 90%;
   }
 
-  
+    /* border */
   .mine-border
   {
       border: 1px solid #707070;
   }
 
-  /* Text Design */
+  /* Text */
   .upcoming-game-text
   {
     font-size: larger;
@@ -54,6 +55,16 @@
   .player-name
   {
     font-size: x-small;
+  }
+
+  .success
+  {
+    font-size: 60px;
+  }
+
+  .h1, h2, h3, h4, h5, h6, label
+  {
+    color: #000000;
   }
 
   /* Navbar */
@@ -170,7 +181,7 @@
   /* Alignment */
   text-right{text-align:left!important}
 
-  /* image style */
+  /* images style */
 
   .games-icons
   {
@@ -212,6 +223,14 @@
     width: 25px;
     height: 25px;
   }
+  
+  .team-logo
+  {
+    margin-right: 1px;
+    margin-top: 1px;
+    width: 25px;
+    height: 25px;
+  }
 
   .upcoming-game-img
   {
@@ -240,6 +259,7 @@
   {
     width:150px;
   }
+
   /* btn-style */
 
   .btn-link
@@ -348,6 +368,13 @@
     width: 133px;
     height: 42px;
     font-size: larger;
+    text-align: center;
+  }
+
+  .welcome-btn:hover
+  {
+    text-decoration: none;
+    color: #FFFFFF;
   }
 
   .btn-login, .btn-welcome-login
@@ -399,29 +426,6 @@
     width: 100px;
     text-align: center;
   }
-
-  /* Media Queries */
-
-  /* For desktop: */
-.column1 {width: 8.33%;}
-.column2 {width: 16.66%;}
-.column3 {width: 25%;}
-.column4 {width: 33.33%;}
-.column5 {width: 41.66%;}
-.column6 {width: 50%;}
-.column7 {width: 58.33%;}
-.column8 {width: 66.66%;}
-.column9 {width: 75%;}
-.column10 {width: 83.33%;}
-.column11 {width: 91.66%;}
-.column12 {width: 100%;}
-
-@media only screen and (max-width: 70px) {
-  /* For mobile phones: */
-  [class*="column"] {
-    width: 100%;
-  }
-}
 
 /* Game Field */
 .field-container {
@@ -566,6 +570,10 @@
 }
 
 /* div styling */
+.plan-body
+{
+  height: 180px; 
+}
 .div-active
 {
   height: 150px;
@@ -622,6 +630,33 @@
   width: 250px;
 }
 
+.upload-team-logo
+{
+  width: 350px;
+  width: 300px;
+}
+
+.color-a
+{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000000;
+  background-color: #206831;
+}
+
+.color-b
+{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000000;
+  background-color: white;
+}
+
+.add-user
+{
+  margin-top: 10%;
+}
+
 /* Dropdown with image */
 
 #referee-image-dropdown {
@@ -644,3 +679,27 @@
 #referee-image-dropdown span.iTEXT {
   position: relative;
 }
+
+  /* Media Queries */
+
+  /* For desktop: */
+  .column1 {width: 8.33%;}
+  .column2 {width: 16.66%;}
+  .column3 {width: 25%;}
+  .column4 {width: 33.33%;}
+  .column5 {width: 41.66%;}
+  .column6 {width: 50%;}
+  .column7 {width: 58.33%;}
+  .column8 {width: 66.66%;}
+  .column9 {width: 75%;}
+  .column10 {width: 83.33%;}
+  .column11 {width: 91.66%;}
+  .column12 {width: 100%;}
+  
+  @media only screen and (max-width: 70px) {
+    /* For mobile phones: */
+    [class*="column"] {
+      width: 100%;
+    }
+  }
+

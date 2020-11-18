@@ -10,10 +10,6 @@
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin for images in select list -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js" ></script>
-
     <title>Add Edit Referee</title>
     <style>
         label
@@ -84,21 +80,21 @@
             <div class="col-lg-4">  <!-- Main Row, Col 1 -->
                 <h4>Referees</h4>
                 <div class="row mb-1">  <!-- Column 1 Row 1-->
-                    <div class="col-8 referee">
+                    <div class="col-8 referee rounded">
                         <span>Pranas Klizmauskas</span>
-                        <img src="../images/referee.jpg" class="referee-pic float-right" alt="">
+                        <img src="../images/referee.jpg" class="referee-pic float-right" alt="referee">
                     </div>
                 </div>
                 <div class="row mb-1">  <!-- Column 1 Row 2-->
-                    <div class="col-8 referee">
+                    <div class="col-8 referee rounded">
                         <span>Staska Greitai</span>
-                        <img src="../images/referee.jpg" class="referee-pic float-right" alt="">
+                        <img src="../images/referee.jpg" class="referee-pic float-right" alt="referee">
                     </div>
                 </div>
             </div>
             <div class="col-lg-8">  <!-- Main Row, Col 2 -->
                 <h4>Add/Edit Referees</h4>
-                <div class="row mine-border">   <!-- Main Row, Col 2, Row 1 -->
+                <div class="row mine-border rounded">   <!-- Main Row, Col 2, Row 1 -->
                     <div class="col-md-6">   <!-- Main Row, Col 2, Row 1, Col 1 -->
                         <div class="row">   <!-- Main Row, Col 2, Row 1, Col 1, Row 1 -->
                             <div class="col-lg-12 pt-2">
@@ -123,7 +119,7 @@
                                         <label for="Name" class="align-items-center">Country Of Origin</label>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm rounded" id="last-name" name="last-name" placeholder="Last Name">
+                                        <input type="text" class="form-control form-control-sm rounded" id="country" name="country" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -158,7 +154,7 @@
                                 <div class="row d-flex justify-content-center pb-2">
                                     <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
                                     <div class="col-lg-12 d-flex justify-content-center pb-2">
-                                        <img id="uploaded-img" src="../images/referee.jpg"/>
+                                        <img id="uploaded-img" src="../images/referee.jpg" alt="referee"/>
                                     </div>
                                     <label for="file" class="mine-border rounded upload-img-btn mt-2" >Upload</label>
                                 </div>
@@ -179,30 +175,6 @@
             var image = document.getElementById('uploaded-img');
             image.src = URL.createObjectURL(event.target.files[0]);
         };
-
-        // referee-image-dropdown
-        var shownnn = "yes";
-        var dropd = document.getElementById("referee-image-dropdown");
-
-        function showww() {
-        dropd.style.height = "auto";
-        dropd.style.overflow = "y-scroll";
-        }
-
-        function hideee() {
-            dropd.style.height = "30px";
-            dropd.style.overflow = "hidden";
-        }
-        //dropd.addEventListener('mouseover', showOrHide, false);
-        //dropd.addEventListener('click',showOrHide , false);
-
-
-        function myfuunc(imgParent) {
-        hideee();
-        var mainDIVV = document.getElementById("referee-image-dropdown");
-        imgParent.parentNode.removeChild(imgParent);
-        mainDIVV.insertBefore(imgParent, mainDIVV.childNodes[0]);
-        }
     </script>
 
 </body>

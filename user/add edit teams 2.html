@@ -10,10 +10,6 @@
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin for images in select list -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js" ></script>
-
     <title>Add Edit Teams</title>
     <style>
         label
@@ -253,29 +249,6 @@
             image.src = URL.createObjectURL(event.target.files[0]);
         };
 
-        // referee-image-dropdown
-        var shownnn = "yes";
-        var dropd = document.getElementById("referee-image-dropdown");
-
-        function showww() {
-        dropd.style.height = "auto";
-        dropd.style.overflow = "y-scroll";
-        }
-
-        function hideee() {
-            dropd.style.height = "30px";
-            dropd.style.overflow = "hidden";
-        }
-        //dropd.addEventListener('mouseover', showOrHide, false);
-        //dropd.addEventListener('click',showOrHide , false);
-
-
-        function myfuunc(imgParent) {
-        hideee();
-        var mainDIVV = document.getElementById("referee-image-dropdown");
-        imgParent.parentNode.removeChild(imgParent);
-        mainDIVV.insertBefore(imgParent, mainDIVV.childNodes[0]);
-        }
     </script>
 
 </body>
