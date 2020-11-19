@@ -303,6 +303,35 @@
     height: 60%;
   }
 
+  .btn-register
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60%;
+  }
+
+  .btn-run-game-end-start
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 45%;
+  }
+
+
+  @media only screen and (max-width: 1250px) {
+    /* For mobile phones: */
+    [class*="btn-run-game-end-start"] {
+      height: 15%;
+    }
+  }
+  
+  .run-game-end, .run-game-start
+  {
+    font-size: x-large;
+  }
+
   .btn-edit
   {
     display: flex;
@@ -605,9 +634,9 @@
 .home, .guest
 {
   border: 1px solid #707070;
-  font-size: larger;
   border-radius: 5px;
   line-height: 25px;
+
 }
 
 .referee, .team-div, .player-div
