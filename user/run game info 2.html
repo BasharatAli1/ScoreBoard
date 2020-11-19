@@ -133,13 +133,13 @@
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Home)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-home">Goal (Home)</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Player)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-player">Goal (Player)</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Guest)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-guest">Goal (Guest)</button>
                                         </div>
                                     </div>
                                 </div>
@@ -148,44 +148,44 @@
                             <div class="row mt-2">     <!-- Main Row, Col 1, Row 4 -->
 
                                 <div class="col-12">
-                                    <h5>Highlights (Home)</h5>    <!-- Score -->
+                                    <h5>Highlights (Home)</h5> 
                                     <div class="row mt-2">
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">highlight</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="highlight-home">highlight</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">corner</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="corner-home">corner</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">offside</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="offside-home">offside</button>
                                         </div>
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">free kick</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="free_kick-home">free kick</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">penalty</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="penalty-home">penalty</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>     <!-- End of Main Row, Col 1, Row 4 -->
                             <div class="row mt-2">     <!-- Main Row, Col 1, Row 5 -->
                                 <div class="col-12">
-                                    <h5>Highlights (Guest)</h5>    <!-- Score -->
+                                    <h5>Highlights (Guest)</h5>
                                     <div class="row mt-2">
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">highlight</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="highlight-guest">highlight</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">corner</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="corner-guest">corner</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">offside</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="offside-guest">offside</button>
                                         </div>
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">free kick</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="free_kick-guest">free kick</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">penalty</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="penalty-guest">penalty</button>
                                         </div>
                                     </div>
                                 </div>
@@ -198,7 +198,7 @@
                                     <h5>Freetext</h5>    <!-- Score -->
                                     <div class="row mt-2">
                                         <div class="col-12 px-1">
-                                            <textarea class="form-control" rows="3" id="message"></textarea>
+                                            <textarea class="form-control" rows="3" id="freetext-textarea"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -207,7 +207,7 @@
                                 <div class="col-12">
                                     <div class="row mt-2">
                                         <div class="col-5 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Freetext</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="freetext-btn">Freetext</button>
                                         </div>
                                         <div class="col-4 pl-1 pr-0">
                                             <select class="custom-select custom-select-sm"> 
@@ -216,7 +216,7 @@
                                             </select>
                                         </div>
                                         <div class="col-3 pl-0 pr-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Crawl</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="crawl">Crawl</button>
                                         </div>
                                     </div>
                                 </div>
@@ -225,13 +225,13 @@
                                 <div class="col-12">
                                     <div class="row mt-2">
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen LineUp</button>
+                                            <button type="button" class="btn btn-sm btn-light btn-block" id="gen-lineup">Gen LineUp</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen Next Games</button>
+                                            <button type="button" class="btn btn-sm btn-light btn-block" id="gen-next_game">Gen Next Games</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen Highlights</button>
+                                            <button type="button" class="btn btn-sm btn-light btn-block" id="gen-highlights">Gen Highlights</button>
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +244,7 @@
                                     <h5>Log <button type="button" class="btn btn-light border rounded refresh"><i class="fa fa-refresh" aria-hidden="true" style='font-size:20px'></i></button></h5>    <!-- Score -->
                                     <div class="row mt-2">
                                         <div class="col-12 px-1">
-                                            <iframe src="log.html" height="100%" width="100%" title="Iframe Example" id="log-iframe"></iframe>    
+                                            <iframe src="log.html" height="100%" width="100%" title="Log" id="log-iframe"></iframe>    
                                         </div>
                                     </div>
                                 </div>
@@ -256,66 +256,66 @@
                             <h5>Info</h5>    <!-- Main Row, Col 2, 1st block -->
                             <div class="row">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Small</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="small">Small</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Fullscreen</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="fullscreen">Fullscreen</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">LineUp</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup">LineUp</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Player</button>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Home Team</button>
-                                </div>
-                                <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Guest Team</button>
-                                </div>
-                                <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Coach</button>
-                                </div>
-                                <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Referee</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="player-btn">Player</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Crew</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="home-team-btn">Home Team</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="guest-team-btn">Guest Team</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="coach">Coach</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="referee">Referee</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="crew">Crew</button>
                                 </div>
                             </div>
 
                             <h5 class="mt-3">Periods</h5>    <!-- Main Row, Col 2, 2nd block -->
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">1st</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="1st">1st</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">2nd</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="2nd">2nd</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">3rd</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="3rd">3rd</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">4th</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="4th">4th</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">5th</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="5th">5th</button>
                                 </div>
                             </div>
                             
                             <h5 class="mt-3">Stats</h5>    <!-- Main Row, Col 2, 3rd block -->
                             <div class="row mt-2">
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Stats</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="stats">Stats</button>
                                 </div>
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Full Stats</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="full-stats">Full Stats</button>
                                 </div>
                             </div>
 
@@ -363,7 +363,7 @@
                                 </div>
                             </div>
                             <div class="row px-1 mt-2">
-                                <button type="button" class="btn btn-secondary btn-block">
+                                <button type="button" class="btn btn-secondary btn-block" id="start-clock">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                     </svg>
@@ -438,7 +438,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-secondary btn-block">
+                                    <button type="button" class="btn btn-secondary btn-block" id="start-countdown">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                         </svg>
@@ -446,7 +446,7 @@
                                     </button>
                                 </div>
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Countdown</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="countdown">Countdown</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
@@ -486,49 +486,71 @@
                             <h5 class="mt-3">Advertisement</h5>    <!-- Main Row, Col 2, 2nd block -->
                             <div class="row mt-2">
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Kojines</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="advertisement">Kojines</button>
                                 </div>    
                             </div>
 
                     </div>   <!-- End of Main Row, Col 2 -->
 
                     <div class="col-lg-2 col-sm-6 mt-2"> <!-- Main Row, Col 3 -->
-                            <h5>Home</h5>
+                        <h5>Home</h5>
+                        <div class="row px-1">
+                            <div class="col-12 home">
+                                <span>DAVYDAS ARLAUSKIS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>YUDAI KOIKE</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>DEIMANTAS KONTENIS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>ANDRIUS LIPSKIS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>ADOMAS MIKA</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>RONALDAS MISIUNAS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>MARIUS PAUKSTE</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>TOMAS RAPALAVICIUS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>KOSTIANTYN SHULTS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>ROKAS STANULEVIVIUS</span>
+                            </div>
+                            <div class="col-12 home">
+                                <span>MARTYNAS VASILIAUSKAS</span>
+                            </div>
+                        </div>
+                        <h5>Substitute</h5>
                             <div class="row px-1">
                                 <div class="col-12 home">
-                                    <span>DAVYDAS ARLAUSKIS</span>
+                                    <span>KIPRAS KELIAUSKAS</span>
                                 </div>
                                 <div class="col-12 home">
-                                    <span>YUDAI KOIKE</span>
+                                    <span>ROKAS LAZDINAUSKAS</span>
                                 </div>
                                 <div class="col-12 home">
-                                    <span>DEIMANTAS KONTENIS</span>
+                                    <span>RYU SAKURAI</span>
                                 </div>
                                 <div class="col-12 home">
-                                    <span>ANDRIUS LIPSKIS</span>
+                                    <span>DOMANTAS SLUTA</span>
                                 </div>
                                 <div class="col-12 home">
-                                    <span>ADOMAS MIKA</span>
+                                    <span>POVILAS SURVILA</span>
                                 </div>
                                 <div class="col-12 home">
-                                    <span>RONALDAS MISIUNAS</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>MARIUS PAUKSTE</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>TOMAS RAPALAVICIUS</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>KOSTIANTYN SHULTS</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>ROKAS STANULEVIVIUS</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>MARTYNAS VASILIAUSKAS</span>
+                                    <span>DZIUGAS TRYBE</span>
                                 </div>
                             </div>
+                            <h5>Coach</h5>
                     </div> <!-- END OF Main Row, Col 3 -->
 
                     <div class="col-lg-2 col-sm-6 mt-2">  <!-- Main Row, Col 4 -->
@@ -568,6 +590,35 @@
                                     <span>MARTYNAS VASILIAUSKAS</span>
                                 </div>
                             </div>
+                            <h5>Substitute</h5>
+                                <div class="row px-1">
+                                    <div class="col-12 guest">
+                                        <span>KIPRAS KELIAUSKAS</span>
+                                    </div>
+                                    <div class="col-12 guest">
+                                        <span>ROKAS LAZDINAUSKAS</span>
+                                    </div>
+                                    <div class="col-12 guest">
+                                        <span>RYU SAKURAI</span>
+                                    </div>
+                                    <div class="col-12 guest">
+                                        <span>DOMANTAS SLUTA</span>
+                                    </div>
+                                    <div class="col-12 guest">
+                                        <span>POVILAS SURVILA</span>
+                                    </div>
+                                    <div class="col-12 guest">
+                                        <span>DZIUGAS TRYBE</span>
+                                    </div>
+                                </div>
+
+                                    <div class="column12 btn-group mt-2 px-0 btn-run-game-end-start">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-success disabled rounded mr-3"><span class="run-game-start">START</span></button>
+                                                <button type="button" class="btn btn-danger disabled rounded"><span class="run-game-end">END</span></button>
+                                            </div>
+                                    </div>
+
                     </div> <!-- END OF Main Row, Col 4 -->
                 </div>   <!-- End of main row -->
             </form>
