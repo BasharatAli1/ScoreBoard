@@ -11,7 +11,8 @@
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../fontawesome/font-awesome.min.css">
+    <script src='../fontawesome/fontawesome.js'></script>
 
     <title>Game Info</title>
 
@@ -60,18 +61,29 @@
             </div>
         </nav>  <!-- End of Navbar -->
 
-        <div class="container-fluid mt-4">      <!-- Main Container -->
+        <div class="container-fluid mt-2">      <!-- Main Container -->
+            <div class="row">
+                <div class="col-sm-2">
+                    <i class='fas fa-radiation-alt' style='font-size:24px'></i>
+                </div>
+                <div class="col-sm-5"> </div>
+                <div class="col-sm-5">
+                    <select class="form-control form-control-sm" id="sel1">
+                        <option value="">KAUNO ZALGIRIS - VS - GINTRA-UNIVERSITETAS - 20.11.2020 (1059-12:59)</option>
+                      </select>                
+                </div>
+            </div>
             <form action="" method="post">
                 <div class="row">   <!-- main row -->
-                    <div class="col-lg-4 mt-3"> <!-- Main Row, Col 1-->
+                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 1-->
                             <div class="row">   <!-- Main Row, Col 1, Row 1 -->
                                 <div class="col-8 px-1">
                                     <select class="form-control form-control-sm">
-                                        <option>Default</option>
+                                        <option value="">Default</option>
                                     </select>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded">Reset</button>
+                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset">Reset</button>
                                 </div>
                             </div>
                             <div class="row">   <!-- Main Row, Col 1, Row 2 -->
@@ -121,13 +133,13 @@
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">Goal (Home)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Home)</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">Goal (Player)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Player)</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">Goal (Guest)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Guest)</button>
                                         </div>
                                     </div>
                                 </div>
@@ -139,19 +151,19 @@
                                     <h5>Highlights (Home)</h5>    <!-- Score -->
                                     <div class="row mt-2">
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">highlight</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">highlight</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">corner</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">corner</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">offside</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">offside</button>
                                         </div>
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">free kick</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">free kick</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">penalty</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">penalty</button>
                                         </div>
                                     </div>
                                 </div>
@@ -161,19 +173,19 @@
                                     <h5>Highlights (Guest)</h5>    <!-- Score -->
                                     <div class="row mt-2">
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">highlight</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">highlight</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">corner</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">corner</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">offside</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">offside</button>
                                         </div>
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">free kick</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">free kick</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">penalty</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">penalty</button>
                                         </div>
                                     </div>
                                 </div>
@@ -195,7 +207,7 @@
                                 <div class="col-12">
                                     <div class="row mt-2">
                                         <div class="col-5 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">Freetext</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Freetext</button>
                                         </div>
                                         <div class="col-4 pl-1 pr-0">
                                             <select class="custom-select custom-select-sm"> 
@@ -204,7 +216,7 @@
                                             </select>
                                         </div>
                                         <div class="col-3 pl-0 pr-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block">Crawl</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Crawl</button>
                                         </div>
                                     </div>
                                 </div>
@@ -213,13 +225,13 @@
                                 <div class="col-12">
                                     <div class="row mt-2">
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-light btn-block">Gen LineUp</button>
+                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen LineUp</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-light btn-block">Gen Next Games</button>
+                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen Next Games</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-light btn-block">Gen Highlights</button>
+                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen Highlights</button>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +251,7 @@
                             </div>     <!-- End of Main Row, Col 1, Row 9 -->
 
                     </div>  <!-- Main Row, Col 1-->
-                    <div class="col-lg-4 mt-3"> <!-- Main Row, Col 2 -->
+                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 2 -->
                         
                             <h5>Info</h5>    <!-- Main Row, Col 2, 1st block -->
                             <div class="row">
@@ -312,15 +324,15 @@
                                 <div class="col-5 px-1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-A[1]">
+                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-C[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-A[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
+                                        <input type="text" name="quant-C[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-A[1]">
+                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-C[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -333,15 +345,15 @@
                                     
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-B[1]">
+                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-D[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-B[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
+                                        <input type="text" name="quant-D[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-B[1]">
+                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-D[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -386,15 +398,15 @@
                                 <div class="col-5 px-1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-A[1]">
+                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-E[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-A[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
+                                        <input type="text" name="quant-E[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-A[1]">
+                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-E[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -407,15 +419,15 @@
                                     
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-B[1]">
+                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-F[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-B[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
+                                        <input type="text" name="quant-F[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-B[1]">
+                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-F[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -454,15 +466,15 @@
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-12 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green disabled">Substitution</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled">Substitution</button>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green disabled">Yellow</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled">Yellow</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green disabled">2nd Yellow</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled">2nd Yellow</button>
                                         </div>
                                         <div class="col-4 px-1">
                                             <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green disabled">Red</button>
@@ -477,16 +489,86 @@
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Kojines</button>
                                 </div>    
                             </div>
-                        </div>  
 
                     </div>   <!-- End of Main Row, Col 2 -->
 
-                    <div class="col-lg-2 mt-3"> <!-- Main Row, Col 3 -->
-                        <h5>Home</h5>
-                    </div>
-                    <div class="col-lg-2 mt-3">  <!-- Main Row, Col 4 -->
-                        <h5>Guest</h5>
-                    </div>
+                    <div class="col-lg-2 col-sm-6 mt-2"> <!-- Main Row, Col 3 -->
+                            <h5>Home</h5>
+                            <div class="row px-1">
+                                <div class="col-12 home">
+                                    <span>DAVYDAS ARLAUSKIS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>YUDAI KOIKE</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>DEIMANTAS KONTENIS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>ANDRIUS LIPSKIS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>ADOMAS MIKA</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>RONALDAS MISIUNAS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>MARIUS PAUKSTE</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>TOMAS RAPALAVICIUS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>KOSTIANTYN SHULTS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>ROKAS STANULEVIVIUS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>MARTYNAS VASILIAUSKAS</span>
+                                </div>
+                            </div>
+                    </div> <!-- END OF Main Row, Col 3 -->
+
+                    <div class="col-lg-2 col-sm-6 mt-2">  <!-- Main Row, Col 4 -->
+                            <h5>Guest</h5>
+                            <div class="row px-1">
+                                <div class="col-12 guest">
+                                    <span>DAVYDAS ARLAUSKIS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>YUDAI KOIKE</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>DEIMANTAS KONTENIS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>ANDRIUS LIPSKIS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>ADOMAS MIKA</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>RONALDAS MISIUNAS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>MARIUS PAUKSTE</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>TOMAS RAPALAVICIUS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>KOSTIANTYN SHULTS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>ROKAS STANULEVIVIUS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>MARTYNAS VASILIAUSKAS</span>
+                                </div>
+                            </div>
+                    </div> <!-- END OF Main Row, Col 4 -->
                 </div>   <!-- End of main row -->
             </form>
        </div>  <!-- End of container -->

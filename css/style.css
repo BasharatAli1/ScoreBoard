@@ -602,6 +602,14 @@
   border-radius: 3%;
 }
 
+.home, .guest
+{
+  border: 1px solid #707070;
+  font-size: larger;
+  border-radius: 5px;
+  line-height: 25px;
+}
+
 .referee, .team-div, .player-div
 {
   border: 1px solid #707070;

@@ -5,6 +5,12 @@ $('.btn-active-green').click(function(){
     $(this).addClass("active");
 });
 
+// for reset button
+
+$('.btn-reset').click(function(){
+    $("button").removeClass("active");
+});
+
 //  refresh button
 $('.refresh').click(function(){
     document.getElementById('log-iframe').setAttribute('src', 'log.html');
