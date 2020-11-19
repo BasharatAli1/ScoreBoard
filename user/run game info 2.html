@@ -9,7 +9,21 @@
     <!-- JavaScript -->
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../fontawesome/font-awesome.min.css">
+    <script src='../fontawesome/fontawesome.js'></script>
+
     <title>Game Info</title>
+
+    <style>  
+    .active {
+        background-color: green !important;
+      }
+      .btn{
+          font-size: smaller;
+      }
+    </style>
 </head>
 <body>
         <!-- Navbar -->
@@ -47,9 +61,524 @@
             </div>
         </nav>  <!-- End of Navbar -->
 
-        <div class="container-fluid pl-5 pr-5 mt-4">      <!-- Main Container -->
+        <div class="container-fluid mt-2">      <!-- Main Container -->
+            <div class="row">
+                <div class="col-sm-2">
+                    <i class='fas fa-radiation-alt' style='font-size:24px'></i>
+                </div>
+                <div class="col-sm-5"> </div>
+                <div class="col-sm-5">
+                    <select class="form-control form-control-sm" id="sel1">
+                        <option value="">KAUNO ZALGIRIS - VS - GINTRA-UNIVERSITETAS - 20.11.2020 (1059-12:59)</option>
+                      </select>                
+                </div>
+            </div>
+            <form action="" method="post">
+                <div class="row">   <!-- main row -->
+                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 1-->
+                            <div class="row">   <!-- Main Row, Col 1, Row 1 -->
+                                <div class="col-8 px-1">
+                                    <select class="form-control form-control-sm">
+                                        <option value="">Default</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset">Reset</button>
+                                </div>
+                            </div>
+                            <div class="row">   <!-- Main Row, Col 1, Row 2 -->
+                                <div class="col-lg-12 px-1">
+                                    <img src="../images/run-game-info-board.PNG" style="width: 100%;" alt="">
+                                </div>
+                            </div>
 
+                            <div class="row border mt-2 pb-2">     <!-- Main Row, Col 1, Row 3 -->
+                                <div class="col-12">
+                                    <h5>Score</h5>    <!-- Score -->
+                                    <div class="row">
+                                        <div class="col-5 px-1">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-secondary btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-A[1]">
+                                                        <b>-</b>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="quant-A[1]" class="form-control text-cente input-team-A-score score-input" value="0" min="0" max="100" >
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-secondary btn-team-A-score" data-type="plus" data-field-A="quant-A[1]">
+                                                        <b>+</b>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 vs">
+                                            <span>VS</span>
+                                        </div>
+                                        <div class="col-5 px-1">
+                                            
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-secondary btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-B[1]">
+                                                        <b>-</b>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="quant-B[1]" class="form-control input-team-B-score score-input" value="0" min="0" max="100">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-secondary btn-team-B-score" data-type="plus" data-field-B="quant-B[1]">
+                                                        <b>+</b>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Home)</button>
+                                        </div>
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Player)</button>
+                                        </div>
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Goal (Guest)</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 3 -->
+
+                            <div class="row mt-2">     <!-- Main Row, Col 1, Row 4 -->
+
+                                <div class="col-12">
+                                    <h5>Highlights (Home)</h5>    <!-- Score -->
+                                    <div class="row mt-2">
+                                        <div class="col-3 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">highlight</button>
+                                        </div>
+                                        <div class="col-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">corner</button>
+                                        </div>
+                                        <div class="col-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">offside</button>
+                                        </div>
+                                        <div class="col-3 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">free kick</button>
+                                        </div>
+                                        <div class="col-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">penalty</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 4 -->
+                            <div class="row mt-2">     <!-- Main Row, Col 1, Row 5 -->
+                                <div class="col-12">
+                                    <h5>Highlights (Guest)</h5>    <!-- Score -->
+                                    <div class="row mt-2">
+                                        <div class="col-3 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">highlight</button>
+                                        </div>
+                                        <div class="col-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">corner</button>
+                                        </div>
+                                        <div class="col-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">offside</button>
+                                        </div>
+                                        <div class="col-3 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">free kick</button>
+                                        </div>
+                                        <div class="col-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">penalty</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 5 -->
+
+                            <div class="border border-secondary mt-3"></div>
+
+                            <div class="row mt-4">     <!-- Main Row, Col 1, Row 6 -->
+                                <div class="col-12">
+                                    <h5>Freetext</h5>    <!-- Score -->
+                                    <div class="row mt-2">
+                                        <div class="col-12 px-1">
+                                            <textarea class="form-control" rows="3" id="message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 6 -->
+                            <div class="row mt-2">     <!-- Main Row, Col 1, Row 7 -->
+                                <div class="col-12">
+                                    <div class="row mt-2">
+                                        <div class="col-5 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Freetext</button>
+                                        </div>
+                                        <div class="col-4 pl-1 pr-0">
+                                            <select class="custom-select custom-select-sm"> 
+                                                <option value="home-logo">HomeLogo</option> 
+                                                <option value="home-logo">HomeLogo</option> 
+                                            </select>
+                                        </div>
+                                        <div class="col-3 pl-0 pr-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Crawl</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 7 -->
+                            <div class="row mt-2">     <!-- Main Row, Col 1, Row 8 -->
+                                <div class="col-12">
+                                    <div class="row mt-2">
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen LineUp</button>
+                                        </div>
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen Next Games</button>
+                                        </div>
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-light btn-block ">Gen Highlights</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 8 -->
+                            
+                            <div class="border border-secondary mt-3"></div>
+                            
+                            <div class="row mt-4">     <!-- Main Row, Col 1, Row 9 -->
+                                <div class="col-12">
+                                    <h5>Log <button type="button" class="btn btn-light border rounded refresh"><i class="fa fa-refresh" aria-hidden="true" style='font-size:20px'></i></button></h5>    <!-- Score -->
+                                    <div class="row mt-2">
+                                        <div class="col-12 px-1">
+                                            <iframe src="log.html" height="100%" width="100%" title="Iframe Example" id="log-iframe"></iframe>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     <!-- End of Main Row, Col 1, Row 9 -->
+
+                    </div>  <!-- Main Row, Col 1-->
+                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 2 -->
+                        
+                            <h5>Info</h5>    <!-- Main Row, Col 2, 1st block -->
+                            <div class="row">
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Small</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Fullscreen</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">LineUp</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Player</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Home Team</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Guest Team</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Coach</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Referee</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block disabled">Crew</button>
+                                </div>
+                            </div>
+
+                            <h5 class="mt-3">Periods</h5>    <!-- Main Row, Col 2, 2nd block -->
+                            <div class="row mt-2">
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">1st</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">2nd</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">3rd</button>
+                                </div>
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">4th</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">5th</button>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-3">Stats</h5>    <!-- Main Row, Col 2, 3rd block -->
+                            <div class="row mt-2">
+                                <div class="col-6 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Stats</button>
+                                </div>
+                                <div class="col-6 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Full Stats</button>
+                                </div>
+                            </div>
+
+                            <h5 class="mt-2">Gameclock</h5>
+                            <div class="row">
+                                <div class="col-5 px-1">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-C[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="quant-C[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-C[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-2"> </div>
+                                <div class="col-5 px-1">
+                                    
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-D[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="quant-D[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-D[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row px-1 mt-2">
+                                <button type="button" class="btn btn-secondary btn-block">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg>
+                                    <span>Start</span>
+                                </button>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">00:00</button>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">45:00</button>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">90:00</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">105:00</button>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">120:00</button>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">Extra Time</button>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-2">Countdown</h5>
+                            <div class="row">
+                                <div class="col-5 px-1">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-E[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="quant-E[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-E[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-2"> </div>
+                                <div class="col-5 px-1">
+                                    
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-F[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                        <input type="text" name="quant-F[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-F[1]">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6 px-1">
+                                    <button type="button" class="btn btn-secondary btn-block">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                        </svg>
+                                        <span>Start</span>
+                                    </button>
+                                </div>
+                                <div class="col-6 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Countdown</button>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">05:00</button>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">10:00</button>
+                                </div>
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block">15:00</button>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-3">Substitutions / Cards 0</h5>    <!-- Main Row, Col 2, 2nd block -->
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled">Substitution</button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled">Yellow</button>
+                                        </div>
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled">2nd Yellow</button>
+                                        </div>
+                                        <div class="col-4 px-1">
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green disabled">Red</button>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mt-3">Advertisement</h5>    <!-- Main Row, Col 2, 2nd block -->
+                            <div class="row mt-2">
+                                <div class="col-4 px-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green">Kojines</button>
+                                </div>    
+                            </div>
+
+                    </div>   <!-- End of Main Row, Col 2 -->
+
+                    <div class="col-lg-2 col-sm-6 mt-2"> <!-- Main Row, Col 3 -->
+                            <h5>Home</h5>
+                            <div class="row px-1">
+                                <div class="col-12 home">
+                                    <span>DAVYDAS ARLAUSKIS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>YUDAI KOIKE</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>DEIMANTAS KONTENIS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>ANDRIUS LIPSKIS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>ADOMAS MIKA</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>RONALDAS MISIUNAS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>MARIUS PAUKSTE</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>TOMAS RAPALAVICIUS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>KOSTIANTYN SHULTS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>ROKAS STANULEVIVIUS</span>
+                                </div>
+                                <div class="col-12 home">
+                                    <span>MARTYNAS VASILIAUSKAS</span>
+                                </div>
+                            </div>
+                    </div> <!-- END OF Main Row, Col 3 -->
+
+                    <div class="col-lg-2 col-sm-6 mt-2">  <!-- Main Row, Col 4 -->
+                            <h5>Guest</h5>
+                            <div class="row px-1">
+                                <div class="col-12 guest">
+                                    <span>DAVYDAS ARLAUSKIS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>YUDAI KOIKE</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>DEIMANTAS KONTENIS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>ANDRIUS LIPSKIS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>ADOMAS MIKA</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>RONALDAS MISIUNAS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>MARIUS PAUKSTE</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>TOMAS RAPALAVICIUS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>KOSTIANTYN SHULTS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>ROKAS STANULEVIVIUS</span>
+                                </div>
+                                <div class="col-12 guest">
+                                    <span>MARTYNAS VASILIAUSKAS</span>
+                                </div>
+                            </div>
+                    </div> <!-- END OF Main Row, Col 4 -->
+                </div>   <!-- End of main row -->
+            </form>
        </div>  <!-- End of container -->
 
+    <!-- JavaScript -->
+       <script src="../js/javascript.js"></script>
+
+       <script>
+
+
+       </script>
 </body>
 </html>
