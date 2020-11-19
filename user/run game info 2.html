@@ -9,6 +9,9 @@
     <!-- JavaScript -->
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/jquery/jquery.min.js"></script> -->
+
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../fontawesome/font-awesome.min.css">
@@ -23,7 +26,12 @@
       .btn{
           font-size: smaller;
       }
+      #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th
+      {
+          display: none;
+      }
     </style>
+
 </head>
 <body>
         <!-- Navbar -->
@@ -83,12 +91,24 @@
                                     </select>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset">Reset</button>
+                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset" id="btn-reset">Reset</button>
                                 </div>
                             </div>
                             <div class="row">   <!-- Main Row, Col 1, Row 2 -->
                                 <div class="col-lg-12 px-1">
-                                    <img src="../images/run-game-info-board.PNG" style="width: 100%;" alt="">
+
+                                    <div class="screen-container">
+                                        <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img">
+                    
+                    
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/3rd.PNG" class="run-game-info-pics"  id="pic-3rd" alt="pic-3rd"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/4th.PNG" class="run-game-info-pics"  id="pic-4th" alt="pic-4th"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/5th.PNG" class="run-game-info-pics"  id="pic-5th" alt="pic-5th"> </div>
+                    
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -291,21 +311,21 @@
                             <h5 class="mt-3">Periods</h5>    <!-- Main Row, Col 2, 2nd block -->
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="1st">1st</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg1st();" id="1st-btn">1st</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="2nd">2nd</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg2nd();" id="2nd-btn">2nd</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="3rd">3rd</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg3rd();" id="3rd-btn">3rd</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="4th">4th</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg4th();" id="4th-btn">4th</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="5th">5th</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg5th();" id="5th-btn">5th</button>
                                 </div>
                             </div>
                             

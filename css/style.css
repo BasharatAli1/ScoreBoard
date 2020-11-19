@@ -247,10 +247,11 @@
     width: 30px;
   }
   
-  .field-img
+  .field-img, .screen-img
   {
     width:100%;
   }
+
   .avatarCorners {
     border:1px solid black;
     border-radius: 110px;
@@ -318,7 +319,6 @@
     justify-content: flex-end;
     height: 45%;
   }
-
 
   @media only screen and (max-width: 1250px) {
     /* For mobile phones: */
@@ -605,6 +605,26 @@
   position: absolute;
   top: 75%;
   right: 40%;
+}
+
+/* Run Game info */
+
+.screen-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+  
+.run-game-info-pics
+{
+  width: 100%;
+  height: 100%;
+}
+
+.position-1st2nd3rd {
+  position: absolute;
+  top: 8%;
+  left: 15%;
 }
 
 /* div styling */

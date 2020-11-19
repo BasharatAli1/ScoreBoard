@@ -5,10 +5,109 @@ $('.btn-active-green').click(function(){
     $(this).addClass("active");
 });
 
+//  refresh button for log.html
+$('.refresh').click(function(){
+    document.getElementById('log-iframe').setAttribute('src', 'log.html');
+});
+
 // for reset button
 
-$('.btn-reset').click(function(){
+document.getElementById("btn-reset").addEventListener("click", resetFun);
+
+function resetFun(){
     $("button").removeClass("active");
+    var pic = document.getElementById('pic-1st');
+    pic.style.display="none";
+    pic = document.getElementById('pic-2nd');
+    pic.style.display="none";
+    pic = document.getElementById('pic-3rd');
+    pic.style.display="none";
+    pic = document.getElementById('pic-4th');
+    pic.style.display="none";
+    pic = document.getElementById('pic-5th');
+    pic.style.display="none";
+}
+
+// pic-1st
+function changeImg1st()
+{
+    resetFun();
+
+    var pic = document.getElementById('pic-1st');
+    pic.src="../images/run-game-info/1st.PNG";
+    pic.style.display="inherit";
+    
+}
+
+// pic-2nd
+function changeImg2nd()
+{
+    resetFun();
+
+    var pic = document.getElementById('pic-2nd');
+    pic.src="../images/run-game-info/2nd.PNG";
+    pic.style.display="inherit";
+}
+
+// pic-3rd
+function changeImg3rd()
+{
+    resetFun();
+
+    var pic = document.getElementById('pic-3rd');
+    pic.src="../images/run-game-info/3rd.PNG";
+    pic.style.display="inherit";
+}
+
+// pic-4th
+function changeImg4th()
+{
+    resetFun();
+
+    var pic = document.getElementById('pic-4th');
+    pic.src="../images/run-game-info/4th.PNG";
+    pic.style.display="inherit";
+}
+
+// pic-5th
+function changeImg5th()
+{
+    resetFun();
+    
+    var pic = document.getElementById('pic-5th');
+    pic.src="../images/run-game-info/5th.PNG";
+    pic.style.display="inherit";
+}
+
+// $('#pic-1st').click(function(){
+//     var pic = document.getElementById('pic-1st');
+//     pic.src="../images/run-game-info/2nd.PNG";
+//     pic.style.display="inherit";
+// });
+
+//  refresh button
+$('.refresh').click(function(){
+    document.getElementById('log-iframe').setAttribute('src', 'log.html');
+});
+
+//  refresh button
+$('.refresh').click(function(){
+    document.getElementById('log-iframe').setAttribute('src', 'log.html');
+});
+
+//  refresh button
+$('.refresh').click(function(){
+    document.getElementById('log-iframe').setAttribute('src', 'log.html');
+});
+
+//  refresh button
+$('.refresh').click(function(){
+    document.getElementById('log-iframe').setAttribute('src', 'log.html');
+});
+
+//  refresh button
+$('.refresh').click(function(){
+    document.getElementById('log-iframe').setAttribute('src', 'log.html');
 });
 
 //  refresh button
