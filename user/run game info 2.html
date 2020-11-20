@@ -23,7 +23,8 @@
       .btn{
           font-size: smaller;
       }
-      #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th
+      #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th, #right-color-bar, #left-color-bar, #team-name, #team-name2, #left-team-logo, 
+      #team-logo-on-board-centre, #team-logo-on-board-right, #team-logo-on-board-left, #score-on-board-large, #score-on-board-small
       {
           display: none;
       }
@@ -80,7 +81,7 @@
             </div>
             <form action="" method="post">
                 <div class="row">   <!-- main row -->
-                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 1-->
+                    <div class="col-lg-4 col-sm-6 mt-2"> <!-- Main Row, Col 1-->
                             <div class="row">   <!-- Main Row, Col 1, Row 1 -->
                                 <div class="col-8 px-1">
                                     <select class="form-control form-control-sm">
@@ -92,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="row">   <!-- Main Row, Col 1, Row 2 -->
-                                <div class="col-lg-12 px-1">
+                                <div class="column12 px-1">
 
                                     <div class="screen-container">
                                         <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
@@ -102,9 +103,16 @@
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/3rd.PNG" class="run-game-info-pics"  id="pic-3rd" alt="pic-3rd"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/4th.PNG" class="run-game-info-pics"  id="pic-4th" alt="pic-4th"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/5th.PNG" class="run-game-info-pics"  id="pic-5th" alt="pic-5th"> </div>
-                    
-                                        <div class="team2-right2"> <img src="../images/player.png" class="player-pic" alt=""> <br> <p class="player-name"> player 5</p> </div>                    
-                                        <div class="team1-left2"> <img src="../images/player.png" class="player-pic" alt=""> <br> <p class="player-name"> player 5</p> </div>
+                                    
+                                        <div class="left-color-bar"> <p class="team-name" id="team-name"> Team Name </p> <img src="../images/run-game-info/green.PNG" class="run-game-info-bars" id="left-color-bar" alt=""> </div>
+                                        <div class="right-color-bar"> <p class="team-name" id="team-name2"> Team Name </p> <img src="../images/run-game-info/yellow.PNG" class="run-game-info-bars" id="right-color-bar" alt=""> </div>    
+                                        
+                                        <div class="score-on-board-large"> <p class="run-game-info-pics" id="score-on-board-large"> Score </p> </div> 
+                                        <div class="score-on-board-small text-centre"> <span class="run-game-info-pics" id="score-on-board-small"> Score </span> </div>    
+                                        
+                                        <div class="left-team-logo"> <img src="../images/run-game-info/team-logo.PNG" class="team-logo-on-board" id="team-logo-on-board-left" alt="logo"> </div>
+                                        <div class="centre-team-logo"> <img src="../images/run-game-info/Australia.png" class="team-logo-on-board" id="team-logo-on-board-centre" alt="logo"> </div>
+                                        <div class="right-team-logo"> <img src="../images/run-game-info/pak.png" class="team-logo-on-board" id="team-logo-on-board-right" alt="logo"> </div>
                                     </div>
 
                                 </div>
@@ -269,7 +277,7 @@
                             </div>     <!-- End of Main Row, Col 1, Row 9 -->
 
                     </div>  <!-- Main Row, Col 1-->
-                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 2 -->
+                    <div class="col-lg-4 col-sm-6 mt-2"> <!-- Main Row, Col 2 -->
                         
                             <h5>Info</h5>    <!-- Main Row, Col 2, 1st block -->
                             <div class="row">
@@ -277,7 +285,7 @@
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="small">Small</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="fullscreen">Fullscreen</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeFullscreen();" id="fullscreen">Fullscreen</button>
                                 </div>
                                 <div class="col-3 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup" onclick="lineUp();">LineUp</button>

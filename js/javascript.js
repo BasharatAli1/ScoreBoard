@@ -1,3 +1,4 @@
+var flag = true
 
 // Button Color green on click
 $('.btn-active-green').click(function(){
@@ -22,6 +23,7 @@ function resetFun(){
 
     setScreen();
     $("button").removeClass("active");
+
     var pic = document.getElementById('pic-1st');
     pic.style.display="none";
     pic = document.getElementById('pic-2nd');
@@ -32,6 +34,28 @@ function resetFun(){
     pic.style.display="none";
     pic = document.getElementById('pic-5th');
     pic.style.display="none";
+    pic = document.getElementById('right-color-bar');
+    pic.style.display="none";
+    pic = document.getElementById('left-color-bar');
+    pic.style.display="none";
+    var text = document.getElementById('team-name');
+    text.style.display = "none"
+    text = document.getElementById('team-name2');
+    text.style.display = "none"
+    text = document.getElementById('score-on-board-large');
+    text.style.display = "none"
+    text = document.getElementById('score-on-board-small');
+    text.style.display = "none"
+    pic = document.getElementById('team-logo-on-board-centre');
+    pic.style.display="none";
+    pic = document.getElementById('team-logo-on-board-left');
+    pic.style.display="none";
+    pic = document.getElementById('team-logo-on-board-right');
+    pic.style.display="none";
+
+    flag = true;
+
+
 }
 
 // screen
@@ -50,6 +74,67 @@ function lineUp()
     var pic = document.getElementById('screen-img');
     pic.src="../images/run-game-info/field.PNG";
     pic.style.display="block";
+}
+
+// fullscreen
+function changeFullscreen()
+{
+    // var pic = document.getElementById('right-color-bar');
+    // pic.style.display="block";
+    // pic = document.getElementById('left-color-bar');
+    // pic.style.display="block";
+    // var text = document.getElementById('team-name');
+    // text.style.display = "block"
+    // text = document.getElementById('team-name2');
+    // text.style.display = "block"
+    // pic = document.getElementById('team-logo-on-board-centre');
+    // pic.style.display="block";
+    // pic = document.getElementById('team-logo-on-board-left');
+    // pic.style.display="block";
+    // pic = document.getElementById('team-logo-on-board-right');
+    // pic.style.display="block";
+
+    //pic.setAttribute('src',"../images/run-game-info/black.PNG");
+    if (flag)
+    {
+        resetFun();
+        var pic = document.getElementById('right-color-bar');
+        pic.style.display="block";
+        pic = document.getElementById('left-color-bar');
+        pic.style.display="block";
+        var text = document.getElementById('team-name');
+        text.style.display = "block"
+        text = document.getElementById('team-name2');
+        text.style.display = "block"
+        text = document.getElementById('score-on-board-large');
+        text.style.display = "block"
+        text = document.getElementById('score-on-board-small');
+        text.style.display = "block"
+        
+        pic = document.getElementById('team-logo-on-board-centre');
+        pic.style.display="block";
+        pic = document.getElementById('team-logo-on-board-left');
+        pic.style.display="block";
+        pic = document.getElementById('team-logo-on-board-right');
+        pic.style.display="block";
+
+        
+        var pic = document.getElementById('screen-img');
+        pic.src="../images/run-game-info/black.PNG";
+        pic.style.display = "block";
+        // barRight.style.display = "block";
+        // barLeft.style.display = "block";
+        // name.style.display = "block"
+        // name2.style.display = "block"
+        
+        $('#fullscreen').removeClass('btn-primary').addClass('btn-success');
+        flag = false;
+    }
+    else 
+    {
+        $('#fullscreen').removeClass('btn-success').addClass('btn-primary');
+        resetFun();
+    }
 }
 
 // pic-1st

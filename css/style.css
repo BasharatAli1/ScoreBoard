@@ -57,7 +57,7 @@
     font-size: small;
   }
 
-  .player-name
+  .player-name, .team-name
   {
     font-size: x-small;
   }
@@ -622,11 +622,69 @@
   width: 100%;
   height: 100%;
 }
+  
+.run-game-info-bars
+{
+  width: 70%;
+  height: 80%;
+}
+  
+.team-logo-on-board
+{
+  width: 40px;
+  height: 40px;
+}
 
 .position-1st2nd3rd {
   position: absolute;
   top: 8%;
   left: 15%;
+}
+
+.left-color-bar {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+
+
+.right-color-bar {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+}
+
+.left-team-logo {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+}
+
+
+.right-team-logo {
+  position: absolute;
+  top: 70%;
+  right: 10%;
+}
+
+
+.centre-team-logo {
+  position: absolute;
+  top: 70%;
+  right: 45%;
+}
+
+.score-on-board-large {
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  font-size: x-large;
+}
+
+.score-on-board-small {
+  position: absolute;
+  top: 10%;
+  left: 45%;
 }
 
 /* div styling */
