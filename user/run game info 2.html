@@ -9,8 +9,8 @@
     <!-- JavaScript -->
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <!-- <script src="../js/jquery/jquery.js"></script>
-    <script src="../js/jquery/jquery.min.js"></script> -->
+    <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/jquery/jquery.min.js"></script>
 
     
     <!-- Font Awesome -->
@@ -20,9 +20,6 @@
     <title>Game Info</title>
 
     <style>  
-    .active {
-        background-color: green !important;
-      }
       .btn{
           font-size: smaller;
       }
@@ -98,8 +95,7 @@
                                 <div class="col-lg-12 px-1">
 
                                     <div class="screen-container">
-                                        <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img">
-                    
+                                        <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
                     
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
@@ -107,6 +103,8 @@
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/4th.PNG" class="run-game-info-pics"  id="pic-4th" alt="pic-4th"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/5th.PNG" class="run-game-info-pics"  id="pic-5th" alt="pic-5th"> </div>
                     
+                                        <div class="team2-right2"> <img src="../images/player.png" class="player-pic" alt=""> <br> <p class="player-name"> player 5</p> </div>                    
+                                        <div class="team1-left2"> <img src="../images/player.png" class="player-pic" alt=""> <br> <p class="player-name"> player 5</p> </div>
                                     </div>
 
                                 </div>
@@ -282,7 +280,7 @@
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="fullscreen">Fullscreen</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup">LineUp</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup" onclick="lineUp();">LineUp</button>
                                 </div>
                                 <div class="col-3 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="player-btn">Player</button>

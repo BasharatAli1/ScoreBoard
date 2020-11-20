@@ -1,8 +1,9 @@
 
 // Button Color green on click
 $('.btn-active-green').click(function(){
-    $("button").removeClass("active");
-    $(this).addClass("active");
+    // $("button").removeClass("active");
+    // $(this).addClass("active");
+    
 });
 
 //  refresh button for log.html
@@ -15,6 +16,11 @@ $('.refresh').click(function(){
 document.getElementById("btn-reset").addEventListener("click", resetFun);
 
 function resetFun(){
+    
+    // Button Color green on click
+    $('.btn-active-green').removeClass('btn-success').addClass('btn-primary');
+
+    setScreen();
     $("button").removeClass("active");
     var pic = document.getElementById('pic-1st');
     pic.style.display="none";
@@ -28,62 +34,163 @@ function resetFun(){
     pic.style.display="none";
 }
 
-// pic-1st
-function changeImg1st()
+// screen
+function setScreen()
+{
+    var pic = document.getElementById('screen-img');
+    pic.src="../images/run-game-info/run-game-info-board.PNG";
+    pic.style.display="block";
+}
+
+// line up
+function lineUp()
 {
     resetFun();
 
+    var pic = document.getElementById('screen-img');
+    pic.src="../images/run-game-info/field.PNG";
+    pic.style.display="block";
+}
+
+// pic-1st
+function changeImg1st()
+{
     var pic = document.getElementById('pic-1st');
-    pic.src="../images/run-game-info/1st.PNG";
-    pic.style.display="inherit";
     
+    if (pic.style.display === "")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/1st.PNG";
+        pic.style.display = "block";
+        
+        $('#1st-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else if (pic.style.display === "none")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/1st.PNG";
+        pic.style.display = "block";
+        $('#1st-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else 
+    {
+        pic.style.display = "none";
+        $('#1st-btn').removeClass('btn-success').addClass('btn-primary');
+        resetFun();
+    }
 }
 
 // pic-2nd
 function changeImg2nd()
 {
-    resetFun();
-
     var pic = document.getElementById('pic-2nd');
-    pic.src="../images/run-game-info/2nd.PNG";
-    pic.style.display="inherit";
+    
+    if (pic.style.display === "")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/1st.PNG";
+        pic.style.display = "block";
+        
+        $('#2nd-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else if (pic.style.display === "none")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/2nd.PNG";
+        pic.style.display = "block";
+        $('#2nd-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else 
+    {
+        pic.style.display = "none";
+        $('#2nd-btn').removeClass('btn-success').addClass('btn-primary');
+        resetFun();
+    }
 }
 
 // pic-3rd
 function changeImg3rd()
 {
-    resetFun();
-
     var pic = document.getElementById('pic-3rd');
-    pic.src="../images/run-game-info/3rd.PNG";
-    pic.style.display="inherit";
+    
+    if (pic.style.display === "")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/3rd.PNG";
+        pic.style.display = "block";
+        
+        $('#3rd-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else if (pic.style.display === "none")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/3rd.PNG";
+        pic.style.display = "block";
+        $('#3rd-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else 
+    {
+        pic.style.display = "none";
+        $('#3rd-btn').removeClass('btn-success').addClass('btn-primary');
+        resetFun();
+    }
 }
 
 // pic-4th
 function changeImg4th()
 {
-    resetFun();
-
     var pic = document.getElementById('pic-4th');
-    pic.src="../images/run-game-info/4th.PNG";
-    pic.style.display="inherit";
+    
+    if (pic.style.display === "")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/4th.PNG";
+        pic.style.display = "block";
+        
+        $('#4th-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else if (pic.style.display === "none")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/4th.PNG";
+        pic.style.display = "block";
+        $('#4th-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else 
+    {
+        pic.style.display = "none";
+        $('#4th-btn').removeClass('btn-success').addClass('btn-primary');
+        resetFun();
+    }
 }
 
 // pic-5th
 function changeImg5th()
 {
-    resetFun();
-    
     var pic = document.getElementById('pic-5th');
-    pic.src="../images/run-game-info/5th.PNG";
-    pic.style.display="inherit";
+    
+    if (pic.style.display === "")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/5th.PNG";
+        pic.style.display = "block";
+        
+        $('#5th-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else if (pic.style.display === "none")
+    {
+        resetFun();
+        pic.src="../images/run-game-info/5th.PNG";
+        pic.style.display = "block";
+        $('#5th-btn').removeClass('btn-primary').addClass('btn-success');
+    } 
+    else 
+    {
+        pic.style.display = "none";
+        $('#5th-btn').removeClass('btn-success').addClass('btn-primary');
+        resetFun();
+    }
 }
-
-// $('#pic-1st').click(function(){
-//     var pic = document.getElementById('pic-1st');
-//     pic.src="../images/run-game-info/2nd.PNG";
-//     pic.style.display="inherit";
-// });
 
 //  refresh button
 $('.refresh').click(function(){
@@ -261,3 +368,13 @@ $('.refresh').click(function(){
                        e.preventDefault();
                    }
                });
+
+
+
+
+
+
+
+
+
+
