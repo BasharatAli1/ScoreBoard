@@ -9,6 +9,9 @@
     <!-- JavaScript -->
     <script src="../js/jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/jquery/jquery.min.js"></script>
+
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../fontawesome/font-awesome.min.css">
@@ -17,13 +20,16 @@
     <title>Game Info</title>
 
     <style>  
-    .active {
-        background-color: green !important;
-      }
       .btn{
           font-size: smaller;
       }
+      #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th, #right-color-bar, #left-color-bar, #team-name, #team-name2, #left-team-logo, 
+      #team-logo-on-board-centre, #team-logo-on-board-right, #team-logo-on-board-left, #score-on-board-large, #score-on-board-small
+      {
+          display: none;
+      }
     </style>
+
 </head>
 <body>
         <!-- Navbar -->
@@ -75,7 +81,7 @@
             </div>
             <form action="" method="post">
                 <div class="row">   <!-- main row -->
-                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 1-->
+                    <div class="col-lg-4 col-sm-6 mt-2"> <!-- Main Row, Col 1-->
                             <div class="row">   <!-- Main Row, Col 1, Row 1 -->
                                 <div class="col-8 px-1">
                                     <select class="form-control form-control-sm">
@@ -83,12 +89,32 @@
                                     </select>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset">Reset</button>
+                                    <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset" id="btn-reset">Reset</button>
                                 </div>
                             </div>
                             <div class="row">   <!-- Main Row, Col 1, Row 2 -->
-                                <div class="col-lg-12 px-1">
-                                    <img src="../images/run-game-info-board.PNG" style="width: 100%;" alt="">
+                                <div class="column12 px-1">
+
+                                    <div class="screen-container">
+                                        <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
+                    
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/3rd.PNG" class="run-game-info-pics"  id="pic-3rd" alt="pic-3rd"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/4th.PNG" class="run-game-info-pics"  id="pic-4th" alt="pic-4th"> </div>
+                                        <div class="position-1st2nd3rd"> <img src="../images/run-game-info/5th.PNG" class="run-game-info-pics"  id="pic-5th" alt="pic-5th"> </div>
+                                    
+                                        <div class="left-color-bar"> <p class="team-name" id="team-name"> Team Name </p> <img src="../images/run-game-info/green.PNG" class="run-game-info-bars" id="left-color-bar" alt=""> </div>
+                                        <div class="right-color-bar"> <p class="team-name" id="team-name2"> Team Name </p> <img src="../images/run-game-info/yellow.PNG" class="run-game-info-bars" id="right-color-bar" alt=""> </div>    
+                                        
+                                        <div class="score-on-board-large"> <p class="run-game-info-pics" id="score-on-board-large"> Score </p> </div> 
+                                        <div class="score-on-board-small text-centre"> <span class="run-game-info-pics" id="score-on-board-small"> Score </span> </div>    
+                                        
+                                        <div class="left-team-logo"> <img src="../images/run-game-info/team-logo.PNG" class="team-logo-on-board" id="team-logo-on-board-left" alt="logo"> </div>
+                                        <div class="centre-team-logo"> <img src="../images/run-game-info/Australia.png" class="team-logo-on-board" id="team-logo-on-board-centre" alt="logo"> </div>
+                                        <div class="right-team-logo"> <img src="../images/run-game-info/pak.png" class="team-logo-on-board" id="team-logo-on-board-right" alt="logo"> </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -251,7 +277,7 @@
                             </div>     <!-- End of Main Row, Col 1, Row 9 -->
 
                     </div>  <!-- Main Row, Col 1-->
-                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 2 -->
+                    <div class="col-lg-4 col-sm-6 mt-2"> <!-- Main Row, Col 2 -->
                         
                             <h5>Info</h5>    <!-- Main Row, Col 2, 1st block -->
                             <div class="row">
@@ -259,10 +285,10 @@
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="small">Small</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="fullscreen">Fullscreen</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeFullscreen();" id="fullscreen">Fullscreen</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup">LineUp</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup" onclick="lineUp();">LineUp</button>
                                 </div>
                                 <div class="col-3 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="player-btn">Player</button>
@@ -291,21 +317,21 @@
                             <h5 class="mt-3">Periods</h5>    <!-- Main Row, Col 2, 2nd block -->
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="1st">1st</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg1st();" id="1st-btn">1st</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="2nd">2nd</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg2nd();" id="2nd-btn">2nd</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="3rd">3rd</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg3rd();" id="3rd-btn">3rd</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="4th">4th</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg4th();" id="4th-btn">4th</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="5th">5th</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg5th();" id="5th-btn">5th</button>
                                 </div>
                             </div>
                             
