@@ -76,25 +76,18 @@ function lineUp()
     pic.style.display="block";
 }
 
+function updateScoreOnScreen()
+{
+    var value = document.getElementById("input-team-A-score").value; //get name from TextBox
+    value = value + " : " + document.getElementById("input-team-B-score").value; //get name from TextBox
+    document.getElementById("score-on-board-large").innerHTML=value;
+    document.getElementById("score-on-board-small").innerHTML=value;
+}
+
+
 // fullscreen
 function changeFullscreen()
 {
-    // var pic = document.getElementById('right-color-bar');
-    // pic.style.display="block";
-    // pic = document.getElementById('left-color-bar');
-    // pic.style.display="block";
-    // var text = document.getElementById('team-name');
-    // text.style.display = "block"
-    // text = document.getElementById('team-name2');
-    // text.style.display = "block"
-    // pic = document.getElementById('team-logo-on-board-centre');
-    // pic.style.display="block";
-    // pic = document.getElementById('team-logo-on-board-left');
-    // pic.style.display="block";
-    // pic = document.getElementById('team-logo-on-board-right');
-    // pic.style.display="block";
-
-    //pic.setAttribute('src',"../images/run-game-info/black.PNG");
     if (flag)
     {
         resetFun();
@@ -102,6 +95,12 @@ function changeFullscreen()
         pic.style.display="block";
         pic = document.getElementById('left-color-bar');
         pic.style.display="block";
+
+        var value = document.getElementById("input-team-A-score").value; //get name from TextBox
+        value = value + " : " + document.getElementById("input-team-B-score").value; //get name from TextBox
+        document.getElementById("score-on-board-large").innerHTML=value ;  
+        document.getElementById("score-on-board-small").innerHTML=value ;  
+
         var text = document.getElementById('team-name');
         text.style.display = "block"
         text = document.getElementById('team-name2');
