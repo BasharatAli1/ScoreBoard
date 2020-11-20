@@ -13,8 +13,6 @@
     <script src="../js/jquery/jquery.min.js"></script>
 
     <!-- Google Font -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&display=swap" rel="stylesheet">
     
@@ -29,7 +27,8 @@
           font-size: smaller;
       }
       #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th, #right-color-bar, #left-color-bar, #team-name, #team-name2, #left-team-logo, 
-      #team-logo-on-board-centre, #team-logo-on-board-right, #team-logo-on-board-left, #score-on-board-large, #score-on-board-small
+      #team-logo-on-board-centre, #team-logo-on-board-right, #team-logo-on-board-left, #score-on-board-large, #score-on-board-small,
+      #countdown-container
       {
           display: none;
       }
@@ -108,6 +107,13 @@
                                     <div class="screen-container">
                                         <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
                     
+                                        <div id="">
+                                            <div id="countdown">
+                                                <!-- <span id="days">0d</span> : <span id="hours">0h</span> : -->
+                                                
+                                            </div>
+                                        </div>
+                                        
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/3rd.PNG" class="run-game-info-pics"  id="pic-3rd" alt="pic-3rd"> </div>
@@ -117,18 +123,15 @@
                                         <div class="left-color-bar"> <p class="team-name" id="team-name"> Team Name </p> <img src="../images/run-game-info/green.PNG" class="run-game-info-bars" id="left-color-bar" alt=""> </div>
                                         <div class="right-color-bar"> <p class="team-name" id="team-name2"> Team Name </p> <img src="../images/run-game-info/yellow.PNG" class="run-game-info-bars" id="right-color-bar" alt=""> </div>    
                                         
-                                        
-                                        
-                                        
-                                        <!-- <div class="score-on-board-large"> <input type="text" name="quant-A[1]" class="text-cente input-team-A-score score-input" value="0" min="0" max="100" class="run-game-info-pics" id="score-on-board-large"> </div>
-                                        <div class="score-on-board-small"> <input type="text" name="quant-A[1]" class="text-cente input-team-A-score score-input" value="0" min="0" max="100" class="run-game-info-pics" id="score-on-board-small"> </div> -->
-
-                                        <div class="score-on-board-large"> <p class="run-game-info-pics" id="score-on-board-large">  </p> </div> 
-                                        <div class="score-on-board-small"> <p class="run-game-info-pics" id="score-on-board-small">  </p> </div>    
+                                        <div class="score-on-board-large"> <span id="score-on-board-large">  </span> </div> 
+                                        <div class="score-on-board-small"> <span id="score-on-board-small">  </span> </div>    
                                         
                                         <div class="left-team-logo"> <img src="../images/run-game-info/team-logo.PNG" class="team-logo-on-board" id="team-logo-on-board-left" alt="logo"> </div>
                                         <div class="centre-team-logo"> <img src="../images/run-game-info/Australia.png" class="team-logo-on-board" id="team-logo-on-board-centre" alt="logo"> </div>
                                         <div class="right-team-logo"> <img src="../images/run-game-info/pak.png" class="team-logo-on-board" id="team-logo-on-board-right" alt="logo"> </div>
+                                        
+                                        <div class="score-on-board-large" id="countdown-container"> <span id="minutes"></span>:<span id="seconds"></span> </div>  
+
                                     </div>
 
                                 </div>
@@ -405,7 +408,7 @@
                                 </div>
                             </div>
                             <div class="row px-1 mt-2">
-                                <button type="button" class="btn btn-secondary btn-block" id="start-clock">
+                                <button type="button" class="btn btn-secondary btn-sm btn-block" id="start-clock">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                     </svg>
@@ -480,26 +483,27 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-secondary btn-block" id="start-countdown">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                        </svg>
-                                        <span>Start</span>
+                                    <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="countdownStartFun();">
+                                        <div id="countdown-start-btn">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                            </svg><span>Start</span>
+                                        </div>
                                     </button>
                                 </div>
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="countdown">Countdown</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="countdown-btn" onclick="countdownFun();">Countdown</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block">05:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="countdownFun2(05,00);">05:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block">10:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="countdownFun2(10,00);">10:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block">15:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="countdownFun2(15,00);">15:00</button>
                                 </div>
                             </div>
                             
@@ -528,7 +532,7 @@
                             <h5 class="mt-3">Advertisement</h5>    <!-- Main Row, Col 2, 2nd block -->
                             <div class="row mt-2">
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="advertisement">Kojines</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="advertisement" onclick="advertisementFun();">Kojines</button>
                                 </div>    
                             </div>
 
@@ -660,7 +664,7 @@
                                                 <button type="button" class="btn btn-danger disabled rounded"><span class="run-game-end">END</span></button>
                                             </div>
                                     </div>
-
+                                    
                     </div> <!-- END OF Main Row, Col 4 -->
                 </div>   <!-- End of main row -->
             </form>

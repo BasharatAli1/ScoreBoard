@@ -667,7 +667,6 @@
   right: 10%;
 }
 
-
 .centre-team-logo {
   position: absolute;
   top: 70%;
@@ -685,6 +684,13 @@
   position: absolute;
   top: 10%;
   left: 45%;
+}
+
+#countdown-container
+{
+  position: absolute;
+  top: 40%;
+  left: 35%;
 }
 
 /* div styling */
@@ -809,6 +815,21 @@
 }
 #referee-image-dropdown span.iTEXT {
   position: relative;
+}
+
+/* Countdown Timer */
+
+#countdown-container {
+  display: inline-block;
+  width: 130px; 
+  height: 40px;
+  border-radius: 5px; 
+  background: black; 
+  font-weight:bold;
+}
+
+#countdown span {
+  font-weight: bold; /*boldens text in the span element*/
 }
 
   /* Media Queries */
