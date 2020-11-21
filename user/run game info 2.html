@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <!--Favicon-->
+    <link rel="icon" href="../images/favicon/icon.png" type="image/gif">
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
@@ -106,13 +109,6 @@
 
                                     <div class="screen-container">
                                         <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
-                    
-                                        <div id="">
-                                            <div id="countdown">
-                                                <!-- <span id="days">0d</span> : <span id="hours">0h</span> : -->
-                                                
-                                            </div>
-                                        </div>
                                         
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
@@ -144,13 +140,13 @@
                                         <div class="col-5 px-1">
                                             <div class="input-group">
                                                 <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-secondary btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-A[1]" onclick>
+                                                    <button type="button" class="btn btn-secondary btn-first-count-value" disabled="disabled" data-type="minus" data-field-A="quant-A[1]" onclick>
                                                         <b>-</b>
                                                     </button>
                                                 </span>
-                                                <input type="text" name="quant-A[1]" class="form-control text-cente input-team-A-score score-input" id="input-team-A-score" value="0" min="0" max="100" onchange="updateScoreOnScreen();">
+                                                <input type="text" name="quant-A[1]" class="form-control text-cente first-count-value score-input" id="first-count-value" value="0" min="0" max="100" onchange="updateScoreOnScreen();">
                                                 <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-secondary btn-team-A-score" data-type="plus" data-field-A="quant-A[1]">
+                                                    <button type="button" class="btn btn-secondary btn-first-count-value" data-type="plus" data-field-A="quant-A[1]">
                                                         <b>+</b>
                                                     </button>
                                                 </span>
@@ -163,13 +159,13 @@
                                             
                                             <div class="input-group">
                                                 <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-secondary btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-B[1]">
+                                                    <button type="button" class="btn btn-secondary btn-second-count-value" disabled="disabled" data-type="minus" data-field-B="quant-B[1]">
                                                         <b>-</b>
                                                     </button>
                                                 </span>
-                                                <input type="text" name="quant-B[1]" class="form-control input-team-B-score score-input" id="input-team-B-score" value="0" min="0" max="100" onchange="updateScoreOnScreen();">
+                                                <input type="text" name="quant-B[1]" class="form-control second-count-value score-input" id="second-count-value" value="0" min="0" max="100" onchange="updateScoreOnScreen();">
                                                 <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-secondary btn-team-B-score" data-type="plus" data-field-B="quant-B[1]">
+                                                    <button type="button" class="btn btn-secondary btn-second-count-value" data-type="plus" data-field-B="quant-B[1]">
                                                         <b>+</b>
                                                     </button>
                                                 </span>
@@ -181,7 +177,7 @@
                                             <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-home">Goal (Home)</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-player">Goal (Player)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="goal-player">Goal (Player)</button>
                                         </div>
                                         <div class="col-4 px-1">
                                             <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-guest">Goal (Guest)</button>
@@ -369,15 +365,15 @@
                                 <div class="col-5 px-1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-C[1]">
+                                            <button type="button" class="btn btn-default btn-first-count-value" disabled="disabled" data-type="minus" data-field-A="quant-C[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-C[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
+                                        <input type="text" name="quant-C[1]" class="form-control text-cente first-count-value score-input" value="000" min="0" max="100" >
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-C[1]">
+                                            <button type="button" class="btn btn-default btn-first-count-value" data-type="plus" data-field-A="quant-C[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -390,15 +386,15 @@
                                     
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-D[1]">
+                                            <button type="button" class="btn btn-default btn-second-count-value" disabled="disabled" data-type="minus" data-field-B="quant-D[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-D[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
+                                        <input type="text" name="quant-D[1]" class="form-control second-count-value score-input" value="00" min="0" max="100">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-D[1]">
+                                            <button type="button" class="btn btn-default btn-second-count-value" data-type="plus" data-field-B="quant-D[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -443,15 +439,15 @@
                                 <div class="col-5 px-1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" disabled="disabled" data-type="minus" data-field-A="quant-E[1]">
+                                            <button type="button" class="btn btn-default btn-first-count-value" disabled="disabled" id="count-minutes-minus" data-type="minus" data-field-A="quant-E[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-E[1]" class="form-control text-cente input-team-A-score score-input" value="000" min="0" max="100" >
+                                        <input type="text" name="quant-E[1]" class="form-control text-cente first-count-value score-input" id="minutes-dynamic" value="000" min="0" max="60" >
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-A-score" data-type="plus" data-field-A="quant-E[1]">
+                                            <button type="button" class="btn btn-default btn-first-count-value" id="count-minutes-plus" data-type="plus" data-field-A="quant-E[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -464,15 +460,15 @@
                                     
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" disabled="disabled" data-type="minus" data-field-B="quant-F[1]">
+                                            <button type="button" class="btn btn-default btn-second-count-value" id="count-seconds-minus" disabled="disabled" data-type="minus" data-field-B="quant-F[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-dash" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                 </svg>
                                             </button>
                                         </span>
-                                        <input type="text" name="quant-F[1]" class="form-control input-team-B-score score-input" value="00" min="0" max="100">
+                                        <input type="text" name="quant-F[1]" class="form-control second-count-value score-input" id="seconds-dynamic" value="00" min="0" max="60">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-team-B-score" data-type="plus" data-field-B="quant-F[1]">
+                                            <button type="button" class="btn btn-default btn-second-count-value" id="count-seconds-plus" data-type="plus" data-field-B="quant-F[1]">
                                                 <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="blue" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                 </svg>
@@ -674,9 +670,10 @@
        <script src="../js/javascript.js"></script>
 
        <script>
-document.getElementById('input-team-A-score').onkeyup = function() {
-  document.getElementById('score-on-board-large').innerHTML = this.value;
-}
+// document.getElementById('first-count-value').onkeyup = function() {
+//   document.getElementById('score-on-board-large').innerHTML = this.value;
+// }
+
 
        </script>
 </body>

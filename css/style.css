@@ -116,6 +116,7 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
   
+  /* outline of navbar-toggler */ 
   .navbar .navbar-toggler {
     margin-right: 2rem;
     border-color: white;
@@ -145,6 +146,78 @@
     margin-right: 15px;
   }
   
+  
+/* SIDEBAR CSS STARTS */
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -200px;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.432);
+  background-color: #a70e0e71;
+}
+
+#sidebar-wrapper .list-group {
+  width: 200px;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -200px;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
+
+.list-group-item {
+  border: 1px solid rgba(0, 0, 0, 0.432);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler{
+  margin-right: 2rem;
+  border-color: white;
+}
+
+/* SIDEBAR CSS ENDS */
+
+
   /* User Game Menu */
 
   .game-menu {
@@ -222,8 +295,8 @@
   .player-pic3
   {
     margin-right: 1px;
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
   }
   
   .referee-pic
@@ -378,22 +451,22 @@
   }
 }
 
-.btn-height-referee
+.btn-referee
 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
+  margin-top: -120px;
 }
 
-.btnHeight-referee1 {height: 30%;}
+/* .btnHeight-referee {height: 0%;}
 
 @media only screen and (max-width: 1000px) {
-/* For mobile phones: */
-[class*="btnHeight-referee1"] {
+[class*="btnHeight-referee"] {
   height: 0%;
 }
-}
+} */
+
   .btn-add
   {
     display: flex;
