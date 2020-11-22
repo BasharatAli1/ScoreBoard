@@ -5,6 +5,8 @@ var flagCountDown = true;
 var flagCountDownStart = false;
 var intervalID;
 
+document.getElementById("score-on-board-small").innerHTML='0:0';
+
 var globalM = parseInt(document.getElementById('minutes-dynamic').value);
 //var globalS = parseInt(document.getElementById('seconds-dynamic').value);
 

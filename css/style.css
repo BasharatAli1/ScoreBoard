@@ -367,7 +367,7 @@
 
   .btn-link:hover
   {
-    text-decoration: none;;
+    text-decoration: none;
     color: #000000;
   }
 
@@ -697,12 +697,80 @@
 
 /* Run Game info */
 
-.screen-container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-  
+
+  .screen-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .small-container {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+
+  .small-bar-pic
+  {
+    height: 22px;
+    width: 340px;
+  }
+
+  #small-left-color-bar, #small-right-color-bar
+  {
+    height: 20px;
+    width: 15px;
+  }
+
+  .small-left-color-bar
+  {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+
+  .small-right-color-bar
+  {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+
+  .small-bar-logo
+  {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+  }
+
+  .small-bar-team-name-1
+  {
+    position: absolute;
+    top: 0%;
+    left: 11%;
+    border-left: 5px solid white;
+    margin-top: 3px;
+    padding-left: 2px;
+    width: 100px;
+  }
+
+  .small-bar-team-name-2
+  {
+    position: absolute;
+    top: 0%;
+    right: 24%;
+    border-right: 5px solid white;
+    margin-top: 3px;
+    padding-right: 2px;
+    width: 100px;
+  }
+
+  #small-bar-logo
+  {
+    height: 20px;
+    width: 15px;
+  }
+
 .run-game-info-pics
 {
   width: 100%;
@@ -766,10 +834,20 @@
   font-size: x-large;
 }
 
-.score-on-board-small {
+.score-on-board-small
+{
+  font-weight: bold;
+}
+
+#score-on-board-small {
   position: absolute;
   top: 10%;
-  left: 45%;
+  left: 40%;
+  color: black;
+  background-color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 1px;
 }
 
 #countdown-container

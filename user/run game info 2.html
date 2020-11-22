@@ -31,7 +31,8 @@
       }
       #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th, #right-color-bar, #left-color-bar, #team-name, #team-name2, #left-team-logo, 
       #team-logo-on-board-centre, #team-logo-on-board-right, #team-logo-on-board-left, #score-on-board-large, #score-on-board-small,
-      #countdown-container
+      #countdown-container, #small-bar-team-name-1, #small-bar-team-name-2, #small-bar-logo, #small-right-color-bar, #small-left-color-bar,
+      #small-bar-pic
       {
           display: none;
       }
@@ -108,24 +109,39 @@
                                 <div class="column12 px-1">
 
                                     <div class="screen-container">
+                                        <!-- background pic on screen board -->
                                         <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
                                         
+                                        <!-- for small btn on screen board -->
+                                        <div class="small-container"> 
+                                            <img src="../images/run-game-info/small-bar.jpg" class="small-bar-pic" id="small-bar-pic" alt="">
+                                            <div class="small-left-color-bar"> <img src="../images/run-game-info/green.PNG" class="" id="small-left-color-bar" alt="left-bar"> </div>
+                                            <div class="small-right-color-bar"> <img src="../images/run-game-info/yellow.PNG" class="" id="small-right-color-bar" alt="right-bar"> </div> 
+                                            <div class="small-bar-logo"><img src="../images/logo/team-logo.PNG" id="small-bar-logo" alt="logo"></div>
+                                            <div class="small-bar-team-name-1"><span class="float-left" id="small-bar-team-name-1">Team 1</span></div>
+                                            <div class="score-on-board-small"> <span id="score-on-board-small">  </span> </div>
+                                            <div class="small-bar-team-name-2"><span class="float-right" id="small-bar-team-name-2">Team 2</span></div>
+                                        </div>
+
+                                        <!-- for periods on screen board -->
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/3rd.PNG" class="run-game-info-pics"  id="pic-3rd" alt="pic-3rd"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/4th.PNG" class="run-game-info-pics"  id="pic-4th" alt="pic-4th"> </div>
                                         <div class="position-1st2nd3rd"> <img src="../images/run-game-info/5th.PNG" class="run-game-info-pics"  id="pic-5th" alt="pic-5th"> </div>
                                     
-                                        <div class="left-color-bar"> <p class="team-name" id="team-name"> Team Name </p> <img src="../images/run-game-info/green.PNG" class="run-game-info-bars" id="left-color-bar" alt=""> </div>
-                                        <div class="right-color-bar"> <p class="team-name" id="team-name2"> Team Name </p> <img src="../images/run-game-info/yellow.PNG" class="run-game-info-bars" id="right-color-bar" alt=""> </div>    
+                                        <!-- For full screen on screen board -->
+                                        <div class="left-color-bar"> <p class="team-name" id="team-name"> Team Name </p> <img src="../images/run-game-info/green.PNG" class="run-game-info-bars" id="left-color-bar" alt="left-bar"> </div>
+                                        <div class="right-color-bar"> <p class="team-name" id="team-name2"> Team Name </p> <img src="../images/run-game-info/yellow.PNG" class="run-game-info-bars" id="right-color-bar" alt="right-bar"> </div>    
                                         
                                         <div class="score-on-board-large"> <span id="score-on-board-large">  </span> </div> 
-                                        <div class="score-on-board-small"> <span id="score-on-board-small">  </span> </div>    
+                                        <div class="score-on-board-small"> <span id="score-on-board-small">  </span> </div>  
                                         
                                         <div class="left-team-logo"> <img src="../images/run-game-info/team-logo.PNG" class="team-logo-on-board" id="team-logo-on-board-left" alt="logo"> </div>
                                         <div class="centre-team-logo"> <img src="../images/run-game-info/Australia.png" class="team-logo-on-board" id="team-logo-on-board-centre" alt="logo"> </div>
                                         <div class="right-team-logo"> <img src="../images/run-game-info/pak.png" class="team-logo-on-board" id="team-logo-on-board-right" alt="logo"> </div>
                                         
+                                        <!-- Count down on screen board -->
                                         <div class="score-on-board-large" id="countdown-container"> <span id="minutes"></span>:<span id="seconds"></span> </div>  
 
                                     </div>
@@ -416,7 +432,7 @@
                                     <button type="button" class="btn btn-sm btn-secondary btn-block">00:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block">45:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="timerFun(45,00)">45:00</button>
                                 </div>
                                 <div class="col-4 px-1">
                                     <button type="button" class="btn btn-sm btn-secondary btn-block">90:00</button>
