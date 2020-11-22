@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <!--Favicon-->
+    <link rel="icon" href="../images/favicon/icon.png" type="image/gif">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <title>Referee</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 header-line">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-10">
+                            <button class="navbar-toggler mt-3" type="button" id="menu-toggle">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn-black float-right mt-3 px-4">Logout</button>
+                        </div>
+                    </div> <!-- Row -->
+                </div> <!-- Logout-btn Container -->
+            </div>
+        </div> <!-- main Row 1 -->
+    </div> <!-- Main Container -->
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="users.html" class="list-group-item list-group-item-action">Users</a>
+                <a href="billing.html" class="list-group-item list-group-item-action">Billing</a>
+                <a href="layout.html" class="list-group-item list-group-item-action">Layout</a>
+                <a href="clubs.html" class="list-group-item list-group-item-action">Clubs</a>
+                <a href="all games.html" class="list-group-item list-group-item-action">All games</a>
+                <a href="teams.html" class="list-group-item list-group-item-action">Teams</a>
+                <a href="" class="list-group-item list-group-item-action active">Referees</a>
+                <a href="media.html" class="list-group-item list-group-item-action">Media</a>
+                <a href="run games.html" class="list-group-item list-group-item-action">Run Games</a>
+            </div>
+        </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row mt-2">   <!-- Row 1 -->
+                        <div class="col-lg-2 col-md-3">
+                            <span><h4>ALL REFEREES</h4></span>
+                        </div>
+                        <div class="col-lg-5 col-md-8">
+                            <div class="row pl-2">
+                                <div class="column6">
+                                    <input class="form-control form-control-sm mine-border" type="text" id = "search-user" placeholder="SEARCH">
+                                </div>  
+                                <div class = "column1">
+                                    <button type="submit" class="btn btn-sm border border-dark float-left" name="search">
+                                        <svg width="2em" height="1em" viewBox="2 0.5 16 14" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <div class="row mr-3">   <!-- Row 2 -->
+                        <div class="col-lg-4 col-md-12">    <!-- Row 2, Col 1 -->
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                                <div class="col-6 ml-2 mine-border mt-2">
+                                    <img class="club-logo my-1" src="../images/referee.jpg" id="avatar" alt="avatar">
+                                    <span class="float-right mt-2 ml-2">Staska Greitai</span>
+                                </div>
+                                <div class="col-4 mt-3">
+                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
+                                </div>
+                            </div>
+
+
+                            <!-- Pagination -->
+                                                        
+                            <ul id="pagin">
+                                    
+                            </ul>
+
+                        </div>
+                        
+                        <div class="col-md-8">
+                            <div class="row pl-3 mt-3">
+                                <h3>ADD NEW REFEREE</h3>
+                            </div>
+                            <form action="" method="post" class=" mine-border rounded">
+
+                                <div class="row">   <!-- Main Row, Col 2, Row 1 -->
+                                    <div class="col-md-6">   <!-- Main Row, Col 2, Row 1, Col 1 -->
+                                        <div class="row">   <!-- Main Row, Col 2, Row 1, Col 1, Row 1 -->
+                                            <div class="col-lg-12 pt-2">
+                                                <div class="row mine-border rounded mt-2 ml-1 pt-1 pb-1 mr-2">
+                                                    <div class="col-sm-5">
+                                                        <label for="Name" class="align-items-center">First Name</label>
+                                                    </div>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control form-control-sm rounded" id="first-name" name="first-name" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="row mine-border rounded mt-2 ml-1 pt-1 pb-1 mr-2">
+                                                    <div class="col-sm-5">
+                                                        <label for="Name" class="align-items-center">Last Name</label>
+                                                    </div>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control form-control-sm rounded" id="last-name" name="last-name" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                                <div class="row mine-border rounded mt-2 ml-1 pt-1 pb-1 mr-2">
+                                                    <div class="col-sm-6">
+                                                        <label for="Name" class="align-items-center">Country Of Origin</label>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control form-control-sm rounded" id="country" name="country" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                
+                                            </div>
+                                        </div>   <!-- End of Main Row, Col 2, Row 1, Col 1, Row 1 -->
+                                    </div>  <!-- End of Main Row, Col 2, Row 1, Col 1 -->
+                
+                                    <div class="col-lg-6">   <!-- Main Row, Col 2, Row 1, Col 2 -->
+                                        <div class="upload-img-referee mr-2 mt-3 mb-3 mx-auto">
+                                            <div class="mine-border rounded">
+                                                <div class="row d-flex justify-content-center pt-2 pb-2">
+                                                    <h5>Avatar</h5>
+                                                </div>
+                                                <div class="row d-flex justify-content-center pb-2">
+                                                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                                                    <div class="col-lg-12 d-flex justify-content-center pb-2">
+                                                        <img id="uploaded-img" src="../images/referee.jpg" alt="referee"/>
+                                                    </div>
+                                                    <label for="file" class="mine-border rounded upload-img-btn mt-2" >Upload</label>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>   <!-- End of Main Row, Col 2, Row 1 -->
+                                <div class="row">
+                                    <div class="col-1">
+                                        <svg></svg>
+                                        <div class="btn-referee">
+                                            <div class="btn-group float-left pl-3 pb-3">
+                                                <button type="button" class="btn btn-success disabled rounded mr-3">
+                                                    <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                    </svg>
+                                                </button>
+                                                <button type="button" class="btn btn-danger disabled rounded">
+                                                    <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   <!-- End of Main Row, Col 2, Row 2 -->
+                              </form> <!-- End of Form-->
+                        
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /#page-content-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+        </div>
+
+    </div> <!-- Main Container -->
+
+</body>
+
+<script>
+    // Menu Toggle Script
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(window).resize(function () {
+        if (window.innerWidth >= 768) {
+            $("#wrapper").removeClass("toggled");
+        }
+    });
+    
+    // Upload Image 
+    var loadFile = function(event) {
+          var image = document.getElementById('uploaded-img');
+          image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+
+        
+    //Pagination //////
+    pageSize = 8;
+
+    var pageCount =  $(".line-content").length / pageSize;
+
+    for(var i = 0 ; i<pageCount;i++){
+        
+    $("#pagin").append('<li><a href="#">'+(i+1)+'</a></li> ');
+    }
+        $("#pagin li").first().find("a").addClass("current")
+    showPage = function(page) {
+        $(".line-content").hide();
+        $(".line-content").each(function(n) {
+            if (n >= pageSize * (page - 1) && n < pageSize * page)
+                $(this).show();
+        });        
+    }
+
+    showPage(1);
+
+    $("#pagin li a").click(function() {
+        $("#pagin li a").removeClass("current");
+        $(this).addClass("current");
+        showPage(parseInt($(this).text())) 
+    });
+</script>
+
+</html>
