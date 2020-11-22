@@ -18,14 +18,14 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="padding: 0;">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row mt-2">
             <div class="col-lg-12 header-line">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-10">
                             <button class="navbar-toggler mt-3" type="button" id="menu-toggle">
-                                <span class="navbar-toggler-icon"></b></span>
+                                <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>
                         <div class="col-2">
@@ -35,51 +35,100 @@
                 </div> <!-- Logout-btn Container -->
             </div>
         </div> <!-- main Row 1 -->
+    </div> <!-- Main Container -->
 
-        <div class="d-flex" id="wrapper">
+    <div class="d-flex" id="wrapper">
 
-            <!-- Sidebar -->
-            <div class="border-right" id="sidebar-wrapper">
-                <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-                    <a href="#" class="list-group-item list-group-item-action">Users</a>
-                    <a href="#" class="list-group-item list-group-item-action">Billing</a>
-                    <a href="#" class="list-group-item list-group-item-action">Layout</a>
-                    <a href="#" class="list-group-item list-group-item-action">Club</a>
-                    <a href="#" class="list-group-item list-group-item-action">All games</a>
-                    <a href="#" class="list-group-item list-group-item-action">Teams</a>
-                    <a href="#" class="list-group-item list-group-item-action">Referees</a>
-                    <a href="#" class="list-group-item list-group-item-action">Media</a>
-                    <a href="#" class="list-group-item list-group-item-action">Run Games</a>
-                </div>
+        <!-- Sidebar -->
+        <div class="border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a href="" class="list-group-item list-group-item-action active">Dashboard</a>
+                <a href="users.html" class="list-group-item list-group-item-action">Users</a>
+                <a href="billing.html" class="list-group-item list-group-item-action">Billing</a>
+                <a href="layout.html" class="list-group-item list-group-item-action">Layout</a>
+                <a href="clubs.html" class="list-group-item list-group-item-action">Clubs</a>
+                <a href="all games.html" class="list-group-item list-group-item-action">All games</a>
+                <a href="teams.html" class="list-group-item list-group-item-action">Teams</a>
+                <a href="referees.html" class="list-group-item list-group-item-action">Referees</a>
+                <a href="media.html" class="list-group-item list-group-item-action">Media</a>
+                <a href="run games.html" class="list-group-item list-group-item-action">Run Games</a>
             </div>
-            <!-- /#sidebar-wrapper -->
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
                 <div class="container ml-5 mt-5">
                     
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-3 border-right">
                             <div> <span><b>NUMBER OF USERS</b></span> </div>
-                            <div> <span><b>NUMBER OF CLUBS</b></span> </div>
-                            <div> <span><b>NUMBER OF TEAMS</b></span> </div>
-                            <div> <span><b>NUMBER OF REFEREES</b></span> </div>
-                            <div> <span><b>NUMBER OF GAMES</b></span> </div>
-                            <div> <span><b>NUMBER OF PLANED GAMES</b></span> </div>
-                            <div> <span><b>NUMBER OF ACTIVE PLANS</b></span> </div>
-                            <div> <span><b>CURRENTLY LIVE USERS</b></span> </div>
-                            <div> <span><b>CURRENTLY LIVE GAMES</b></span> </div>
                         </div>
                         <div class="col-1">
                             <div> <span id="users"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>NUMBER OF CLUBS</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="clubs"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>NUMBER OF TEAMS</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="teams"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>NUMBER OF REFEREES</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="referees"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>NUMBER OF GAMES</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="games"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>NUMBER OF PLANED GAMES</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="planed-games"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>NUMBER OF ACTIVE PLANS</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="active-plans"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>CURRENTLY LIVE USERS</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="live-users"><b>10</b></span> </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 border-right">
+                            <div> <span><b>CURRENTLY LIVE GAMES</b></span> </div>
+                        </div>
+                        <div class="col-1">
                             <div> <span id="live-games"><b>10</b></span> </div>
                         </div>
                     </div>
@@ -95,8 +144,9 @@
 
 </body>
 
-<!-- Menu Toggle Script -->
 <script>
+    
+// Menu Toggle Script
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");

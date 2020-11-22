@@ -856,7 +856,6 @@
 .upload-team-logo
 {
   width: 350px;
-  width: 300px;
 }
 
 .color-a
@@ -951,6 +950,29 @@
 
   .user-img
   {
-    width:45px;
-    height:45px;
+    width:40px;
+    height:40px;
   }
+
+  /* pagination */
+
+  .current {
+    font-weight: bold;
+    }
+
+    #pagin li {
+    display: inline-block;
+    border: 1px solid black;
+    color: black;
+    margin-top: 10px;
+    padding: 5px 10px;
+    }
+
+    #pagin li a{
+    color: black;
+    }
+
+    .club-logo{
+      width:35px;
+      height:35px;
+    }

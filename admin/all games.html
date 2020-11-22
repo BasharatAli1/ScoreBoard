@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <!--Favicon-->
+    <link rel="icon" href="../images/favicon/icon.png" type="image/gif">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <title>All Games</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 header-line">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-10">
+                            <button class="navbar-toggler mt-3" type="button" id="menu-toggle">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn-black float-right mt-3 px-4">Logout</button>
+                        </div>
+                    </div> <!-- Row -->
+                </div> <!-- Logout-btn Container -->
+            </div>
+        </div> <!-- main Row 1 -->
+    </div> <!-- Main Container -->
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="users.html" class="list-group-item list-group-item-action">Users</a>
+                <a href="billing.html" class="list-group-item list-group-item-action">Billing</a>
+                <a href="layout.html" class="list-group-item list-group-item-action">Layout</a>
+                <a href="clubs.html" class="list-group-item list-group-item-action">Clubs</a>
+                <a href="" class="list-group-item list-group-item-action active">All games</a>
+                <a href="teams.html" class="list-group-item list-group-item-action">Teams</a>
+                <a href="referees.html" class="list-group-item list-group-item-action">Referees</a>
+                <a href="media.html" class="list-group-item list-group-item-action">Media</a>
+                <a href="run games.html" class="list-group-item list-group-item-action">Run Games</a>
+            </div>
+        </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">   <!-- Container-->
+                    <div class="row mt-2">   <!-- Row 1 -->
+                        <div class="col-lg-2 col-md-3">
+                            <span><h4>ALL GAMES</h4></span>
+                        </div>
+                        <div class="col-lg-5 col-md-8">
+                            <div class="row pl-3">
+                                <div class="column6">
+                                    <input class="form-control form-control-sm mine-border" type="text" id = "search-user" placeholder="SEARCH">
+                                </div>  
+                                <div class = "column1">
+                                    <button type="submit" class="btn btn-sm border border-dark float-left" name="search">
+                                        <svg width="2em" height="1em" viewBox="2 0.5 16 14" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <div class="row"> <!-- Row 2 -->
+                        <div class="col-lg-6 mr-5">  <!-- Row 2, Col 1-->
+                            
+                            <div class="row">   <!-- 1st Row -->
+                                <div class="col-lg-12 shadow ml-3 mt-3 line-content">     <!-- Main Col, which contains all rows -->
+                                    <div class="row border-bottom">    <!-- Row 1 -->
+                                        <div class="col-lg-6 pt-2 pb-2 pl-4">   <!-- Row 1, Col 1 -->
+                                            <div class="row">
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
+                                                </div>
+                                                <div class="column8 text-center">
+                                                    <span class="align-middle ml-3">Test Game : 01/01/2000 : 12:00 P.M</span> 
+                                                </div>
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">  <!-- Row 1, Col 2 -->
+                                            <a href="#" type="button" class="btn btn-link float-right">DELETE</a>
+                                            <a href="line up.html" type="button" class="btn btn-link float-right border-right">LINE UP</a>
+                                            <a href="create edit new game.html" type="button" class="btn btn-link float-right border-right border-left">EDIT</a>
+                                        </div>  
+                                    </div>
+                                    <div class="row">   <!-- Row 2 -->
+                                        <div class="col-lg-6 pt-2 pb-2 pl-4">   <!-- Row 2, Col 1 -->
+                                            <div class="row">
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
+                                                </div>
+                                                <div class="column8 text-center">
+                                                    <span class="align-middle ml-1">Test Game 2 : 01/01/2000 : 12:00 P.M</span> 
+                                                </div>
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">  <!-- Row 2, Col 2 -->
+                                            <a href="#" type="button" class="btn btn-link float-right">DELETE</a>
+                                            <a href="line up.html" type="button" class="btn btn-link float-right border-right">LINE UP</a>
+                                            <a href="create edit new game.html" type="button" class="btn btn-link float-right border-right border-left">EDIT</a>
+                                        </div>
+                                    </div>
+                            
+                                </div>  <!-- End of Main Col, which contains all rows -->
+                            </div>
+                            
+                            <div class="row">   <!-- 1st Row -->
+                                <div class="col-lg-12 shadow ml-3 mt-3 line-content">     <!-- Main Col, which contains all rows -->
+                                    <div class="row border-bottom">    <!-- Row 1 -->
+                                        <div class="col-lg-6 pt-2 pb-2 pl-4">   <!-- Row 1, Col 1 -->
+                                            <div class="row">
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
+                                                </div>
+                                                <div class="column8 text-center">
+                                                    <span class="align-middle ml-3">Test Game : 01/01/2000 : 12:00 P.M</span> 
+                                                </div>
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">  <!-- Row 1, Col 2 -->
+                                            <a href="#" type="button" class="btn btn-link float-right">DELETE</a>
+                                            <a href="line up.html" type="button" class="btn btn-link float-right border-right">LINE UP</a>
+                                            <a href="create edit new game.html" type="button" class="btn btn-link float-right border-right border-left">EDIT</a>
+                                        </div>  
+                                    </div>
+                                    <div class="row">   <!-- Row 2 -->
+                                        <div class="col-lg-6 pt-2 pb-2 pl-4">   <!-- Row 2, Col 1 -->
+                                            <div class="row">
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
+                                                </div>
+                                                <div class="column8 text-center">
+                                                    <span class="align-middle ml-1">Test Game 2 : 01/01/2000 : 12:00 P.M</span> 
+                                                </div>
+                                                <div class="column1">
+                                                    <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">  <!-- Row 2, Col 2 -->
+                                            <a href="#" type="button" class="btn btn-link float-right">DELETE</a>
+                                            <a href="line up.html" type="button" class="btn btn-link float-right border-right">LINE UP</a>
+                                            <a href="create edit new game.html" type="button" class="btn btn-link float-right border-right border-left">EDIT</a>
+                                        </div>
+                                    </div>
+                            
+                                </div>  <!-- End of Main Col, which contains all rows -->
+                            </div>
+                            
+
+                            <!-- Pagination -->
+                                                                
+                            <ul class="mt-4" id="pagin">
+                                            
+                            </ul>
+                        </div>  <!-- End of Row 2, Col 1-->
+
+                        <div class="col-lg-5">  <!-- Row 2, Col 2 -->
+                            <div class="row mine-border rounded mt-2 pb-2">   <!-- Row 2, Col 2, Row 1 -->
+                                <div  class="col-lg-3 mt-2">
+                                    <label for="Beggining" class="align-items-center">Beggining</label>
+                                </div>
+                                <div  class="col-lg-3 mt-2">
+                                    <input type="datetime-local" class="form-control form-control-sm rounded" id="game-beggining" name="game-beggining">
+                                </div>
+                                <div  class="col-lg-3 mt-2">
+                                    <label for="End">End</label>
+                                </div>
+                                <div  class="col-lg-3 mt-2">
+                                    <input type="datetime-local" class="form-control form-control-sm rounded" id="game-end" name="game-end">
+                                </div>
+                            </div>
+                            <div class="row mine-border rounded mt-2 pb-2">    <!-- Row 2, Col 2, Row 2 -->
+                                <div class="col-md-6">
+                                    <label for="game">Name of The Game</label>
+                                    <input type="text" class="form-control form-control-sm" id="game" placeholder="Enter The Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="sponsor">Sponsor</label>
+                                    <input type="text" class="form-control form-control-sm" id="sponser" placeholder="Enter The Name">
+                                </div>
+                            </div>
+                            <div class="row mine-border rounded mt-2 pt-2 justify-content-center align-items-center">    <!-- Row 2, Col 2, Row 3 -->
+                                <div class="col-lg-2">    <!-- Row 2, Col 2, Row 3, Col 1 -->
+                                    <label for="stream" class="align-items-center">Stream Key</label>
+                                </div>
+                                <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 2 -->
+                                    <div class="input-group mb-2  input-group-sm">
+                                        <div class="input-group-prepend">
+                                        <button  type="button" class="input-group-btn btn btn-danger disabled rounded">
+                                            <svg width="1em" height="1em" viewBox="4 5 8 8" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                            </svg>
+                                        </button>
+                                        <span class="input-group-text bg-transparent">YouTube</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="https://youtube.com" id="youtube" name="youtube">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 3 -->
+                                    <div class="input-group mb-2  input-group-sm">
+                                        <div class="input-group-prepend">
+                                        <button  type="button" class="input-group-btn btn btn-success disabled rounded">
+                                            <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                            </svg>
+                                        </button>
+                                        <span class="input-group-text bg-transparent">Facebook</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="https://facebook.com" id="facebook" name="facebook">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">    <!-- Row 2, Col 2, Row 3, Col 4 -->
+                                    <div class="input-group mb-2  input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <button  type="button" class="input-group-btn btn btn-success disabled rounded">
+                                                <svg width="1em" height="1em" viewBox="4 4 8 8" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                </svg>
+                                            </button>
+                                        <span class="input-group-text bg-transparent">Vimeo</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="https://vimeo.com" id="vimeo" name="vimeo">
+                                    </div>
+                                </div>
+                            </div>    <!-- Row 2, Col 2, Row 3 -->
+                            <div class="row mt-2 pt-2 h-25 justify-content-center align-items-center">    <!-- Row 2, Col 2, Row 4 -->
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <label for="home-team" class="align-items-center pl-3">Home Team</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <select id="home-team" name="home-team" class="form-control form-control-sm">
+                                                <option value="">Pick A Team</option>
+                                                <option value="home-team-1">Team 1</option>
+                                                <option value="home-team-2">Team 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label for="home-team-id" class="align-items-center pl-3">Home Team ID</label>
+                                    </div>                        
+                                    <div class="row">                            
+                                        <div class="col-lg-12">
+                                            <input type="text" class="form-control form-control-sm" id="home-team-id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="media p-3 d-flex justify-content-center">
+                                        <!-- <img src="" class="games-icons2" alt=""> -->
+                                        <label for="guest-team" class="align-items-center pl-3 pl-3">VS</label>
+                                        <!-- <img src="" class="games-icons2" alt="">   -->
+                                    </div>
+                                    <div class="media-body"> </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                    <div class="row">
+                                        <label for="guest-team" class="align-items-center pl-3">Guest Team</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <select id="guest-team" name="guest-team" class="form-control form-control-sm">
+                                                <option value="">Pick A Team</option>
+                                                <option value="guest-team-1">Team 1</option>
+                                                <option value="guest-team-2">Team 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row">
+                                        <label for="guest-team-id" class="align-items-center pl-3">Guest Team ID</label>
+                                    </div>
+                                    
+                                    <div class="row">                            
+                                        <div class="col-lg-12">
+                                            <input type="text" class="form-control form-control-sm" id="guest-team-id">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mine-border rounded mt-2 mb-5 pb-5">    <!-- Row 2, Col 2, Row 5 -->
+                                <div class="col-lg-12 h-50">
+                                    <label for="referee" class="align-items-center pl-3">Referee</label>
+                                </div>
+                                <div class="col-lg-6 pt-2">
+                                    <div id="referee-image-dropdown" onmouseleave="hideee();" class="form-control">
+                                        <div class="img_holder" onclick="myfuunc(this);" onmouseover="showww();">
+                                            <span class="iTEXT">Pranas Klizmauskas</span> <img class="flagimgs first float-right" src="../images/referee.jpg" /> 
+                                        </div>                            
+                                        <div class="img_holder" onclick="myfuunc(this);" onmouseover="showww();">
+                                            <span class="iTEXT">Staska Greitai</span> <img class="flagimgs second float-right" src="../images/referee.jpg" /> 
+                                        </div>
+                                    </div>
+                                </div>                        
+                                <div class="col-lg-4 pt-2">
+                                    <select id="main-referee" name="main-referee" class="form-control form-control-sm pl-0">
+                                        <option value="main-referee1">Main Referee</option>
+                                        <option value="main-referee1">Main Referee</option>
+                                    </select>
+                                </div>     
+                                <div class="col-lg-1 pt-2">
+                                    <button  type="submit" class="input-group-btn btn btn-link mine-border rounded btn-sm rounded">
+                                        <svg width="0.7em" height="0.5em" viewBox="4.5 4.5 7 7" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </button>
+                                </div>                   
+                                <div class="col-lg-4"> </div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="upload-img-field  mr-2 mt-2"> <!-- Row 2, Col 1 -->
+                                    <div class="mine-border rounded">
+                                        <div class="row d-flex justify-content-center pt-2 pb-2">
+                                            <h5>Add Game Cover</h5>
+                                        </div>
+                                        <div class="row d-flex justify-content-center pb-2">
+                                            <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                                            <div class="col-lg-12 d-flex justify-content-center pb-2">
+                                                <img id="uploaded-img" src="../images/game/game.jpg"/>
+                                            </div>
+                                            <label for="file" class="mine-border rounded upload-img-btn mt-2" >Upload</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div> 
+                        </div>  <!-- End of Row 2, Col 2 -->
+                    </div>  <!-- End of Row 2-->
+                    
+                    
+
+                </div>   <!-- End Container-->
+                <!-- /#page-content-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+        </div>
+
+    </div> <!-- Main Container -->
+
+</body>
+
+<script>
+    // Menu Toggle Script
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(window).resize(function () {
+        if (window.innerWidth >= 768) {
+            $("#wrapper").removeClass("toggled");
+        }
+    });
+
+
+        
+    //Pagination //////
+    pageSize = 4;
+
+    var pageCount =  $(".line-content").length / pageSize;
+
+    for(var i = 0 ; i<pageCount;i++){
+        
+    $("#pagin").append('<li><a href="#">'+(i+1)+'</a></li> ');
+    }
+        $("#pagin li").first().find("a").addClass("current")
+    showPage = function(page) {
+        $(".line-content").hide();
+        $(".line-content").each(function(n) {
+            if (n >= pageSize * (page - 1) && n < pageSize * page)
+                $(this).show();
+        });        
+    }
+
+    showPage(1);
+
+    $("#pagin li a").click(function() {
+        $("#pagin li a").removeClass("current");
+        $(this).addClass("current");
+        showPage(parseInt($(this).text())) 
+    });
+    
+    // Upload Image 
+    var loadFile = function(event) {
+          var image = document.getElementById('uploaded-img');
+          image.src = URL.createObjectURL(event.target.files[0]);
+    };
+    
+
+        
+        // referee-image-dropdown
+        var shownnn = "yes";
+        var dropd = document.getElementById("referee-image-dropdown");
+
+        function showww() {
+        dropd.style.height = "auto";
+        dropd.style.overflow = "y-scroll";
+        }
+
+        function hideee() {
+            dropd.style.height = "30px";
+            dropd.style.overflow = "hidden";
+        }
+
+        function myfuunc(imgParent) {
+        hideee();
+        var mainDIVV = document.getElementById("referee-image-dropdown");
+        imgParent.parentNode.removeChild(imgParent);
+        mainDIVV.insertBefore(imgParent, mainDIVV.childNodes[0]);
+        }
+        
+</script>
+
+</html>

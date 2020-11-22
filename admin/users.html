@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="padding: 0;">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 header-line">
                 <div class="container-fluid">
@@ -44,24 +44,25 @@
                 </div> <!-- Logout-btn Container -->
             </div>
         </div> <!-- main Row 1 -->
+    </div> <!-- Main Container -->
 
-        <div class="d-flex" id="wrapper">
+    <div class="d-flex" id="wrapper">
 
-            <!-- Sidebar -->
-            <div class="border-right" id="sidebar-wrapper">
-                <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
-                    <a href="#" class="list-group-item list-group-item-action active">Users</a>
-                    <a href="#" class="list-group-item list-group-item-action">Billing</a>
-                    <a href="#" class="list-group-item list-group-item-action">Layout</a>
-                    <a href="#" class="list-group-item list-group-item-action">Club</a>
-                    <a href="#" class="list-group-item list-group-item-action">All games</a>
-                    <a href="#" class="list-group-item list-group-item-action">Teams</a>
-                    <a href="#" class="list-group-item list-group-item-action">Referees</a>
-                    <a href="#" class="list-group-item list-group-item-action">Media</a>
-                    <a href="#" class="list-group-item list-group-item-action">Run Games</a>
-                </div>
+        <!-- Sidebar -->
+        <div class="border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="" class="list-group-item list-group-item-action active">Users</a>
+                <a href="billing.html" class="list-group-item list-group-item-action">Billing</a>
+                <a href="layout.html" class="list-group-item list-group-item-action">Layout</a>
+                <a href="clubs.html" class="list-group-item list-group-item-action">Clubs</a>
+                <a href="all games.html" class="list-group-item list-group-item-action">All games</a>
+                <a href="teams.html" class="list-group-item list-group-item-action">Teams</a>
+                <a href="referees.html" class="list-group-item list-group-item-action">Referees</a>
+                <a href="media.html" class="list-group-item list-group-item-action">Media</a>
+                <a href="run games.html" class="list-group-item list-group-item-action">Run Games</a>
             </div>
+        </div>
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
@@ -72,7 +73,7 @@
                             <span><h4>ALL USERS</h4></span>
                         </div>
                         <div class="col-lg-5 col-md-8">
-                            <div class="row">
+                            <div class="row pl-2">
                                 <div class="column6">
                                     <input class="form-control form-control-sm mine-border" type="text" id = "search-user" placeholder="SEARCH">
                                 </div>  
@@ -90,130 +91,219 @@
                     
                     <div class="row">   <!-- Row 2 -->
                         <div class="col-lg-7 col-md-12">
-                            <div class="row pl-0">
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
-                                <div class="col-lg-3 col-8 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" alt="avatar">
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
                                 </div>
-                                <div class="col-lg-8 col-md-10 mt-1">
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="remove">REMOVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="edit">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="active">ACTIVE</a>
-                                    <a href="#" type="button" class="btn btn-link btn-sm user-btn mine-border ml-2" id="inactive">INACTIVE</a>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
+                                </div>
+                            </div>
+                            <div class="row line-content">
+                                <div class="col-3 ml-2 mine-border mt-2">
+                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
+                                    <span>Nick Gers</span>
+                                </div>
+                                <div class="col-8 mt-3">
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
+                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
                             </div>
 
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                  <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                      <span class="sr-only">Previous</span>
-                                    </a>
-                                  </li>
-                                  <li class="page-item active">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                  </li>
-                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                  <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                      <span class="sr-only">Next</span>
-                                    </a>
-                                  </li>
-                                </ul>
-                            </nav>
+
+                            <!-- Pagination -->
+                                                        
+                            <ul id="pagin">
+                                    
+                            </ul>
+
                         </div>
                         
                         <div class="col-md-5">
@@ -223,7 +313,7 @@
                                 </div>
                                 <div class="row">
                                         <div class="col-lg-12 mb-5">
-                                          <div class="border border-dark rounded pl-3 pr-3 pt-3">   <!-- Form Fields div-->
+                                          <div class="border border-dark rounded mr-3 pl-3 pr-3 pt-3">   <!-- Form Fields div-->
                                               <div class="form-group row">
                                                 <label class="col-sm-5"> <b><h5>First Name</b></h5> </label>
                                                 <div class="float-right col-sm-7">
@@ -535,7 +625,7 @@
                                 
                                                 <div class="pr-2 mb-5 text-centre">
                                                     
-                                                    <button type="submit" class="btn btn-link border border-dark mt-5 mx-auto float-right"> <b>ADD NEW USER</b> </button> 
+                                                    <button type="submit" class="btn btn-link mt-1 border border-dark mt-5 mx-auto float-right"> <b>ADD NEW USER</b> </button> 
                                                 </div>
                                             </div>
                                           
@@ -564,8 +654,8 @@
 
 </body>
 
-<!-- Menu Toggle Script -->
 <script>
+    // Menu Toggle Script 
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
@@ -581,6 +671,32 @@
           var image = document.getElementById('register-uploaded-img');
           image.src = URL.createObjectURL(event.target.files[0]);
     };
+        
+    //Pagination //////
+    pageSize = 8;
+
+    var pageCount =  $(".line-content").length / pageSize;
+
+    for(var i = 0 ; i<pageCount;i++){
+        
+    $("#pagin").append('<li><a href="#">'+(i+1)+'</a></li> ');
+    }
+        $("#pagin li").first().find("a").addClass("current")
+    showPage = function(page) {
+        $(".line-content").hide();
+        $(".line-content").each(function(n) {
+            if (n >= pageSize * (page - 1) && n < pageSize * page)
+                $(this).show();
+        });        
+    }
+
+    showPage(1);
+
+    $("#pagin li a").click(function() {
+        $("#pagin li a").removeClass("current");
+        $(this).addClass("current");
+        showPage(parseInt($(this).text())) 
+    });
 </script>
 
 </html>
