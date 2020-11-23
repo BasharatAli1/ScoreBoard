@@ -1,6 +1,7 @@
 var flagSmall = true;
 var flagFullScreen = true;
 var flagLineUp = true;
+var flagHomeTeam = true;
 var flagAdvertisement = true;
 var flagCountDown = true;
 var flagCountDownStart = false;
@@ -13,6 +14,8 @@ var clockIntervalID; // setInterval() ID for clock
 document.getElementById("score-on-board-small").innerHTML='0:0';
 document.getElementById("clock-minutes").innerHTML='00';
 document.getElementById("clock-seconds").innerHTML='00';
+document.getElementById("clock-minutes2").innerHTML='00';
+document.getElementById("clock-seconds2").innerHTML='00';
 
 // to save value of sec and min to restart countdown
 var globalCoundownMin = parseInt(document.getElementById('minutes-dynamic').value);
@@ -116,12 +119,71 @@ function resetFun()
     text.style.display = "none"
     text = document.getElementById('score-on-board-large');
     text.style.display = "none"
+    text = document.getElementById('fullscreen-clock-container');
+    text.style.display = "none"
     pic = document.getElementById('team-logo-on-board-centre');
     pic.style.display="none";
     pic = document.getElementById('team-logo-on-board-left');
     pic.style.display="none";
     pic = document.getElementById('team-logo-on-board-right');
     pic.style.display="none";
+
+    /* Guest Team */     
+    pic = document.getElementById('guest-card-bg');
+    pic.style.display="none";
+    pic = document.getElementById('guest-team-logo');
+    pic.style.display="none";
+    pic = document.getElementById('guest-small-logo-bw-card');
+    pic.style.display="none";
+    
+    text = document.getElementById('guest-team-header');
+    text.style.display = "none"
+    text = document.getElementById('guest-team-some-text_1');
+    text.style.display = "none"
+    text = document.getElementById('guest-team-some-text_2');
+    text.style.display = "none"
+    text = document.getElementById('guest-team-some-text_3');
+    text.style.display = "none"
+
+    /* Home Team */     
+    pic = document.getElementById('home-card-bg');
+    pic.style.display="none";
+    pic = document.getElementById('home-team-logo');
+    pic.style.display="none";
+    pic = document.getElementById('home-small-logo-bw-card');
+    pic.style.display="none";
+    
+    text = document.getElementById('home-team-header');
+    text.style.display = "none"
+    text = document.getElementById('home-team-some-text_1');
+    text.style.display = "none"
+    text = document.getElementById('home-team-some-text_2');
+    text.style.display = "none"
+    text = document.getElementById('home-team-some-text_3');
+    text.style.display = "none"
+
+    /* for player */
+    var pic = document.getElementById('player-card-bg');
+    pic.style.display="none";
+    pic = document.getElementById('player-pic-info-group');
+    pic.style.display="none";
+    pic = document.getElementById('player-small-logo-bw-card');
+    pic.style.display="none";
+    
+    var text = document.getElementById('player-header');
+    text.style.display = "none"
+    text = document.getElementById('player-some-text_1');
+    text.style.display = "none"
+    
+    /* crew */
+    
+    pic = document.getElementById('crew-card');
+    pic.style.display="none";
+    
+    text = document.getElementById('crew-header');
+    text.style.display = "none"
+    text = document.getElementById('crew-name');
+    text.style.display = "none"
 
     clearInterval(counterIntervalID);
     clearInterval(clockIntervalID);
@@ -130,6 +192,7 @@ function resetFun()
 
     flagFullScreen = true;
     flagLineUp = true;
+    flagHomeTeam = true;
     flagAdvertisement = true;
     flagCountDown = true;
     flagCountDownStart = false;
@@ -165,6 +228,7 @@ function resetSmall()
 // Small    
 function smallFun()
 {
+    resetFun();
     if(flagSmall)
     {
        var pic = document.getElementById('small-bar-pic');
@@ -225,6 +289,128 @@ function lineUp()
     }
 }
 
+// home team
+function homeTeamFun()
+{
+    
+    var pic = document.getElementById('screen-img');
+    if (flagHomeTeam)
+    {
+        resetFun();
+        
+        pic.src="../images/run-game-info/green bg.PNG";
+        pic.style.display="block";
+        
+        $('#home-team-btn').removeClass('btn-primary').addClass('btn-success');
+        flagHomeTeam = false;
+    } 
+    else if (!flagHomeTeam)
+    {
+        resetFun();
+        pic.src="../images/run-game-info/run-game-info-board.PNG";
+        pic.style.display = "block";
+        $('#home-team-btn').removeClass('btn-success').addClass('btn-primary');
+    }
+}
+
+// guest team
+function guestTeamFun()
+{
+    reset_btn_function();
+    var pic = document.getElementById('screen-img');
+    
+        pic.src="../images/run-game-info/green bg.PNG";
+        
+        pic = document.getElementById('guest-card-bg');
+        pic.style.display="block";
+        pic = document.getElementById('guest-team-logo');
+        pic.style.display="block";
+        pic = document.getElementById('guest-small-logo-bw-card');
+        pic.style.display="block";
+        
+        var text = document.getElementById('guest-team-header');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-some-text_1');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-some-text_2');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-some-text_3');
+        text.style.display = "block"
+        
+        $('#guest-team-btn').removeClass('btn-primary').addClass('btn-success');
+
+        disappearTime(5);
+}
+
+// home team
+function homeTeamFun()
+{
+    reset_btn_function();
+    var pic = document.getElementById('screen-img');
+    
+        pic.src="../images/run-game-info/green bg.PNG";
+        
+        pic = document.getElementById('home-card-bg');
+        pic.style.display="block";
+        pic = document.getElementById('home-team-logo');
+        pic.style.display="block";
+        pic = document.getElementById('home-small-logo-bw-card');
+        pic.style.display="block";
+        
+        var text = document.getElementById('home-team-header');
+        text.style.display = "block"
+        text = document.getElementById('home-team-some-text_1');
+        text.style.display = "block"
+        text = document.getElementById('home-team-some-text_2');
+        text.style.display = "block"
+        text = document.getElementById('home-team-some-text_3');
+        text.style.display = "block"
+        
+        $('#home-team-btn').removeClass('btn-primary').addClass('btn-success');
+
+        disappearTime(5);
+}
+
+// player team
+function playerFun()
+{
+       reset_btn_function();
+        var pic = document.getElementById('player-card-bg');
+        pic.style.display="block";
+        pic = document.getElementById('player-pic-info-group');
+        pic.style.display="block";
+        pic = document.getElementById('player-small-logo-bw-card');
+        pic.style.display="block";
+        
+        var text = document.getElementById('player-header');
+        text.style.display = "block"
+        text = document.getElementById('player-some-text_1');
+        text.style.display = "block"
+        
+        $('#player-btn').removeClass('btn-primary').addClass('btn-success');
+
+        disappearTime(5);
+}
+
+/* crew */
+
+function crewFun()
+{
+       reset_btn_function();
+        var pic = document.getElementById('crew-card');
+        pic.style.display="block";
+        
+        var text = document.getElementById('crew-header');
+        text.style.display = "block"
+        text = document.getElementById('crew-name');
+        text.style.display = "block"
+        
+        $('#crew-btn').removeClass('btn-primary').addClass('btn-success');
+
+        disappearTime(5);
+}
+
+
 function updateScoreOnScreen()
 {
     var value = document.getElementById("first-count-value").value; //get name from TextBox
@@ -239,7 +425,7 @@ function changeFullscreen()
 {
     if (flagFullScreen)
     {
-        resetFun();
+        reset_btn_function();
         var pic = document.getElementById('right-color-bar');
         pic.style.display="block";
         pic = document.getElementById('left-color-bar');
@@ -248,7 +434,6 @@ function changeFullscreen()
         var value = document.getElementById("first-count-value").value; //get name from TextBox
         value = value + " : " + document.getElementById("second-count-value").value; //get name from TextBox
         document.getElementById("score-on-board-large").innerHTML=value ;  
-        document.getElementById("score-on-board-small").innerHTML=value ;  
 
         var text = document.getElementById('team-name');
         text.style.display = "block"
@@ -256,7 +441,7 @@ function changeFullscreen()
         text.style.display = "block"
         text = document.getElementById('score-on-board-large');
         text.style.display = "block"
-        text = document.getElementById('score-on-board-small');
+        text = document.getElementById('fullscreen-clock-container');
         text.style.display = "block"
         
         pic = document.getElementById('team-logo-on-board-centre');
@@ -276,7 +461,7 @@ function changeFullscreen()
     else 
     {
         $('#fullscreen').removeClass('btn-success').addClass('btn-primary');
-        resetFun();
+        reset_btn_function();
     }
 }
 
@@ -610,7 +795,6 @@ function clockStartFun()
     alert('G = ' + globalTotalSeconds);
     if(globalClockSec === undefined)
     {
-        // alert('S1');
 
     }
     if(flagClockStartNew)
@@ -619,16 +803,13 @@ function clockStartFun()
     }
     else if(!flagClockStart) // counter is already running or user 1st time press start button without changing sec and minutes value
     {
-        //alert('S2');
         if(parseInt(globalClockMin) === 0 && parseInt(globalClockSec) === 0)
         {
             flagClockStart = false;
-//            alert('C1');
         }
         else
         {
             flagClockStart = true;
-//            alert('C2');
         }
         clearInterval(clockIntervalID);
         document.getElementById("clock-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
@@ -711,6 +892,7 @@ function clock(m, s, t)
                 s='0'+s;
             }
             document.querySelector("#clock-seconds").textContent = s;
+            document.querySelector("#clock-seconds2").textContent = s;
             $("#clock-seconds-dynamic").val(s);
         };
     
@@ -722,6 +904,7 @@ function clock(m, s, t)
                 m='0'+m;
             }
             document.querySelector("#clock-minutes").textContent = m;
+            document.querySelector("#clock-minutes2").textContent = m;
             $("#clock-minutes-dynamic").val(m);
         };
     
@@ -751,7 +934,6 @@ function countdownStartFun()
     }
     else if(!flagCountDownStart) // counter is already running or user 1st time press start button without changing sec and minutes value
     {
-        alert('1');
         if(globalCoundownMin === 0 && globalCoundownSec === 0)
             flagCountDownStart = false;
         else
@@ -760,9 +942,7 @@ function countdownStartFun()
         document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
     }
     else if(flagCountDownStart)    // user press stop during count down
-    {
-        alert('2');
-        
+    {   
         $('#countdown-btn').removeClass('btn-primary').addClass('btn-success');
         flagCountDown = false;
 
@@ -898,6 +1078,36 @@ function intervalExecutin(m, s)
             }
             setMinutes(convert(tempSeconds, 60));
             setSeconds(tempSeconds == 60 ? 59 : tempSeconds);
+            totalSeconds--;
+            tempSeconds = totalSeconds;
+        }, 1000);
+}
+
+// Pics will disappear after secific time
+
+
+function disappearTime(s)
+{    
+        let totalSeconds = s;
+    
+        //temporary seconds holder
+        let tempSeconds = totalSeconds;
+    
+        // Update the count down every 1 second
+        counterIntervalID = setInterval(() => {
+            //clears countdown when all seconds are counted
+            if (totalSeconds <= 0) 
+            {
+                resetFun();
+                
+                $('#guest-team-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#home-team-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#player-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#crew-btn').removeClass('btn-success').addClass('btn-primary');
+
+                clearInterval(counterIntervalID);
+            }
+            tempSeconds == 60 ? 59 : tempSeconds;
             totalSeconds--;
             tempSeconds = totalSeconds;
         }, 1000);

@@ -695,7 +695,7 @@
   right: 40%;
 }
 
-/* Run Game info */
+/* //////// Run Game info //////////// */
 
 
   .screen-container {
@@ -775,6 +775,124 @@
     font-weight: bold;
   }
 
+  /* for guest team, for home team, player (info group) */
+
+  .guest-card-bg, .home-card-bg, .player-card-bg
+  {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+    left: 15%;
+    right: 15%;
+    margin-bottom: 5%;
+  }
+  
+  #guest-card-bg, #home-card-bg, #player-card-bg
+  {
+    width: 90%;
+  }
+
+  .guest-team-logo, .home-team-logo
+  {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+  }
+
+  #guest-team-logo, #home-team-logo
+  {
+    width: 50%;
+  }
+
+  .guest-team-header, .home-team-header, .player-header
+  {
+    position: absolute;
+    top: 5%;
+    right: 42%;
+  }
+
+  .guest-team-some-text_1, .home-team-some-text_1
+  {
+    position: absolute;
+    top: 18%;
+    left: 21%;
+  }
+
+  .guest-team-some-text_2, .home-team-some-text_2
+  {
+    position: absolute;
+    top: 30%;
+    left: 21%;
+  }
+
+  .guest-team-some-text_3, .home-team-some-text_3
+  {
+    position: absolute;
+    top: 60%;
+    left: 21%;
+  }
+
+  .guest-small-logo-bw-card, .home-small-logo-bw-card, .player-small-logo-bw-card
+  {
+    position: absolute;
+    top: 75%;
+    right: 45%;
+  }
+
+  #guest-small-logo-bw-card, #home-small-logo-bw-card, #player-small-logo-bw-card
+  {
+    width: 70%;
+  }
+
+  /* For Player */
+  .player-some-text_1
+  {
+    position: absolute;
+    top: 22%;
+    right: 37%;
+  }
+
+  .player-pic-info-group
+  {
+    position: absolute;
+    top: 20%;
+    left: 17%;
+  }
+
+  #player-pic-info-group
+  {
+    width: 50%;
+  }
+
+  /* crew */
+  
+  .crew-card
+  {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .crew-header
+  {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .crew-name
+  {
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+
+
+  /* For small btn */
   .clock-small
   {
     position: absolute;
@@ -828,12 +946,12 @@
 .fullscreen-clock
 {
   position: absolute;
-  top: 0%;
-  right: 0%;
-  /* border: 5px solid white; */
-  margin-top: -2px;
+  top: 10%;
+  left: 45%;
+  padding-left: 2px;
   padding-right: 2px;
-  width: 100px;
+  margin-top: -3px;
+  font-weight: bold;
 }
 
 
@@ -864,17 +982,39 @@
 
 .score-on-board-large {
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: 42%;
   font-size: x-large;
 }
 
-#countdown-container
+ #score-on-board-large {
+  font-size: 300px;
+  height: 300px;
+  /* color: #F90D0D;
+  border: 1px solid white; */
+} 
+
+#minutes
 {
+  font-size: 200px;
+}
+
+/* Countdown Timer */
+
+#countdown-container {
   position: absolute;
   top: 40%;
   left: 35%;
+
+  display: inline-block;
+  width: 130px; 
+  height: 40px;
+  border-radius: 5px; 
+  background: black; 
+  font-weight:bold;
 }
+
+/* /////////////////// */
 
 /* div styling */
 .plan-body
@@ -999,19 +1139,8 @@
   position: relative;
 }
 
-/* Countdown Timer */
-
-#countdown-container {
-  display: inline-block;
-  width: 130px; 
-  height: 40px;
-  border-radius: 5px; 
-  background: black; 
-  font-weight:bold;
-}
-
 #countdown span {
-  font-weight: bold; /*boldens text in the span element*/
+  font-weight: bold;
 }
 
   /* Media Queries */
