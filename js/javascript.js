@@ -1,16 +1,26 @@
+var flagSmall = true;
 var flagFullScreen = true;
 var flagLineUp = true;
 var flagAdvertisement = true;
 var flagCountDown = true;
 var flagCountDownStart = false;
-var intervalID;
+var flagClockStart = false; // if user stop clock
+var flagClockStartNew = false; // if Clock value is set manually
+var counterIntervalID; // setInterval() ID for countdown
+var clockIntervalID; // setInterval() ID for clock
 
+// values of score and clock initially on board
 document.getElementById("score-on-board-small").innerHTML='0:0';
+document.getElementById("clock-minutes").innerHTML='00';
+document.getElementById("clock-seconds").innerHTML='00';
 
-var globalM = parseInt(document.getElementById('minutes-dynamic').value);
-//var globalS = parseInt(document.getElementById('seconds-dynamic').value);
+// to save value of sec and min to restart countdown
+var globalCoundownMin = parseInt(document.getElementById('minutes-dynamic').value);
+var globalCoundownSec = parseInt(document.getElementById('seconds-dynamic').value);
+var globalClockSec = parseInt(document.getElementById('clock-seconds-dynamic').value);
+var globalClockMin = parseInt(document.getElementById('clock-minutes-dynamic').value);
+var globalTotalSeconds;
 
-var globalS = parseInt(document.getElementById('seconds-dynamic').value);
 
 //  refresh button for log.html
 $('.refresh').click(function(){
@@ -20,39 +30,71 @@ $('.refresh').click(function(){
 
 //  Count down minutes minus clicked
 $('#count-minutes-minus').click(function(){
-    globalM = parseInt(document.getElementById("minutes-dynamic").value) + 1;
+    globalCoundownMin = parseInt(document.getElementById("minutes-dynamic").value) + 1;
     flagCountDownStart = true;
 });
 
 //  Count down seconds minus clicked
 $('#count-minutes-plus').click(function(){
-    globalM = parseInt(document.getElementById("minutes-dynamic").value) + 1;
+    globalCoundownMin = parseInt(document.getElementById("minutes-dynamic").value) + 1;
     flagCountDownStart = true;
 });
 
 //  Count down minutes minus clicked
 $('#count-seconds-minus').click(function(){
-    globalS = parseInt(document.getElementById("seconds-dynamic").value) + 1;
+    globalCoundownSec = parseInt(document.getElementById("seconds-dynamic").value) + 1;
     flagCountDownStart = true;
 });
 
 //  Count down seconds minus clicked
 $('#count-seconds-plus').click(function(){
-    globalS = parseInt(document.getElementById("seconds-dynamic").value) + 1;
+    globalClockSec = parseInt(document.getElementById("seconds-dynamic").value) + 1;
     flagCountDownStart = true;
 });
 
+
+
+//  clock minutes minus clicked
+$('#clock-minutes-minus').click(function(){
+    globalClockMin = parseInt(document.getElementById("clock-minutes-dynamic").value) + 1;
+    flagClockStartNew = true;
+});
+
+//  clock minutes minus clicked
+$('#clock-minutes-plus').click(function(){
+    globalClockMin = parseInt(document.getElementById("clock-minutes-dynamic").value) + 1;
+    flagClockStartNew = true;
+});
+
+//  clock seconds minus clicked
+$('#clock-seconds-minus').click(function(){
+    globalClockSec = parseInt(document.getElementById("clock-seconds-dynamic").value) + 1;
+    flagClockStartNew = true;
+});
+
+//  clock seconds minus clicked
+$('#clock-seconds-plus').click(function(){
+    globalClockSec = parseInt(document.getElementById("clock-seconds-dynamic").value) + 1;
+    flagClockStartNew = true;
+});
+
 // for reset button
+document.getElementById("btn-reset").addEventListener("click", reset_btn_function);
 
-document.getElementById("btn-reset").addEventListener("click", resetFun);
+function reset_btn_function()
+{
+    resetFun();
+    resetSmall();
+}
 
-function resetFun(){
+function resetFun()
+{
     
     // Button Color green on click
     $('.btn-active-green').removeClass('btn-success').addClass('btn-primary');
 
     setScreen();
-    $("button").removeClass("active");
+//    $("button").removeClass("active");
 
     var pic = document.getElementById('pic-1st');
     pic.style.display="none";
@@ -74,8 +116,6 @@ function resetFun(){
     text.style.display = "none"
     text = document.getElementById('score-on-board-large');
     text.style.display = "none"
-    text = document.getElementById('score-on-board-small');
-    text.style.display = "none"
     pic = document.getElementById('team-logo-on-board-centre');
     pic.style.display="none";
     pic = document.getElementById('team-logo-on-board-left');
@@ -83,7 +123,8 @@ function resetFun(){
     pic = document.getElementById('team-logo-on-board-right');
     pic.style.display="none";
 
-    clearInterval(intervalID);
+    clearInterval(counterIntervalID);
+    clearInterval(clockIntervalID);
     var Span = document.getElementById('countdown-container');
     Span.style.display = "none";
 
@@ -92,8 +133,64 @@ function resetFun(){
     flagAdvertisement = true;
     flagCountDown = true;
     flagCountDownStart = false;
+    flagClockStart = false;
 
     document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
+}
+
+// reset small
+function resetSmall()
+{
+    var pic = document.getElementById('small-bar-pic');
+    pic.style.display = "none";
+    pic = document.getElementById('small-left-color-bar');
+    pic.style.display = "none";
+    pic = document.getElementById('small-right-color-bar');
+    pic.style.display = "none";
+    pic = document.getElementById('small-bar-logo');
+    pic.style.display = "none";
+    var text = document.getElementById('small-bar-team-name-1');
+    text.style.display = "none";
+    text = document.getElementById('small-bar-team-name-2');
+    text.style.display = "none";
+    text = document.getElementById('score-on-board-small');
+    text.style.display = "none";
+    text = document.getElementById('clock-container');
+    text.style.display = "none";
+    
+    $('#small-btn').removeClass('btn-success').addClass('btn-primary');
+    flagSmall = true;
+}
+
+// Small    
+function smallFun()
+{
+    if(flagSmall)
+    {
+       var pic = document.getElementById('small-bar-pic');
+       pic.style.display = "block";
+       pic = document.getElementById('small-left-color-bar');
+       pic.style.display = "block";
+       pic = document.getElementById('small-right-color-bar');
+       pic.style.display = "block";
+       pic = document.getElementById('small-bar-logo');
+       pic.style.display = "block";
+       var text = document.getElementById('small-bar-team-name-1');
+       text.style.display = "block";
+       text = document.getElementById('small-bar-team-name-2');
+       text.style.display = "block";
+       text = document.getElementById('score-on-board-small');
+       text.style.display = "block";
+       text = document.getElementById('clock-container');
+       text.style.display = "block";
+       
+        $('#small-btn').removeClass('btn-primary').addClass('btn-success');
+        flagSmall = false;
+    }
+    else if(!flagSmall)
+    {
+        resetSmall();
+    }
 }
 
 // screen
@@ -125,29 +222,6 @@ function lineUp()
         pic.src="../images/run-game-info/run-game-info-board.PNG";
         pic.style.display = "block";
         $('#lineup').removeClass('btn-success').addClass('btn-primary');
-    }
-}
-
-// advertisement
-function advertisementFun()
-{    
-    var pic = document.getElementById('screen-img');
-    if (flagAdvertisement)
-    {
-        resetFun();
-        
-        pic.src="../images/run-game-info/advertisement.PNG";
-        pic.style.display="block";
-        
-        $('#advertisement').removeClass('btn-primary').addClass('btn-success');
-        flagAdvertisement = false;
-    } 
-    else if (!flagAdvertisement)
-    {
-        resetFun();
-        pic.src="../images/run-game-info/run-game-info-board.PNG";
-        pic.style.display = "block";
-        $('#advertisement').removeClass('btn-success').addClass('btn-primary');
     }
 }
 
@@ -351,7 +425,7 @@ $('.refresh').click(function(){
     document.getElementById('log-iframe').setAttribute('src', 'log.html');
 });
 
-           // Minus and plus for team A
+           // Minus and plus for team A Score and Clock + Countdown Minutes
            $('.btn-first-count-value').click(function(e)
            { 
                e.preventDefault();
@@ -439,7 +513,7 @@ $('.refresh').click(function(){
 
                
 
-           // Minus and plus for team B
+           // Minus and plus for team B Score and Clock + Countdown Minutes
            $('.btn-second-count-value').click(function(e)
            {
                e.preventDefault();
@@ -525,93 +599,145 @@ $('.refresh').click(function(){
 
 
 
-        //    // Minus and plus for Countdown Minutes
-        //    $('.btn-countdown-min').click(function(e)
-        //    { 
-        //        e.preventDefault();
-               
-        //        fieldName = $(this).attr('data-field-A');
-        //        type      = $(this).attr('data-type');
-        //        var input = $("input[name='"+fieldName+"']");
-        //        var currentVal = parseInt(input.val());
-        //        if (!isNaN(currentVal)) 
-        //        {
-        //            if(type == 'minus') 
-        //            {
-        //                if(currentVal > input.attr('min')) {
-        //                    input.val(currentVal - 1).change();
-        //                } 
-        //                if(parseInt(input.val()) == input.attr('min')) {
-        //                    $(this).attr('disabled', true);
-        //                }
+// Clock of game
+function clockFun(m, s, t)
+{
+    clock(m, s, t);
+}
 
-        //            } 
-        //            else if(type == 'plus') 
-        //            {
-        //                if(currentVal < input.attr('max')) 
-        //                {
-        //                    input.val(currentVal + 1).change();
-        //                }
-        //                if(parseInt(input.val()) == input.attr('max')) 
-        //                {
-        //                    $(this).attr('disabled', true);
-        //                }
-        //            }
-        //        } 
-        //        else 
-        //        {
-        //            input.val(0);
-        //        }
-        //    });
-        //    $('.input-countdown-min').focusin(function()
-        //    {
-        //         $(this).data('oldValue', $(this).val());
-        //    });
-        //    $('.input-countdown-min').change(function() 
-        //    {
-        //        minValue =  parseInt($(this).attr('min'));
-        //        maxValue =  parseInt($(this).attr('max'));
-        //        valueCurrent = parseInt($(this).val());
-               
-        //        name = $(this).attr('name');
-        //        if(valueCurrent >= minValue) 
-        //        {
-        //            $(".btn-countdown-min[data-type='minus'][data-field-A='"+name+"']").removeAttr('disabled')
-        //        } 
-        //        else 
-        //        {
-        //            alert('Sorry, the minimum value was reached');
-        //            $(this).val($(this).data('oldValue'));
-        //        }
-        //        if(valueCurrent <= maxValue) 
-        //        {
-        //            $(".btn-countdown-min[data-type='plus'][data-field-A='"+name+"']").removeAttr('disabled')
-        //        } 
-        //        else 
-        //        {
-        //            alert('Sorry, the maximum value was reached');
-        //            $(this).val($(this).data('oldValue'));
-        //        }
-        //    });
-        //    $(".input-countdown-min").keydown(function (e) 
-        //    {
-        //            // Allow: backspace, delete, tab, escape, enter and .
-        //            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
-        //                // Allow: Ctrl+A
-        //                (e.keyCode == 65 && e.ctrlKey === true) || 
-        //                // Allow: home, end, left, right
-        //                (e.keyCode >= 35 && e.keyCode <= 39)) 
-        //             {
-        //                 // let it happen, don't do anything
-        //                 return;
-        //            }
-        //            // Ensure that it is a number and stop the keypress
-        //            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) 
-        //            {
-        //                e.preventDefault();
-        //            }
-        //     });
+function clockStartFun()
+{
+    alert('G = ' + globalTotalSeconds);
+    if(globalClockSec === undefined)
+    {
+        // alert('S1');
 
+    }
+    if(flagClockStartNew)
+    {
+        clock(globalClockMin, globalClockSec, globalTotalSeconds);
+    }
+    else if(!flagClockStart) // counter is already running or user 1st time press start button without changing sec and minutes value
+    {
+        //alert('S2');
+        if(parseInt(globalClockMin) === 0 && parseInt(globalClockSec) === 0)
+        {
+            flagClockStart = false;
+//            alert('C1');
+        }
+        else
+        {
+            flagClockStart = true;
+//            alert('C2');
+        }
+        clearInterval(clockIntervalID);
+        document.getElementById("clock-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
+    }
+    else if(flagClockStart)    // user press stop during count down
+    {
+        //alert('S3');
+
+        document.getElementById("clock-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
+        clearInterval(clockIntervalID);
+        
+        //document.getElementById("countdown-container").style.display="block";
+        
+        // alert('Min = ' + globalClockMin);
+        // alert('Sec = ' + globalClockSec);
+        clock(globalClockMin, globalClockSec, globalTotalSeconds);
+        flagClockStart = false;
+    }
+}
+
+function clock(m, s, t)
+{
+    clearInterval(clockIntervalID);
+    document.getElementById("clock-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
+    
+    // if count down is started, user can't manually increment/decrement minutes or 
+    // seconds of count down
+    if(globalClockMin == 0 && globalClockSec == 0 || flagClockStartNew)
+    {
+        $('#clock-minutes-minus').prop('disabled',true);
+        $('#clock-minutes-plus').prop('disabled',true);
+        $('#clock-seconds-minus').prop('disabled',true);
+        $('#clock-seconds-plus').prop('disabled',true);
+    }
+    
+        // converts all to seconds
+        let totalSecondsGiven = m * 60 + s;
+        let totalSeconds;
+        if(!flagClockStart) // if user start clock but not press start button or increment 
+        // mins and secs by button and press start
+        {
+            alert('1st attempt');
+            totalSeconds = 0;
+            globalTotalSeconds = totalSecondsGiven; // 1st time save total given seconds
+        }
+        else if(flagClockStart) // in any other case, if user press start button
+        {
+            alert('2nd attempt');
+            totalSeconds = m * 60 + s;
+            totalSecondsGiven = globalTotalSeconds;
+        }
+        if(flagClockStartNew)
+        {
+            flagClockStart = false;
+            flagClockStartNew = false;
+        }
+            
+        //temporary seconds holder
+        let tempSeconds = totalSeconds;
+    
+        // calculates number of minutes and seconds from a given number of seconds
+        const convertClock = (value, inSeconds) => {
+            if (value > inSeconds) 
+            {
+                let x = value % inSeconds;
+                tempSeconds = x;    // like if we have 66s, then x = 6
+                return Math.trunc((value) / inSeconds);    // like if we have 66s, then return 1
+            } 
+            else 
+            {
+                return 0;
+            }
+        };
+    
+        //sets seconds
+        const setClockSeconds = (s) => {
+            globalClockSec = s
+            if(s<10)
+            {
+                s='0'+s;
+            }
+            document.querySelector("#clock-seconds").textContent = s;
+            $("#clock-seconds-dynamic").val(s);
+        };
+    
+        //sets minutes
+        const setClockMinutes = (m) => {
+            globalClockMin = m;
+            if(m<10)
+            {
+                m='0'+m;
+            }
+            document.querySelector("#clock-minutes").textContent = m;
+            $("#clock-minutes-dynamic").val(m);
+        };
+    
+        // Update the count down every 1 second
+        clockIntervalID = setInterval(() => {
+            //clears countdown when all seconds are counted
+            if (totalSecondsGiven === totalSeconds) {
+                flagClockStart = false;
+                clearInterval(clockIntervalID);
+            }
+            setClockMinutes(convertClock(totalSeconds, 60));
+            setClockSeconds(tempSeconds == 60 ? 59 : tempSeconds);
+            totalSeconds++;
+            tempSeconds = totalSeconds;
+        }, 1000);
+}
 
 
 //// Count Down ////
@@ -619,33 +745,34 @@ $('.refresh').click(function(){
 function countdownStartFun()
 {
 //    resetFun();
-
-
-    if(globalS === undefined)
+    if(globalCoundownSec === undefined)
     {
 
     }
     else if(!flagCountDownStart) // counter is already running or user 1st time press start button without changing sec and minutes value
     {
         alert('1');
-        if(globalM === 0 && globalS === 0)
+        if(globalCoundownMin === 0 && globalCoundownSec === 0)
             flagCountDownStart = false;
         else
             flagCountDownStart = true;
-        clearInterval(intervalID);
+        clearInterval(counterIntervalID);
         document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
     }
     else if(flagCountDownStart)    // user press stop during count down
     {
         alert('2');
+        
+        $('#countdown-btn').removeClass('btn-primary').addClass('btn-success');
+        flagCountDown = false;
+
         document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
-        clearInterval(intervalID);
+        clearInterval(counterIntervalID);
         
         document.getElementById("countdown-container").style.display="block";
         
-        intervalExecutin(globalM, globalS);
+        intervalExecutin(globalCoundownMin, globalCoundownSec);
             flagCountDownStart = false;
-
     }
 }
 
@@ -653,11 +780,10 @@ function countdownFun()
 {
     var container = document.getElementById('countdown-container');
 
-    if (flagCountDown)
+    if (flagCountDown)  // first time countdown btn pressed
     {   
         resetFun();
         
-
         container.style.display="block";
         
         $('#countdown-btn').removeClass('btn-primary').addClass('btn-success');
@@ -665,20 +791,29 @@ function countdownFun()
         document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
 
         intervalExecutin(15, 00);
-
     } 
-    else if (!flagCountDown)
+    else if (!flagCountDown)  // second time countdown btn pressed
     {
+        // if count down is finished, now user can manually increment/decrement minutes or 
+        // seconds of count down
+        $('#count-minutes-minus').prop('disabled',false);
+        $('#count-minutes-plus').prop('disabled',false);
+        $('#count-seconds-minus').prop('disabled',false);
+        $('#count-seconds-plus').prop('disabled',false);
+
+        // if count down end, then reset values    
+        globalCoundownMin = 0;
+        globalCoundownSec = 0;
+        $("#minutes-dynamic").val('000');
+        $("#seconds-dynamic").val('00');
+
         resetFun();
-        clearInterval(intervalID);
+        clearInterval(counterIntervalID);
         
         container.style.display = "none";
         $('#countdown-btn').removeClass('btn-success').addClass('btn-primary');
     }
-
 }
-
-
 
 function countdownFun2(m, s)
 {
@@ -687,7 +822,7 @@ function countdownFun2(m, s)
         resetFun();
         flagCountDown = false;
         
-        clearInterval(intervalID);
+        clearInterval(counterIntervalID);
 
         document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
 
@@ -702,14 +837,16 @@ function countdownFun2(m, s)
 
 function intervalExecutin(m, s)
 {
+    //resetSmall();
     let minutes = m; // starting number of minutes
     let seconds = s; // starting number of seconds
 
+    // if count down is started, user can't manually increment/decrement minutes or 
+    // seconds of count down
     $('#count-minutes-minus').prop('disabled',true);
     $('#count-minutes-plus').prop('disabled',true);
     $('#count-seconds-minus').prop('disabled',true);
     $('#count-seconds-plus').prop('disabled',true);
-    
     
         // converts all to seconds
         let totalSeconds = minutes * 60 + seconds;
@@ -732,28 +869,59 @@ function intervalExecutin(m, s)
         };
     
         //sets seconds
-        const setSeconds = (s) => {
-            globalS = s
+        const setSeconds = (s) => { 
+            globalCoundownSec = s
+            if(s<10)
+            {
+                s='0'+s;
+            }
             document.querySelector("#seconds").textContent = s;
             $("#seconds-dynamic").val(s);
         };
     
         //sets minutes
         const setMinutes = (m) => {
-            globalM = m;
+            globalCoundownMin = m
+            if(m<10)
+            {
+                m='0'+m;
+            }
             document.querySelector("#minutes").textContent = m;
             $("#minutes-dynamic").val(m);
         };
     
         // Update the count down every 1 second
-        intervalID = setInterval(() => {
+        counterIntervalID = setInterval(() => {
             //clears countdown when all seconds are counted
             if (totalSeconds <= 0) {
-                clearInterval(intervalID);
+                clearInterval(counterIntervalID);
             }
             setMinutes(convert(tempSeconds, 60));
             setSeconds(tempSeconds == 60 ? 59 : tempSeconds);
             totalSeconds--;
             tempSeconds = totalSeconds;
         }, 1000);
+}
+
+// advertisement
+function advertisementFun()
+{    
+    var pic = document.getElementById('screen-img');
+    if (flagAdvertisement)
+    {
+        resetFun();
+        
+        pic.src="../images/run-game-info/advertisement.PNG";
+        pic.style.display="block";
+        
+        $('#advertisement').removeClass('btn-primary').addClass('btn-success');
+        flagAdvertisement = false;
+    } 
+    else if (!flagAdvertisement)
+    {
+        resetFun();
+        pic.src="../images/run-game-info/run-game-info-board.PNG";
+        pic.style.display = "block";
+        $('#advertisement').removeClass('btn-success').addClass('btn-primary');
+    }
 }

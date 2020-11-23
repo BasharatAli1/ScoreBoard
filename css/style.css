@@ -704,12 +704,12 @@
     color: white;
   }
 
+   /* for small btn on screen board  */
   .small-container {
     position: absolute;
     top: 5%;
     left: 5%;
   }
-
   .small-bar-pic
   {
     height: 22px;
@@ -718,7 +718,7 @@
 
   #small-left-color-bar, #small-right-color-bar
   {
-    height: 20px;
+    height: 22px;
     width: 15px;
   }
 
@@ -749,7 +749,6 @@
     top: 0%;
     left: 11%;
     border-left: 5px solid white;
-    margin-top: 3px;
     padding-left: 2px;
     width: 100px;
   }
@@ -760,7 +759,29 @@
     top: 0%;
     right: 24%;
     border-right: 5px solid white;
-    margin-top: 3px;
+    padding-right: 2px;
+    width: 100px;
+  }
+
+  #score-on-board-small {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    color: black;
+    background-color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: -3px;
+    font-weight: bold;
+  }
+
+  .clock-small
+  {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    /* border: 5px solid white; */
+    margin-top: -2px;
     padding-right: 2px;
     width: 100px;
   }
@@ -770,12 +791,6 @@
     height: 20px;
     width: 15px;
   }
-
-.run-game-info-pics
-{
-  width: 100%;
-  height: 100%;
-}
   
 .run-game-info-bars
 {
@@ -789,16 +804,36 @@
   height: 40px;
 }
 
-.position-1st2nd3rd {
+/* for periods on screen board */
+
+.periods-div {
   position: absolute;
   top: 8%;
   left: 15%;
 }
 
+.run-game-info-pics
+{
+  width: 100%;
+  height: 100%;
+}
+
+ /* For full screen on screen board  */
 .left-color-bar {
   position: absolute;
   top: 20%;
   left: 25%;
+}
+
+.fullscreen-clock
+{
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  /* border: 5px solid white; */
+  margin-top: -2px;
+  padding-right: 2px;
+  width: 100px;
 }
 
 
@@ -832,22 +867,6 @@
   top: 40%;
   left: 42%;
   font-size: x-large;
-}
-
-.score-on-board-small
-{
-  font-weight: bold;
-}
-
-#score-on-board-small {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-  color: black;
-  background-color: white;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-top: 1px;
 }
 
 #countdown-container
