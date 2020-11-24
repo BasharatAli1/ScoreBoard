@@ -704,6 +704,61 @@
     color: white;
   }
 
+  .goal-home, .goal-guest, .goal-player
+  {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .goal-home-logo, .goal-guest-logo, .goal-player-logo
+  {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-110%, -50%);
+  }
+
+  .goal-home-player, .goal-guest-player, .goal-player-player
+  {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(75%, -50%);
+  }
+
+  .goal-minutes
+  {
+    position: absolute;
+    top: 70%;
+    left: 55%;
+    transform: translate(-140%, -50%);
+  }
+
+  .goal-home-name, .goal-guest-name, .goal-player-name
+  {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-220%, -50%);
+  }
+
+  #goal-home-name, #goal-guest-name, #goal-player-name
+  {
+    font-size: xx-large;
+  }
+
+  #goal-home-logo, #goal-guest-logo, #goal-player-logo
+  {
+    width: 30%;
+  }
+
+  #goal-home-player, #goal-guest-player, #goal-player-player
+  {
+    width: 35%;
+  }
+
   .black-bar
   {
     position: absolute;
@@ -754,13 +809,13 @@
 
   .small-bar-pic
   {
-    height: 22px;
-    width: 340px;
+    height: 25px;
+    width: 260px;
   }
 
   #small-left-color-bar, #small-right-color-bar
   {
-    height: 22px;
+    height: 25px;
     width: 15px;
   }
 
@@ -770,22 +825,35 @@
     top: 0%;
     left: 0%;
   }
+  .teams-names-goals
+  {
+    position: absolute;
+    top: 0%;
+    left: 13%;
+    padding-left: 2px;
+    width: 95px;
+  }
+
+  #teams-names-goals
+  {
+    width: 140px;
+  }
 
   .small-right-color-bar
   {
     position: absolute;
     top: 0%;
-    right: 0%;
+    right: 26%;
   }
 
   .small-bar-logo
   {
     position: absolute;
     top: 0%;
-    left: 5%;
+    left: 6%;
   }
 
-  .small-bar-team-name-1
+  /* .small-bar-team-name-1
   {
     position: absolute;
     top: 0%;
@@ -803,18 +871,32 @@
     border-right: 5px solid white;
     padding-right: 2px;
     width: 100px;
+  } */
+
+  .score-on-board-small {
+    position: absolute;
+    top: -15%;
+    left: 33%;
   }
 
   #score-on-board-small {
-    position: absolute;
-    top: 10%;
-    left: 40%;
-    color: black;
-    background-color: white;
+    color: #000000;
     padding-left: 2px;
     padding-right: 2px;
-    margin-top: -3px;
+    font-size: x-large;
     font-weight: bold;
+  }
+
+  .clock-small
+  {
+    position: absolute;
+    top: -2%;
+    right: -6%;
+    /* border: 5px solid white; */
+    margin-top: -4px;
+    padding-right: 2px;
+    width: 100px;
+    font-size: x-large;
   }
 
   /* for guest team, for home team, player (info group) */
@@ -935,21 +1017,11 @@
 
 
   /* For small btn */
-  .clock-small
-  {
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    /* border: 5px solid white; */
-    margin-top: -2px;
-    padding-right: 2px;
-    width: 100px;
-  }
 
   #small-bar-logo
   {
-    height: 20px;
-    width: 15px;
+    height: 25px;
+    width: 18px;
   }
   
 .run-game-info-bars
@@ -1276,28 +1348,34 @@
 {
   position: absolute;
   top: 40%;
-  right: 25%;
+  right: 30%;
 }
 
 .full-stats-team-text-2
 {
   position: absolute;
   top: 40%;
-  left: 25%;
+  left: 30%;
 }
 
-/* .full-stats-small-logo-bw-card
+.full-stats-team-text-3
 {
   position: absolute;
-  top: 90%;
-  right: 37%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  right: 5%;
 }
 
-#full-stats-small-logo-bw-card
+.full-stats-team-text-4
 {
-  width: 70%;
-} */
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+#full-stats-team-text-1, #full-stats-team-text-2, #full-stats-team-text-3, #full-stats-team-text-4
+{
+  font-size: x-small;
+}
 
 /* for periods on screen board */
 .periods-div {
@@ -1394,6 +1472,63 @@
   padding-top: 2px;
   font-size: x-large;
 }
+
+  /* yellow */  
+  .yellow-card, .red-card, .second-yellow-card
+  {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #yellow-card, #red-card, #second-yellow-card
+  {
+    width: 90%;
+  }
+  
+  .yellow-card-name, .red-card-name, .second-yellow-card-name
+  {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .yellow-card-text-1, .red-card-text-1, .second-yellow-card-text-1
+  {
+    position: absolute;
+    top: 71%;
+    right: 37%;
+  }
+  
+  .yellow-card-text-2, .red-card-text-2, .second-yellow-card-text-2
+  {
+    position: absolute;
+    top: 78%;
+    right: 37%;
+    color: #000000;
+  }
+
+
+  /* crawl */
+  
+  .crawl
+  {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* freetext */
+  .freetext
+  {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 /* /////////////////// */
 
@@ -1583,3 +1718,29 @@
       width:35px;
       height:35px;
     }
+
+    /* crawl */
+    
+.crawl {
+  line-height: 15px;
+  opacity: 70%;
+  width: 100%;
+  color: white;
+  background-color: silver;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.crawl p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: crawl 10s linear infinite;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+@keyframes crawl {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
