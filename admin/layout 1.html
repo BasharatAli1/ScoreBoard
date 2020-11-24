@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../fontawesome/font-awesome.min.css">
     <script src='../fontawesome/fontawesome.js'></script>
 
-    <title>Game Info</title>
+    <title>Layout</title>
 
     <style>  
       .btn{
@@ -67,6 +67,10 @@
         font-family: 'Alfa Slab One', cursive;
         font-size: 30px;
       }
+      .nav-link
+      {
+          font-size: medium;
+      }
     </style>
 
 </head>
@@ -84,24 +88,40 @@
             </a>
           
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="collapsibleNavbar">
+
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item mx-auto" class="topnav-right">
-                    <a style="font-size:18px;" class="nav-link" href="dashboard.html">  Home </a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                      <a style="font-size:18px;" class="nav-link" href="run game 1.html"> Run Games </a>
+                    <a href="users.html" class="nav-link">Users</a>
                   </li>
                   <li class="nav-item">
-                      <a style="font-size:18px;" class="nav-link" href="upcoming games.html"> Games </a>
+                    <a href="billing.html" class="nav-link">Billing</a>
                   </li>
                   <li class="nav-item">
-                      <a style="font-size:18px;" class="nav-link" href="add edit teams 1.html"> Teams </a>
+                    <a href="layout.html" class="nav-link active">Layout</a>
                   </li>
                   <li class="nav-item">
-                      <a style="font-size:18px;" class="nav-link" href="my account.html"> My Account </a>
+                    <a href="clubs.html" class="nav-link">Clubs</a>
                   </li>
                   <li class="nav-item">
-                      <a style="font-size:18px;" class="nav-link" href=""> logout </a>
+                    <a href="all games.html" class="nav-link">All games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="teams.html" class="nav-link">Teams</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="referees.html" class="nav-link">Referees</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="media.html" class="nav-link">Media</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="run games.html" class="nav-link">Run Games</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href=""> logout </a>
                   </li>
                 </ul>
             </div>
@@ -121,8 +141,45 @@
             </div>
             <form action="" method="post">
                 <div class="row">   <!-- main row -->
-                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 1-->
-                            <div class="row">   <!-- Main Row, Col 1, Row 1 -->
+
+                    <div class="col-lg-4 col-sm-6 mt-2 mb-5">  <!-- Main Row, Col 1 -->
+                        
+                        <div class="mr-2 mt-3 mb-3 mx-auto">
+                            <div class="mine-border rounded">
+                                <div class="row d-flex justify-content-center pt-2 pb-2">
+                                    <h5>CURRENT PICTURE</h5>
+                                </div>
+                                <div class="row d-flex justify-content-center pb-2">
+                                    <img id="uploaded-img" src="../images/run-game-info/current-pic.PNG" alt="current img"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-img-referee mr-2 mt-3 mb-3 mx-auto">
+                            <div class="mine-border rounded">
+                                <div class="row d-flex justify-content-center pt-2 pb-2">
+                                    <h5>NEW PICTURE</h5>
+                                </div>
+                                <div class="row d-flex justify-content-center pb-2">
+                                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                                    <div class="col-lg-12 d-flex justify-content-center pb-2">
+                                        <img id="uploaded-img" src="../images/run-game-info/image.png" alt="new img"/>
+                                    </div>
+                                    <label for="file" class="mine-border rounded upload-img-btn mt-2" >Upload</label>
+                                </div>
+                            </div>
+                        </div>
+                                <div class="column12 btn-group mt-2 px-0 btn-run-game-end-start">
+                                        <div class="float-right">
+                                            <button type="button" class="btn btn-success disabled rounded mr-3"><span class="run-game-start">START</span></button>
+                                            <button type="button" class="btn btn-danger disabled rounded"><span class="run-game-end">END</span></button>
+                                        </div>
+                                </div>
+                                
+                </div> <!-- END OF Main Row, Col 1 -->
+                    
+                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 2-->
+                            <div class="row">   <!-- Main Row, Col 2, Row 1 -->
                                 <div class="col-8 px-1">
                                     <select class="form-control form-control-sm">
                                         <option value="">Default</option>
@@ -132,7 +189,7 @@
                                     <button type="reset" class="btn btn-sm btn-link btn-block btn-sm border border-dark rounded btn-reset" id="btn-reset">Reset</button>
                                 </div>
                             </div>
-                            <div class="row">   <!-- Main Row, Col 1, Row 2 -->
+                            <div class="row">   <!-- Main Row, Col 2, Row 2 -->
                                 <div class="column12 px-1">
 
                                     <div class="screen-container">
@@ -200,7 +257,7 @@
                                         <!-- for small btn on screen board -->
                                         <div class="small-container"> 
                                             <img src="../images/run-game-info/small-bar.jpg" class="small-bar-pic" id="small-bar-pic" alt="">
-                                            <img src="../images/run-game-info/teams-names-goals.png" id="teams-names-goals" class="teams-names-goals" alt="">   <!-- This picture will be uploaded by admin from admin/layout 1.html file-->
+                                            <img src="../images/run-game-info/teams-names-goals.png" id="teams-names-goals" class="teams-names-goals" alt="">
                                             <div class="small-left-color-bar"> <img src="../images/run-game-info/green.PNG" class="" id="small-left-color-bar" alt="left-bar"> </div>
                                             <div class="small-right-color-bar"> <img src="../images/run-game-info/yellow.PNG" class="" id="small-right-color-bar" alt="right-bar"> </div> 
                                             <div class="small-bar-logo"><img src="../images/logo/team-logo.PNG" id="small-bar-logo" alt="logo"></div>
@@ -344,7 +401,7 @@
                                 </div>
                             </div>
 
-                            <div class="row border mt-2 pb-2">     <!-- Main Row, Col 1, Row 3 -->
+                            <div class="row border mt-2 pb-2">     <!-- Main Row, Col 2, Row 3 -->
                                 <div class="col-12">
                                     <h5>Score</h5>    <!-- Score -->
                                     <div class="row">
@@ -395,7 +452,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>     <!-- End of Main Row, Col 1, Row 3 -->
+                            </div>     <!-- End of Main Row, Col 2, Row 3 -->
 
                             <div class="row mt-2">     <!-- Main Row, Col 1, Row 4 -->
 
@@ -419,7 +476,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>     <!-- End of Main Row, Col 1, Row 4 -->
+                            </div>     <!-- End of Main Row, Col 2, Row 4 -->
                             <div class="row mt-2">     <!-- Main Row, Col 1, Row 5 -->
                                 <div class="col-12">
                                     <h5>Highlights (Guest)</h5>
@@ -441,11 +498,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>     <!-- End of Main Row, Col 1, Row 5 -->
+                            </div>     <!-- End of Main Row, Col 2, Row 5 -->
 
                             <div class="border border-secondary mt-3"></div>
 
-                            <div class="row mt-4">     <!-- Main Row, Col 1, Row 6 -->
+                            <div class="row mt-4">     <!-- Main Row, Col 2, Row 6 -->
                                 <div class="col-12">
                                     <h5>Freetext</h5>    <!-- Score -->
                                     <div class="row mt-2">
@@ -454,7 +511,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>     <!-- End of Main Row, Col 1, Row 6 -->
+                            </div>     <!-- End of Main Row, Col 2, Row 6 -->
                             <div class="row mt-2">     <!-- Main Row, Col 1, Row 7 -->
                                 <div class="col-12">
                                     <div class="row mt-2">
@@ -473,7 +530,7 @@
                                     </div>
                                 </div>
                             </div>     <!-- End of Main Row, Col 1, Row 7 -->
-                            <div class="row mt-2">     <!-- Main Row, Col 1, Row 8 -->
+                            <div class="row mt-2">     <!-- Main Row, Col 2, Row 8 -->
                                 <div class="col-12">
                                     <div class="row mt-2">
                                         <div class="col-4 px-1">
@@ -487,11 +544,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>     <!-- End of Main Row, Col 1, Row 8 -->
+                            </div>     <!-- End of Main Row, Col 2, Row 8 -->
                             
                             <div class="border border-secondary mt-3"></div>
                             
-                            <div class="row mt-4">     <!-- Main Row, Col 1, Row 9 -->
+                            <div class="row mt-4">     <!-- Main Row, Col 2, Row 9 -->
                                 <div class="col-12">
                                     <h5>Log <button type="button" class="btn btn-light border rounded refresh"><i class="fa fa-refresh" aria-hidden="true" style='font-size:20px'></i></button></h5>    <!-- Score -->
                                     <div class="row mt-2">
@@ -502,10 +559,10 @@
                                 </div>
                             </div>     <!-- End of Main Row, Col 1, Row 9 -->
 
-                    </div>  <!-- Main Row, Col 1-->
-                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 2 -->
+                    </div>  <!-- Main Row, Col 2-->
+                    <div class="col-lg-4 mt-2"> <!-- Main Row, Col 3 -->
                         
-                            <h5>Info</h5>    <!-- Main Row, Col 2, 1st block -->
+                            <h5>Info</h5>    <!-- Main Row, Col 3, 1st block -->
                             <div class="row">
                                 <div class="col-3 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="small-btn" onclick="smallFun();">Small</button>
@@ -540,7 +597,7 @@
                                 </div>
                             </div>
 
-                            <h5 class="mt-3">Periods</h5>    <!-- Main Row, Col 2, 2nd block -->
+                            <h5 class="mt-3">Periods</h5>    <!-- Main Row, Col 3, 2nd block -->
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" onclick="changeImg1st();" id="1st-btn">1st</button>
@@ -561,7 +618,7 @@
                                 </div>
                             </div>
                             
-                            <h5 class="mt-3">Stats</h5>    <!-- Main Row, Col 2, 3rd block -->
+                            <h5 class="mt-3">Stats</h5>    <!-- Main Row, Col 3, 3rd block -->
                             <div class="row mt-2">
                                 <div class="col-6 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="stats-btn" onclick="statsFun()">Stats</button>
@@ -743,136 +800,8 @@
                                 </div>    
                             </div>
 
-                    </div>   <!-- End of Main Row, Col 2 -->
+                    </div>   <!-- End of Main Row, Col 3 -->
 
-                    <div class="col-lg-2 col-sm-6 mt-2"> <!-- Main Row, Col 3 -->
-                        <h5>Home</h5>
-                        <div class="row px-1">
-                            <div class="col-12 home">
-                                <span>DAVYDAS ARLAUSKIS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>YUDAI KOIKE</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>DEIMANTAS KONTENIS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>ANDRIUS LIPSKIS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>ADOMAS MIKA</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>RONALDAS MISIUNAS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>MARIUS PAUKSTE</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>TOMAS RAPALAVICIUS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>KOSTIANTYN SHULTS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>ROKAS STANULEVIVIUS</span>
-                            </div>
-                            <div class="col-12 home">
-                                <span>MARTYNAS VASILIAUSKAS</span>
-                            </div>
-                        </div>
-                        <h5>Substitute</h5>
-                            <div class="row px-1">
-                                <div class="col-12 home">
-                                    <span>KIPRAS KELIAUSKAS</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>ROKAS LAZDINAUSKAS</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>RYU SAKURAI</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>DOMANTAS SLUTA</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>POVILAS SURVILA</span>
-                                </div>
-                                <div class="col-12 home">
-                                    <span>DZIUGAS TRYBE</span>
-                                </div>
-                            </div>
-                            <h5>Coach</h5>
-                    </div> <!-- END OF Main Row, Col 3 -->
-
-                    <div class="col-lg-2 col-sm-6 mt-2">  <!-- Main Row, Col 4 -->
-                            <h5>Guest</h5>
-                            <div class="row px-1">
-                                <div class="col-12 guest">
-                                    <span>DAVYDAS ARLAUSKIS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>YUDAI KOIKE</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>DEIMANTAS KONTENIS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>ANDRIUS LIPSKIS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>ADOMAS MIKA</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>RONALDAS MISIUNAS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>MARIUS PAUKSTE</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>TOMAS RAPALAVICIUS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>KOSTIANTYN SHULTS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>ROKAS STANULEVIVIUS</span>
-                                </div>
-                                <div class="col-12 guest">
-                                    <span>MARTYNAS VASILIAUSKAS</span>
-                                </div>
-                            </div>
-                            <h5>Substitute</h5>
-                                <div class="row px-1">
-                                    <div class="col-12 guest">
-                                        <span>KIPRAS KELIAUSKAS</span>
-                                    </div>
-                                    <div class="col-12 guest">
-                                        <span>ROKAS LAZDINAUSKAS</span>
-                                    </div>
-                                    <div class="col-12 guest">
-                                        <span>RYU SAKURAI</span>
-                                    </div>
-                                    <div class="col-12 guest">
-                                        <span>DOMANTAS SLUTA</span>
-                                    </div>
-                                    <div class="col-12 guest">
-                                        <span>POVILAS SURVILA</span>
-                                    </div>
-                                    <div class="col-12 guest">
-                                        <span>DZIUGAS TRYBE</span>
-                                    </div>
-                                </div>
-
-                                    <div class="column12 btn-group mt-2 px-0 btn-run-game-end-start">
-                                            <div class="float-right">
-                                                <button type="button" class="btn btn-success disabled rounded mr-3"><span class="run-game-start">START</span></button>
-                                                <button type="button" class="btn btn-danger disabled rounded"><span class="run-game-end">END</span></button>
-                                            </div>
-                                    </div>
-                                    
-                    </div> <!-- END OF Main Row, Col 4 -->
                 </div>   <!-- End of main row -->
             </form>
        </div>  <!-- End of container -->

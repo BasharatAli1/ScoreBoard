@@ -19,6 +19,7 @@ var disappearIntervalID; // setInterval() ID for dissappear pics
 document.getElementById("score-on-board-small").innerHTML='0:0';
 document.getElementById("stats-goal").innerHTML='0:0';
 document.getElementById("full-stats-goal").innerHTML='0:0';
+document.getElementById("goal-clock-minutes").innerHTML='00 Minutes'; 
 document.getElementById("clock-minutes").innerHTML='00';        // for small btn
 document.getElementById("clock-seconds").innerHTML='00';
 document.getElementById("clock-minutes2").innerHTML='00';       // for full screen
@@ -102,13 +103,30 @@ function resetFun()
     resetCountdown();
     resetClock();
     resetStats();
-    resetFullStatsFun();
+    resetFullStatsFun(); 
+    resetHighlightsHome();            
+    resetHighlightsGuest();
+    resetCards();
+    resetScoreGroup();
     
     globalCoundownMin = 0;
     globalCoundownSec = 0;
     globalClockSec = 0;
     globalClockMin = 0;
     globalTotalSeconds = 0;
+    
+    document.getElementById("score-on-board-small").innerHTML='0:0';
+    //document.getElementById("stats-goal").innerHTML='0:0';
+    document.getElementById("goal-clock-minutes").innerHTML='00 Minutes';
+    document.getElementById("clock-minutes").innerHTML='00';        // for small btn
+    document.getElementById("clock-seconds").innerHTML='00';
+    document.getElementById("clock-minutes2").innerHTML='00';       // for full screen
+    document.getElementById("clock-seconds2").innerHTML='00';
+    
+    $('#freetext-btn').removeClass('btn-success').addClass('btn-primary');
+    $('#crawl-btn').removeClass('btn-success').addClass('btn-primary');
+    document.getElementById('crawl').style.display = 'none';
+    document.getElementById('freetext').style.display = 'none';
 }
 
 // reset info group
@@ -117,26 +135,29 @@ function resetInfo()
     // reser Small
     var pic = document.getElementById('small-bar-pic');
     pic.style.display = "none";
+    pic = document.getElementById('teams-names-goals');
+    pic.style.display = "none";
     pic = document.getElementById('small-left-color-bar');
     pic.style.display = "none";
     pic = document.getElementById('small-right-color-bar');
     pic.style.display = "none";
     pic = document.getElementById('small-bar-logo');
     pic.style.display = "none";
-    var text = document.getElementById('small-bar-team-name-1');
-    text.style.display = "none";
-    text = document.getElementById('small-bar-team-name-2');
-    text.style.display = "none";
+    // var text = document.getElementById('small-bar-team-name-1');
+    // text.style.display = "none";
+    // text = document.getElementById('small-bar-team-name-2');
+    // text.style.display = "none";
     text = document.getElementById('score-on-board-small');
     text.style.display = "none";
     text = document.getElementById('clock-container');
     text.style.display = "none";
-    document.getElementById("score-on-board-small").innerHTML='0:0';
-    //document.getElementById("stats-goal").innerHTML='0:0';
-    document.getElementById("clock-minutes").innerHTML='00';        // for small btn
-    document.getElementById("clock-seconds").innerHTML='00';
-    document.getElementById("clock-minutes2").innerHTML='00';       // for full screen
-    document.getElementById("clock-seconds2").innerHTML='00';
+    // document.getElementById("score-on-board-small").innerHTML='0:0';
+    // //document.getElementById("stats-goal").innerHTML='0:0';
+    // document.getElementById("goal-clock-minutes").innerHTML='00 Minutes';
+    // document.getElementById("clock-minutes").innerHTML='00';        // for small btn
+    // document.getElementById("clock-seconds").innerHTML='00';
+    // document.getElementById("clock-minutes2").innerHTML='00';       // for full screen
+    // document.getElementById("clock-seconds2").innerHTML='00';
     
     /* reset lineup */
     setScreen();
@@ -289,16 +310,18 @@ function smallFun()
         resetInfo();
        var pic = document.getElementById('small-bar-pic');
        pic.style.display = "block";
+       pic = document.getElementById('teams-names-goals');
+       pic.style.display = "block";
        pic = document.getElementById('small-left-color-bar');
        pic.style.display = "block";
        pic = document.getElementById('small-right-color-bar');
        pic.style.display = "block";
        pic = document.getElementById('small-bar-logo');
        pic.style.display = "block";
-       var text = document.getElementById('small-bar-team-name-1');
-       text.style.display = "block";
-       text = document.getElementById('small-bar-team-name-2');
-       text.style.display = "block";
+    //    var text = document.getElementById('small-bar-team-name-1');
+    //    text.style.display = "block";
+    //    text = document.getElementById('small-bar-team-name-2');
+    //    text.style.display = "block";
        text = document.getElementById('score-on-board-small');
        text.style.display = "block";
        text = document.getElementById('clock-container');
@@ -344,7 +367,6 @@ function lineUp()
 // home team
 function homeTeamFun()
 {
-    
     var pic = document.getElementById('screen-img');
     if (flagHomeTeam)
     {
@@ -593,6 +615,108 @@ function resetHighlightsHome()
         clearInterval(disappearIntervalID);
 }
 
+// Score
+
+
+function goalHomeFun()
+{
+    resetScoreGroup();
+    var pic = document.getElementById('goal-home');
+    pic.style.display="block";
+    pic = document.getElementById('goal-home-logo');
+    pic.style.display="block";
+    pic = document.getElementById('goal-home-player');
+    pic.style.display="block";
+    
+    var text = document.getElementById('goal-home-name');
+    text.style.display = "block"
+    text = document.getElementById('goal-clock-minutes');
+    text.style.display = "block";
+    $('#goal-home-btn').removeClass('btn-primary').addClass('btn-success');
+    disappearTime(5);
+}
+
+function goalGuestFun()
+{
+    resetScoreGroup();
+    var pic = document.getElementById('goal-guest');
+    pic.style.display="block";
+    pic = document.getElementById('goal-guest-logo');
+    pic.style.display="block";
+    pic = document.getElementById('goal-guest-player');
+    pic.style.display="block";
+    
+    var text = document.getElementById('goal-guest-name');
+    text.style.display = "block"
+    text = document.getElementById('goal-clock-minutes');
+    text.style.display = "block";
+    $('#goal-guest-btn').removeClass('btn-primary').addClass('btn-success');
+    disappearTime(5);
+}
+
+function goalPlayerFun()
+{
+    resetScoreGroup();
+    var pic = document.getElementById('goal-player');
+    pic.style.display="block";
+    pic = document.getElementById('goal-player-logo');
+    pic.style.display="block";
+    pic = document.getElementById('goal-player-player');
+    pic.style.display="block";
+    
+    var text = document.getElementById('goal-player-name');
+    text.style.display = "block"
+    text = document.getElementById('goal-clock-minutes');
+    text.style.display = "block";
+    $('#goal-player-btn').removeClass('btn-primary').addClass('btn-success');
+    disappearTime(5);
+}
+
+function resetScoreGroup()
+{
+    var pic = document.getElementById('goal-home');
+    pic.style.display="none";
+    pic = document.getElementById('goal-home-logo');
+    pic.style.display="none";
+    pic = document.getElementById('goal-home-player');
+    pic.style.display="none";
+    
+    var text = document.getElementById('goal-home-name');
+    text.style.display = "none"
+    text = document.getElementById('goal-clock-minutes');
+    text.style.display = "none"
+    
+    $('#goal-home-btn').removeClass('btn-success').addClass('btn-primary');
+    
+    pic = document.getElementById('goal-player');
+    pic.style.display="none";
+    pic = document.getElementById('goal-player-logo');
+    pic.style.display="none";
+    pic = document.getElementById('goal-player-player');
+    pic.style.display="none";
+    
+     text = document.getElementById('goal-player-name');
+    text.style.display = "none"
+    text = document.getElementById('goal-clock-minutes');
+    text.style.display = "none"
+    $('#goal-player-btn').removeClass('btn-success').addClass('btn-primary');
+    
+    pic = document.getElementById('goal-guest');
+    pic.style.display="none";
+    pic = document.getElementById('goal-guest-logo');
+    pic.style.display="none";
+    pic = document.getElementById('goal-guest-player');
+    pic.style.display="none";
+    
+     text = document.getElementById('goal-guest-name');
+    text.style.display = "none"
+    text = document.getElementById('goal-clock-minutes');
+    text.style.display = "none"
+    $('#goal-guest-btn').removeClass('btn-success').addClass('btn-primary');
+
+        clearInterval(disappearIntervalID);
+}
+
 // Highlights (Guest) 
 function highlightGuestFun()
 {
@@ -703,6 +827,20 @@ function resetHighlightsGuest()
         clearInterval(disappearIntervalID);
 }
 
+//// freetext
+function freetextFun()
+{
+    document.getElementById('freetext').innerHTML = document.getElementById('freetext-textarea').value;
+    document.getElementById('freetext').style.display = 'block';
+    $('#freetext-btn').removeClass('btn-primary').addClass('btn-success');
+}
+
+function crawlFun()
+{
+    document.getElementById('crawl').innerHTML = document.getElementById('freetext-textarea').value;
+    document.getElementById('crawl').style.display = 'block';
+    $('#crawl-btn').removeClass('btn-primary').addClass('btn-success');
+}
 
 ///
 function updateScoreOnScreen()
@@ -1010,6 +1148,10 @@ function fullStatsFun()
          text.style.display = "block";
          text = document.getElementById('full-stats-team-text-2');
          text.style.display = "block";
+         text = document.getElementById('full-stats-team-text-3');
+         text.style.display = "block";
+         text = document.getElementById('full-stats-team-text-4');
+         text.style.display = "block";
          
          $('#full-stats-btn').removeClass('btn-primary').addClass('btn-success');
          flagFullStats = false;
@@ -1046,7 +1188,97 @@ function resetFullStatsFun()
     text.style.display = "none";
     text = document.getElementById('full-stats-team-text-2');
     text.style.display = "none";
+    text = document.getElementById('full-stats-team-text-3');
+    text.style.display = "none";
+    text = document.getElementById('full-stats-team-text-4');
+    text.style.display = "none";
     flagFullStats = true;
+}
+
+function yellowFun()
+{
+    resetCards();
+    var pic = document.getElementById('yellow-card');
+    pic.style.display="block";
+    
+    var text = document.getElementById('yellow-card-name');
+    text.style.display = "block"
+    text = document.getElementById('yellow-card-text-1');
+    text.style.display = "block"
+    text = document.getElementById('yellow-card-text-2');
+    text.style.display = "block"
+    $('#yellow-btn').removeClass('btn-primary').addClass('btn-success');
+    disappearTime(5);
+}
+
+function redFun()
+{
+    resetCards();
+    var pic = document.getElementById('red-card');
+    pic.style.display="block";
+    
+    var text = document.getElementById('red-card-name');
+    text.style.display = "block"
+    text = document.getElementById('red-card-text-1');
+    text.style.display = "block"
+    text = document.getElementById('red-card-text-2');
+    text.style.display = "block"
+    $('#red-btn').removeClass('btn-primary').addClass('btn-success');
+    disappearTime(5);
+}
+
+function secondYellowFun()
+{
+    resetCards();
+    var pic = document.getElementById('second-yellow-card');
+    pic.style.display="block";
+    
+    var text = document.getElementById('second-yellow-card-name');
+    text.style.display = "block"
+    text = document.getElementById('second-yellow-card-text-1');
+    text.style.display = "block"
+    text = document.getElementById('second-yellow-card-text-2');
+    text.style.display = "block"
+    $('#second-yellow-btn').removeClass('btn-primary').addClass('btn-success');
+    disappearTime(5);
+}
+
+function resetCards()
+{
+    var pic = document.getElementById('yellow-card');
+    pic.style.display="none";
+    var text = document.getElementById('yellow-card-name');
+    text.style.display = "none";
+    text = document.getElementById('yellow-card-text-1');
+    text.style.display = "none";
+    text = document.getElementById('yellow-card-text-2');
+    text.style.display = "none";
+    
+    $('#yellow-btn').removeClass('btn-success').addClass('btn-primary');
+    
+    pic = document.getElementById('red-card');
+    pic.style.display="none";
+    text = document.getElementById('red-card-name');
+    text.style.display = "none";
+    text = document.getElementById('red-card-text-1');
+    text.style.display = "none";
+    text = document.getElementById('red-card-text-2');
+    text.style.display = "none";
+    
+    $('#red-btn').removeClass('btn-success').addClass('btn-primary');
+    
+    pic = document.getElementById('second-yellow-card');
+    pic.style.display="none";
+    text = document.getElementById('second-yellow-card-name');
+    text.style.display = "none";
+    text = document.getElementById('second-yellow-card-text-1');
+    text.style.display = "none";
+    text = document.getElementById('second-yellow-card-text-2');
+    text.style.display = "none";
+    
+    $('#second-yellow-btn').removeClass('btn-success').addClass('btn-primary');
+
+        clearInterval(disappearIntervalID);
 }
 
 //  refresh button
@@ -1139,8 +1371,6 @@ $('.refresh').click(function(){
                         e.preventDefault();
                     }
             });
-
-               
 
            // Minus and plus for team B Score and Clock + Countdown Minutes
            $('.btn-second-count-value').click(function(e)
@@ -1340,6 +1570,7 @@ function clock(m, s)
             }
             document.querySelector("#clock-minutes").textContent = m;
             document.querySelector("#clock-minutes2").textContent = m;
+            document.getElementById("goal-clock-minutes").innerHTML=m+' Minutes';
             $("#clock-minutes-dynamic").val(m);
         };
     
@@ -1469,8 +1700,6 @@ function intervalExecutin(m, s)
     
         // converts all to seconds
         let totalSeconds = minutes * 60 + seconds;
-        alert('s = ' + seconds);
-        alert('T = ' + totalSeconds);
         //temporary seconds holder
         let tempSeconds = totalSeconds;
     
@@ -1564,6 +1793,18 @@ function disappearTime(s)
                 $('#free_kick-guest-btn').removeClass('btn-success').addClass('btn-primary');
                 $('#penalty-guest-btn').removeClass('btn-success').addClass('btn-primary');                
                 resetHighlightsGuest();
+
+                $('#yellow-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#second-yellow-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#red-btn').removeClass('btn-success').addClass('btn-primary'); 
+                resetCards()   
+
+                // Goal Home    
+                $('#goal-home-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#goal-guest-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#goal-player-btn').removeClass('btn-success').addClass('btn-primary');
+
+                resetScoreGroup();
 
                 clearInterval(disappearIntervalID);
             }
