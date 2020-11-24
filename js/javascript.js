@@ -7,14 +7,21 @@ var flagCountDown = true;
 var flagCountDownStart = false;
 var flagClockStart = false; // if user stop clock
 var flagClockStartNew = false; // if Clock value is set manually
+var flagStats = true;
+var flagFullStats = true;
+
+
 var counterIntervalID; // setInterval() ID for countdown
 var clockIntervalID; // setInterval() ID for clock
+var disappearIntervalID; // setInterval() ID for dissappear pics
 
 // values of score and clock initially on board
 document.getElementById("score-on-board-small").innerHTML='0:0';
-document.getElementById("clock-minutes").innerHTML='00';
+document.getElementById("stats-goal").innerHTML='0:0';
+document.getElementById("full-stats-goal").innerHTML='0:0';
+document.getElementById("clock-minutes").innerHTML='00';        // for small btn
 document.getElementById("clock-seconds").innerHTML='00';
-document.getElementById("clock-minutes2").innerHTML='00';
+document.getElementById("clock-minutes2").innerHTML='00';       // for full screen
 document.getElementById("clock-seconds2").innerHTML='00';
 
 // to save value of sec and min to restart countdown
@@ -51,7 +58,7 @@ $('#count-seconds-minus').click(function(){
 
 //  Count down seconds minus clicked
 $('#count-seconds-plus').click(function(){
-    globalClockSec = parseInt(document.getElementById("seconds-dynamic").value) + 1;
+    globalCoundownSec = parseInt(document.getElementById("seconds-dynamic").value) + 1;
     flagCountDownStart = true;
 });
 
@@ -82,128 +89,32 @@ $('#clock-seconds-plus').click(function(){
 });
 
 // for reset button
-document.getElementById("btn-reset").addEventListener("click", reset_btn_function);
-
-function reset_btn_function()
-{
-    resetFun();
-    resetSmall();
-}
+document.getElementById("btn-reset").addEventListener("click", resetFun);
 
 function resetFun()
 {
-    
-    // Button Color green on click
+    // Button Color green to blue on click
     $('.btn-active-green').removeClass('btn-success').addClass('btn-primary');
 
     setScreen();
-//    $("button").removeClass("active");
-
-    var pic = document.getElementById('pic-1st');
-    pic.style.display="none";
-    pic = document.getElementById('pic-2nd');
-    pic.style.display="none";
-    pic = document.getElementById('pic-3rd');
-    pic.style.display="none";
-    pic = document.getElementById('pic-4th');
-    pic.style.display="none";
-    pic = document.getElementById('pic-5th');
-    pic.style.display="none";
-    pic = document.getElementById('right-color-bar');
-    pic.style.display="none";
-    pic = document.getElementById('left-color-bar');
-    pic.style.display="none";
-    var text = document.getElementById('team-name');
-    text.style.display = "none"
-    text = document.getElementById('team-name2');
-    text.style.display = "none"
-    text = document.getElementById('score-on-board-large');
-    text.style.display = "none"
-    text = document.getElementById('fullscreen-clock-container');
-    text.style.display = "none"
-    pic = document.getElementById('team-logo-on-board-centre');
-    pic.style.display="none";
-    pic = document.getElementById('team-logo-on-board-left');
-    pic.style.display="none";
-    pic = document.getElementById('team-logo-on-board-right');
-    pic.style.display="none";
-
-    /* Guest Team */     
-    pic = document.getElementById('guest-card-bg');
-    pic.style.display="none";
-    pic = document.getElementById('guest-team-logo');
-    pic.style.display="none";
-    pic = document.getElementById('guest-small-logo-bw-card');
-    pic.style.display="none";
+    resetInfo();
+    resetPeriods();
+    resetCountdown();
+    resetClock();
+    resetStats();
+    resetFullStatsFun();
     
-    text = document.getElementById('guest-team-header');
-    text.style.display = "none"
-    text = document.getElementById('guest-team-some-text_1');
-    text.style.display = "none"
-    text = document.getElementById('guest-team-some-text_2');
-    text.style.display = "none"
-    text = document.getElementById('guest-team-some-text_3');
-    text.style.display = "none"
-
-    /* Home Team */     
-    pic = document.getElementById('home-card-bg');
-    pic.style.display="none";
-    pic = document.getElementById('home-team-logo');
-    pic.style.display="none";
-    pic = document.getElementById('home-small-logo-bw-card');
-    pic.style.display="none";
-    
-    text = document.getElementById('home-team-header');
-    text.style.display = "none"
-    text = document.getElementById('home-team-some-text_1');
-    text.style.display = "none"
-    text = document.getElementById('home-team-some-text_2');
-    text.style.display = "none"
-    text = document.getElementById('home-team-some-text_3');
-    text.style.display = "none"
-
-    /* for player */
-    var pic = document.getElementById('player-card-bg');
-    pic.style.display="none";
-    pic = document.getElementById('player-pic-info-group');
-    pic.style.display="none";
-    pic = document.getElementById('player-small-logo-bw-card');
-    pic.style.display="none";
-    
-    var text = document.getElementById('player-header');
-    text.style.display = "none"
-    text = document.getElementById('player-some-text_1');
-    text.style.display = "none"
-    
-    /* crew */
-    
-    pic = document.getElementById('crew-card');
-    pic.style.display="none";
-    
-    text = document.getElementById('crew-header');
-    text.style.display = "none"
-    text = document.getElementById('crew-name');
-    text.style.display = "none"
-
-    clearInterval(counterIntervalID);
-    clearInterval(clockIntervalID);
-    var Span = document.getElementById('countdown-container');
-    Span.style.display = "none";
-
-    flagFullScreen = true;
-    flagLineUp = true;
-    flagHomeTeam = true;
-    flagAdvertisement = true;
-    flagCountDown = true;
-    flagCountDownStart = false;
-    flagClockStart = false;
-
-    document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
+    globalCoundownMin = 0;
+    globalCoundownSec = 0;
+    globalClockSec = 0;
+    globalClockMin = 0;
+    globalTotalSeconds = 0;
 }
 
-// reset small
-function resetSmall()
+// reset info group
+function resetInfo()
 {
+    // reser Small
     var pic = document.getElementById('small-bar-pic');
     pic.style.display = "none";
     pic = document.getElementById('small-left-color-bar');
@@ -220,17 +131,162 @@ function resetSmall()
     text.style.display = "none";
     text = document.getElementById('clock-container');
     text.style.display = "none";
+    document.getElementById("score-on-board-small").innerHTML='0:0';
+    //document.getElementById("stats-goal").innerHTML='0:0';
+    document.getElementById("clock-minutes").innerHTML='00';        // for small btn
+    document.getElementById("clock-seconds").innerHTML='00';
+    document.getElementById("clock-minutes2").innerHTML='00';       // for full screen
+    document.getElementById("clock-seconds2").innerHTML='00';
     
-    $('#small-btn').removeClass('btn-success').addClass('btn-primary');
-    flagSmall = true;
+    /* reset lineup */
+    setScreen();
+
+        /* Full Screen */
+        pic = document.getElementById('right-color-bar');
+        pic.style.display="none";
+        pic = document.getElementById('left-color-bar');
+        pic.style.display="none";
+        text = document.getElementById('team-name');
+        text.style.display = "none"
+        text = document.getElementById('team-name2');
+        text.style.display = "none"
+        text = document.getElementById('score-on-board-large');
+        text.style.display = "none"
+        text = document.getElementById('fullscreen-clock-container');
+        text.style.display = "none"
+        pic = document.getElementById('team-logo-on-board-centre');
+        pic.style.display="none";
+        pic = document.getElementById('team-logo-on-board-left');
+        pic.style.display="none";
+        pic = document.getElementById('team-logo-on-board-right');
+        pic.style.display="none";
+    
+        /* Guest Team */     
+        pic = document.getElementById('guest-card-bg');
+        pic.style.display="none";
+        pic = document.getElementById('guest-team-logo');
+        pic.style.display="none";
+        pic = document.getElementById('guest-small-logo-bw-card');
+        pic.style.display="none";
+        
+        text = document.getElementById('guest-team-header');
+        text.style.display = "none"
+        text = document.getElementById('guest-team-some-text_1');
+        text.style.display = "none"
+        text = document.getElementById('guest-team-some-text_2');
+        text.style.display = "none"
+        text = document.getElementById('guest-team-some-text_3');
+        text.style.display = "none"
+    
+        /* Home Team */     
+        pic = document.getElementById('home-card-bg');
+        pic.style.display="none";
+        pic = document.getElementById('home-team-logo');
+        pic.style.display="none";
+        pic = document.getElementById('home-small-logo-bw-card');
+        pic.style.display="none";
+        
+        text = document.getElementById('home-team-header');
+        text.style.display = "none"
+        text = document.getElementById('home-team-some-text_1');
+        text.style.display = "none"
+        text = document.getElementById('home-team-some-text_2');
+        text.style.display = "none"
+        text = document.getElementById('home-team-some-text_3');
+        text.style.display = "none"
+    
+        /* for player */
+        pic = document.getElementById('player-card-bg');
+        pic.style.display="none";
+        pic = document.getElementById('player-pic-info-group');
+        pic.style.display="none";
+        pic = document.getElementById('player-small-logo-bw-card');
+        pic.style.display="none";
+        
+        text = document.getElementById('player-header');
+        text.style.display = "none"
+        text = document.getElementById('player-some-text_1');
+        text.style.display = "none"
+        
+        /* Coach */    
+        pic = document.getElementById('coach-card');
+        pic.style.display="none";
+        pic = document.getElementById('coach-pic-info-group');
+        pic.style.display="none";
+        
+        text = document.getElementById('coach-header');
+        text.style.display = "none"
+        text = document.getElementById('coach-name');
+        text.style.display = "none"
+        text = document.getElementById('coach-small-logo-bw-card');
+        text.style.display = "none"
+        
+        /* crew */
+        pic = document.getElementById('crew-card');
+        pic.style.display="none";
+        
+        text = document.getElementById('crew-header');
+        text.style.display = "none"
+        text = document.getElementById('crew-name');
+        text.style.display = "none"
+    
+        clearInterval(disappearIntervalID);
+    
+        flagSmall = true;
+        flagFullScreen = true;
+        flagLineUp = true;
+        flagHomeTeam = true;
+
+        $('.btn-active-green').removeClass('btn-success').addClass('btn-primary');   
+}
+
+function resetPeriods()
+{
+    // Button Color toggle
+    $('.btn-active-green').removeClass('btn-success').addClass('btn-primary');
+    var pic = document.getElementById('pic-1st');
+    pic.style.display="none";
+    pic = document.getElementById('pic-2nd');
+    pic.style.display="none";
+    pic = document.getElementById('pic-3rd');
+    pic.style.display="none";
+    pic = document.getElementById('pic-4th');
+    pic.style.display="none";
+    pic = document.getElementById('pic-5th');
+    pic.style.display="none";
+}
+
+// rset couny down
+function resetCountdown()
+{
+    var Span = document.getElementById('countdown-container');
+    Span.style.display = "none";
+    clearInterval(counterIntervalID);
+    flagCountDown = true;
+    flagCountDownStart = false;
+    document.getElementById("countdown-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg><span>Start</span>';
+}
+
+// reset clock
+function resetClock()
+{
+    clearInterval(clockIntervalID);
+    flagClockStart = false;
+
+    flagAdvertisement = true;
 }
 
 // Small    
 function smallFun()
 {
-    resetFun();
-    if(flagSmall)
+    
+    if(!flagSmall)
     {
+        resetInfo();
+    }
+    else if(flagSmall)
+    {
+        resetInfo();
        var pic = document.getElementById('small-bar-pic');
        pic.style.display = "block";
        pic = document.getElementById('small-left-color-bar');
@@ -251,10 +307,6 @@ function smallFun()
         $('#small-btn').removeClass('btn-primary').addClass('btn-success');
         flagSmall = false;
     }
-    else if(!flagSmall)
-    {
-        resetSmall();
-    }
 }
 
 // screen
@@ -272,7 +324,7 @@ function lineUp()
     var pic = document.getElementById('screen-img');
     if (flagLineUp)
     {
-        resetFun();
+        resetInfo();
         
         pic.src="../images/run-game-info/field.PNG";
         pic.style.display="block";
@@ -282,7 +334,7 @@ function lineUp()
     } 
     else if (!flagLineUp)
     {
-        resetFun();
+        resetInfo();
         pic.src="../images/run-game-info/run-game-info-board.PNG";
         pic.style.display = "block";
         $('#lineup').removeClass('btn-success').addClass('btn-primary');
@@ -296,7 +348,7 @@ function homeTeamFun()
     var pic = document.getElementById('screen-img');
     if (flagHomeTeam)
     {
-        resetFun();
+        resetInfo();
         
         pic.src="../images/run-game-info/green bg.PNG";
         pic.style.display="block";
@@ -306,7 +358,7 @@ function homeTeamFun()
     } 
     else if (!flagHomeTeam)
     {
-        resetFun();
+        resetInfo();
         pic.src="../images/run-game-info/run-game-info-board.PNG";
         pic.style.display = "block";
         $('#home-team-btn').removeClass('btn-success').addClass('btn-primary');
@@ -316,7 +368,7 @@ function homeTeamFun()
 // guest team
 function guestTeamFun()
 {
-    reset_btn_function();
+    resetInfo();
     var pic = document.getElementById('screen-img');
     
         pic.src="../images/run-game-info/green bg.PNG";
@@ -342,10 +394,30 @@ function guestTeamFun()
         disappearTime(5);
 }
 
+// coach
+function coachFun()
+{
+       resetInfo();
+    var pic = document.getElementById('coach-card');
+    pic.style.display="block";
+    pic = document.getElementById('coach-pic-info-group');
+    pic.style.display="block";
+    
+    var text = document.getElementById('coach-header');
+    text.style.display = "block"
+    text = document.getElementById('coach-name');
+    text.style.display = "block"
+    text = document.getElementById('coach-small-logo-bw-card');
+    text.style.display = "block"
+    $('#coach-btn').removeClass('btn-primary').addClass('btn-success');
+
+    disappearTime(5);
+}
+
 // home team
 function homeTeamFun()
 {
-    reset_btn_function();
+    resetInfo();
     var pic = document.getElementById('screen-img');
     
         pic.src="../images/run-game-info/green bg.PNG";
@@ -374,7 +446,7 @@ function homeTeamFun()
 // player team
 function playerFun()
 {
-       reset_btn_function();
+       resetInfo();
         var pic = document.getElementById('player-card-bg');
         pic.style.display="block";
         pic = document.getElementById('player-pic-info-group');
@@ -396,7 +468,7 @@ function playerFun()
 
 function crewFun()
 {
-       reset_btn_function();
+       resetInfo();
         var pic = document.getElementById('crew-card');
         pic.style.display="block";
         
@@ -411,12 +483,236 @@ function crewFun()
 }
 
 
+// Highlights (Home) 
+function highlightHomeFun()
+{
+        resetHighlightsHome();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('home-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('home-highlight-text');
+        text.style.display = "block"
+        text = document.getElementById('home-team-name');
+        text.style.display = "block"
+        $('#highlight-home-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function cornerHomeFun()
+{
+        resetHighlightsHome();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('home-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('home-corner-text');
+        text.style.display = "block"
+        text = document.getElementById('home-team-name');
+        text.style.display = "block"
+        $('#corner-home-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function cornerOffsideHomeFun()
+{
+        resetHighlightsHome();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('home-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('home-offside-text');
+        text.style.display = "block"
+        text = document.getElementById('home-team-name');
+        text.style.display = "block"
+        $('#offside-home-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function free_kickHomeFun()
+{
+        resetHighlightsHome();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('home-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('home-free_kick-text');
+        text.style.display = "block"
+        text = document.getElementById('home-team-name');
+        text.style.display = "block"
+        $('#free_kick-home-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function penaltyHomeFun()
+{
+        resetHighlightsHome();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('home-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('home-penalty-text');
+        text.style.display = "block"
+        text = document.getElementById('home-team-name');
+        text.style.display = "block"
+        $('#penalty-home-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function resetHighlightsHome()
+{
+        var pic = document.getElementById('black-bar');
+        pic.style.display="none";
+        pic = document.getElementById('home-highlights-logo');
+        pic.style.display="none";
+        
+        var text = document.getElementById('home-highlight-text');
+        text.style.display = "none";
+        text = document.getElementById('home-team-name');
+        text.style.display = "none";
+        text = document.getElementById('home-corner-text');
+        text.style.display = "none";
+        text = document.getElementById('home-offside-text');
+        text.style.display = "none";
+        text = document.getElementById('home-free_kick-text');
+        text.style.display = "none";
+        text = document.getElementById('home-penalty-text');
+        text.style.display = "none";
+
+        $('#highlight-home-btn').removeClass('btn-success').addClass('btn-primary');
+        $('#corner-home-btn').removeClass('btn-success').addClass('btn-primary');
+        $('#offside-home-btn').removeClass('btn-success').addClass('btn-primary');
+        $('#free_kick-home-btn').removeClass('btn-success').addClass('btn-primary');
+        $('#penalty-home-btn').removeClass('btn-success').addClass('btn-primary');
+
+        clearInterval(disappearIntervalID);
+}
+
+// Highlights (Guest) 
+function highlightGuestFun()
+{
+        resetHighlightsGuest();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('guest-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('guest-highlight-text');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-name');
+        text.style.display = "block"
+        $('#highlight-guest-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function cornerGuestFun()
+{
+        resetHighlightsGuest();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('guest-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('guest-corner-text');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-name');
+        text.style.display = "block"
+        $('#corner-guest-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function cornerOffsideGuestFun()
+{
+        resetHighlightsGuest();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('guest-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('guest-offside-text');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-name');
+        text.style.display = "block"
+        $('#offside-guest-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function free_kickGuestFun()
+{
+        resetHighlightsGuest();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('guest-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('guest-free_kick-text');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-name');
+        text.style.display = "block"
+        $('#free_kick-guest-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function penaltyGuestFun()
+{
+        resetHighlightsGuest();
+        var pic = document.getElementById('black-bar');
+        pic.style.display="block";
+        var pic = document.getElementById('guest-highlights-logo');
+        pic.style.display="block";
+        
+        var text = document.getElementById('guest-penalty-text');
+        text.style.display = "block"
+        text = document.getElementById('guest-team-name');
+        text.style.display = "block"
+        $('#penalty-guest-btn').removeClass('btn-primary').addClass('btn-success');
+        disappearTime(5);
+}
+
+function resetHighlightsGuest()
+{
+    var pic = document.getElementById('black-bar');
+    pic.style.display="none";
+    pic = document.getElementById('guest-highlights-logo');
+    pic.style.display="none";
+    
+    var text = document.getElementById('guest-highlight-text');
+    text.style.display = "none";
+    text = document.getElementById('guest-team-name');
+    text.style.display = "none";
+    text = document.getElementById('guest-corner-text');
+    text.style.display = "none";
+    text = document.getElementById('guest-offside-text');
+    text.style.display = "none";
+    text = document.getElementById('guest-free_kick-text');
+    text.style.display = "none";
+    text = document.getElementById('guest-penalty-text');
+    text.style.display = "none";
+    
+    $('#highlight-guest-btn').removeClass('btn-success').addClass('btn-primary');
+    $('#corner-guest-btn').removeClass('btn-success').addClass('btn-primary');
+    $('#offside-guest-btn').removeClass('btn-success').addClass('btn-primary');
+    $('#free_kick-guest-btn').removeClass('btn-success').addClass('btn-primary');
+    $('#penalty-guest-btn').removeClass('btn-success').addClass('btn-primary');
+
+        clearInterval(disappearIntervalID);
+}
+
+
+///
 function updateScoreOnScreen()
 {
     var value = document.getElementById("first-count-value").value; //get name from TextBox
     value = value + " : " + document.getElementById("second-count-value").value; //get name from TextBox
     document.getElementById("score-on-board-large").innerHTML=value;
     document.getElementById("score-on-board-small").innerHTML=value;
+    document.getElementById("stats-goal").innerHTML=value;
+    document.getElementById("full-stats-goal").innerHTML=value;
 }
 
 
@@ -425,7 +721,7 @@ function changeFullscreen()
 {
     if (flagFullScreen)
     {
-        reset_btn_function();
+        resetInfo();
         var pic = document.getElementById('right-color-bar');
         pic.style.display="block";
         pic = document.getElementById('left-color-bar');
@@ -461,7 +757,7 @@ function changeFullscreen()
     else 
     {
         $('#fullscreen').removeClass('btn-success').addClass('btn-primary');
-        reset_btn_function();
+        resetInfo();
     }
 }
 
@@ -472,7 +768,7 @@ function changeImg1st()
     
     if (pic.style.display === "")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/1st.PNG";
         pic.style.display = "block";
         
@@ -480,7 +776,7 @@ function changeImg1st()
     } 
     else if (pic.style.display === "none")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/1st.PNG";
         pic.style.display = "block";
         $('#1st-btn').removeClass('btn-primary').addClass('btn-success');
@@ -489,7 +785,7 @@ function changeImg1st()
     {
         pic.style.display = "none";
         $('#1st-btn').removeClass('btn-success').addClass('btn-primary');
-        resetFun();
+        resetPeriods();
     }
 }
 
@@ -500,7 +796,7 @@ function changeImg2nd()
     
     if (pic.style.display === "")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/1st.PNG";
         pic.style.display = "block";
         
@@ -508,7 +804,7 @@ function changeImg2nd()
     } 
     else if (pic.style.display === "none")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/2nd.PNG";
         pic.style.display = "block";
         $('#2nd-btn').removeClass('btn-primary').addClass('btn-success');
@@ -517,7 +813,7 @@ function changeImg2nd()
     {
         pic.style.display = "none";
         $('#2nd-btn').removeClass('btn-success').addClass('btn-primary');
-        resetFun();
+        resetPeriods();
     }
 }
 
@@ -528,7 +824,7 @@ function changeImg3rd()
     
     if (pic.style.display === "")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/3rd.PNG";
         pic.style.display = "block";
         
@@ -536,7 +832,7 @@ function changeImg3rd()
     } 
     else if (pic.style.display === "none")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/3rd.PNG";
         pic.style.display = "block";
         $('#3rd-btn').removeClass('btn-primary').addClass('btn-success');
@@ -545,7 +841,7 @@ function changeImg3rd()
     {
         pic.style.display = "none";
         $('#3rd-btn').removeClass('btn-success').addClass('btn-primary');
-        resetFun();
+        resetPeriods();
     }
 }
 
@@ -556,7 +852,7 @@ function changeImg4th()
     
     if (pic.style.display === "")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/4th.PNG";
         pic.style.display = "block";
         
@@ -564,7 +860,7 @@ function changeImg4th()
     } 
     else if (pic.style.display === "none")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/4th.PNG";
         pic.style.display = "block";
         $('#4th-btn').removeClass('btn-primary').addClass('btn-success');
@@ -573,7 +869,7 @@ function changeImg4th()
     {
         pic.style.display = "none";
         $('#4th-btn').removeClass('btn-success').addClass('btn-primary');
-        resetFun();
+        resetPeriods();
     }
 }
 
@@ -584,7 +880,7 @@ function changeImg5th()
     
     if (pic.style.display === "")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/5th.PNG";
         pic.style.display = "block";
         
@@ -592,7 +888,7 @@ function changeImg5th()
     } 
     else if (pic.style.display === "none")
     {
-        resetFun();
+        resetPeriods();
         pic.src="../images/run-game-info/5th.PNG";
         pic.style.display = "block";
         $('#5th-btn').removeClass('btn-primary').addClass('btn-success');
@@ -601,8 +897,156 @@ function changeImg5th()
     {
         pic.style.display = "none";
         $('#5th-btn').removeClass('btn-success').addClass('btn-primary');
-        resetFun();
+        resetPeriods();
     }
+}
+
+function statsFun()
+{
+    if(flagStats)
+    {
+        resetFullStatsFun();
+        var pic = document.getElementById('screen-img');
+            pic.src="../images/run-game-info/black.PNG";
+            pic.style.display="block";
+         pic = document.getElementById('stats-card-bg');
+         pic.style.display="block";
+         pic = document.getElementById('stats-team-logo-1');
+         pic.style.display="block";
+         pic = document.getElementById('stats-team-logo-2');
+         pic.style.display="block";
+         pic = document.getElementById('stats-team-logo-1');
+         pic.style.display="block";
+         pic = document.getElementById('stats-team-logo-2');
+         pic.style.display="block";
+         pic = document.getElementById('stats-small-logo-bw-card');
+         pic.style.display="block";
+         
+         var text = document.getElementById('stats-header');
+         text.style.display = "block";
+         text = document.getElementById('stats-team-name-1');
+         text.style.display = "block";
+         text = document.getElementById('stats-team-name-2');
+         text.style.display = "block";
+         text = document.getElementById('stats-team-name-1');
+         text.style.display = "block";
+         text = document.getElementById('stats-goal');
+         text.style.display = "block";
+         text = document.getElementById('stats-team-text-1');
+         text.style.display = "block";
+         text = document.getElementById('stats-team-text-2');
+         text.style.display = "block";
+         
+         $('#stats-btn').removeClass('btn-primary').addClass('btn-success');
+         flagStats = false;
+    }
+    else if(!flagStats)
+    {
+        flagStats = true;
+        resetStats();
+    }
+}
+
+function resetStats()
+{
+    setScreen();
+    
+    $('#stats-btn').removeClass('btn-success').addClass('btn-primary');
+
+    var pic = document.getElementById('stats-card-bg');
+    pic.style.display="none";
+    pic = document.getElementById('stats-team-logo-1');
+    pic.style.display="none";
+    pic = document.getElementById('stats-team-logo-2');
+    pic.style.display="none";
+    pic = document.getElementById('stats-team-logo-1');
+    pic.style.display="none";
+    pic = document.getElementById('stats-team-logo-2');
+    pic.style.display="none";
+    pic = document.getElementById('stats-small-logo-bw-card');
+    pic.style.display="none";
+    
+    var text = document.getElementById('stats-header');
+    text.style.display = "none";
+    text = document.getElementById('stats-team-name-1');
+    text.style.display = "none";
+    text = document.getElementById('stats-team-name-2');
+    text.style.display = "none";
+    text = document.getElementById('stats-team-name-1');
+    text.style.display = "none";
+    text = document.getElementById('stats-goal');
+    text.style.display = "none";
+    text = document.getElementById('stats-team-text-1');
+    text.style.display = "none";
+    text = document.getElementById('stats-team-text-2');
+    text.style.display = "none";
+    flagStats = true;
+}
+
+function fullStatsFun()
+{
+    if(flagFullStats)
+    {
+        resetStats();
+        var pic = document.getElementById('screen-img');
+            pic.src="../images/run-game-info/black.PNG";
+            pic.style.display="block";
+         pic = document.getElementById('full-stats-team-logo-1');
+         pic.style.display="block";
+         pic = document.getElementById('full-stats-team-logo-2');
+         pic.style.display="block";
+         pic = document.getElementById('full-stats-left-color-bar');
+         pic.style.display="block";
+         pic = document.getElementById('full-stats-right-color-bar');
+         pic.style.display="block";
+         
+         var text = document.getElementById('full-stats-team-name-1');
+         text.style.display = "block";
+         text = document.getElementById('full-stats-team-name-2');
+         text.style.display = "block";
+         text = document.getElementById('full-stats-goal');
+         text.style.display = "block";
+         text = document.getElementById('full-stats-team-text-1');
+         text.style.display = "block";
+         text = document.getElementById('full-stats-team-text-2');
+         text.style.display = "block";
+         
+         $('#full-stats-btn').removeClass('btn-primary').addClass('btn-success');
+         flagFullStats = false;
+    }
+    else if(!flagFullStats)
+    {
+        flagFullStats = true;
+        resetFullStatsFun();
+    }
+}
+
+function resetFullStatsFun()
+{
+    setScreen();
+    
+    $('#full-stats-btn').removeClass('btn-success').addClass('btn-primary');
+
+    var pic = document.getElementById('full-stats-team-logo-1');
+    pic.style.display="none";
+    pic = document.getElementById('full-stats-team-logo-2');
+    pic.style.display="none";
+    pic = document.getElementById('full-stats-left-color-bar');
+    pic.style.display="none";
+    pic = document.getElementById('full-stats-right-color-bar');
+    pic.style.display="none";
+    
+    var text = document.getElementById('full-stats-team-name-1');
+    text.style.display = "none";
+    text = document.getElementById('full-stats-team-name-2');
+    text.style.display = "none";
+    text = document.getElementById('full-stats-goal');
+    text.style.display = "none";
+    text = document.getElementById('full-stats-team-text-1');
+    text.style.display = "none";
+    text = document.getElementById('full-stats-team-text-2');
+    text.style.display = "none";
+    flagFullStats = true;
 }
 
 //  refresh button
@@ -785,21 +1229,20 @@ $('.refresh').click(function(){
 
 
 // Clock of game
-function clockFun(m, s, t)
+function clockFun(m, s)
 {
-    clock(m, s, t);
+    clock(m, s);
 }
 
 function clockStartFun()
 {
-    alert('G = ' + globalTotalSeconds);
     if(globalClockSec === undefined)
     {
 
     }
     if(flagClockStartNew)
     {
-        clock(globalClockMin, globalClockSec, globalTotalSeconds);
+        clock(globalClockMin, globalClockSec);
     }
     else if(!flagClockStart) // counter is already running or user 1st time press start button without changing sec and minutes value
     {
@@ -816,21 +1259,15 @@ function clockStartFun()
     }
     else if(flagClockStart)    // user press stop during count down
     {
-        //alert('S3');
-
         document.getElementById("clock-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
         clearInterval(clockIntervalID);
         
-        //document.getElementById("countdown-container").style.display="block";
-        
-        // alert('Min = ' + globalClockMin);
-        // alert('Sec = ' + globalClockSec);
-        clock(globalClockMin, globalClockSec, globalTotalSeconds);
+        clock(globalClockMin, globalClockSec);
         flagClockStart = false;
     }
 }
 
-function clock(m, s, t)
+function clock(m, s)
 {
     clearInterval(clockIntervalID);
     document.getElementById("clock-start-btn").innerHTML='<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-stop-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/></svg><span>Stop</span>';
@@ -851,13 +1288,11 @@ function clock(m, s, t)
         if(!flagClockStart) // if user start clock but not press start button or increment 
         // mins and secs by button and press start
         {
-            alert('1st attempt');
             totalSeconds = 0;
             globalTotalSeconds = totalSecondsGiven; // 1st time save total given seconds
         }
         else if(flagClockStart) // in any other case, if user press start button
         {
-            alert('2nd attempt');
             totalSeconds = m * 60 + s;
             totalSecondsGiven = globalTotalSeconds;
         }
@@ -912,7 +1347,11 @@ function clock(m, s, t)
         clockIntervalID = setInterval(() => {
             //clears countdown when all seconds are counted
             if (totalSecondsGiven === totalSeconds) {
-                flagClockStart = false;
+                flagClockStart = false;        
+                $('#clock-minutes-minus').prop('disabled',false);
+                $('#clock-minutes-plus').prop('disabled',false);
+                $('#clock-seconds-minus').prop('disabled',false);
+                $('#clock-seconds-plus').prop('disabled',false);
                 clearInterval(clockIntervalID);
             }
             setClockMinutes(convertClock(totalSeconds, 60));
@@ -927,7 +1366,7 @@ function clock(m, s, t)
 
 function countdownStartFun()
 {
-//    resetFun();
+//    resetPeriods();
     if(globalCoundownSec === undefined)
     {
 
@@ -962,7 +1401,7 @@ function countdownFun()
 
     if (flagCountDown)  // first time countdown btn pressed
     {   
-        resetFun();
+        resetCountdown();
         
         container.style.display="block";
         
@@ -987,7 +1426,7 @@ function countdownFun()
         $("#minutes-dynamic").val('000');
         $("#seconds-dynamic").val('00');
 
-        resetFun();
+        resetCountdown();
         clearInterval(counterIntervalID);
         
         container.style.display = "none";
@@ -999,7 +1438,7 @@ function countdownFun2(m, s)
 {
     var container = document.getElementById('countdown-container');
 
-        resetFun();
+        ////resetFun();
         flagCountDown = false;
         
         clearInterval(counterIntervalID);
@@ -1017,7 +1456,7 @@ function countdownFun2(m, s)
 
 function intervalExecutin(m, s)
 {
-    //resetSmall();
+    //resetInfo();
     let minutes = m; // starting number of minutes
     let seconds = s; // starting number of seconds
 
@@ -1030,7 +1469,8 @@ function intervalExecutin(m, s)
     
         // converts all to seconds
         let totalSeconds = minutes * 60 + seconds;
-    
+        alert('s = ' + seconds);
+        alert('T = ' + totalSeconds);
         //temporary seconds holder
         let tempSeconds = totalSeconds;
     
@@ -1073,7 +1513,11 @@ function intervalExecutin(m, s)
         // Update the count down every 1 second
         counterIntervalID = setInterval(() => {
             //clears countdown when all seconds are counted
-            if (totalSeconds <= 0) {
+            if (totalSeconds <= 0) {                
+                $('#count-minutes-minus').prop('disabled',false);
+                $('#count-minutes-plus').prop('disabled',false);
+                $('#count-seconds-minus').prop('disabled',false);
+                $('#count-seconds-plus').prop('disabled',false);
                 clearInterval(counterIntervalID);
             }
             setMinutes(convert(tempSeconds, 60));
@@ -1094,18 +1538,34 @@ function disappearTime(s)
         let tempSeconds = totalSeconds;
     
         // Update the count down every 1 second
-        counterIntervalID = setInterval(() => {
+        disappearIntervalID = setInterval(() => {
             //clears countdown when all seconds are counted
             if (totalSeconds <= 0) 
             {
-                resetFun();
+                resetInfo();
                 
                 $('#guest-team-btn').removeClass('btn-success').addClass('btn-primary');
                 $('#home-team-btn').removeClass('btn-success').addClass('btn-primary');
                 $('#player-btn').removeClass('btn-success').addClass('btn-primary');
                 $('#crew-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#coach-btn').removeClass('btn-success').addClass('btn-primary');
+                
+                // highlights group
+                resetHighlightsHome();
+                $('#highlight-home-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#corner-home-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#offside-home-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#free_kick-home-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#penalty-home-btn').removeClass('btn-success').addClass('btn-primary');
 
-                clearInterval(counterIntervalID);
+                $('#highlight-guest-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#corner-guest-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#offside-guest-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#free_kick-guest-btn').removeClass('btn-success').addClass('btn-primary');
+                $('#penalty-guest-btn').removeClass('btn-success').addClass('btn-primary');                
+                resetHighlightsGuest();
+
+                clearInterval(disappearIntervalID);
             }
             tempSeconds == 60 ? 59 : tempSeconds;
             totalSeconds--;

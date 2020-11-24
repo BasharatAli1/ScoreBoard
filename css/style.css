@@ -580,7 +580,7 @@
 
 .team1-centered3 {
   position: absolute;
-  top: 75%;
+  top: 85%;
   left: 40%;
 }
 
@@ -691,7 +691,7 @@
 .team2-centered3 {
 
   position: absolute;
-  top: 75%;
+  top: 85%;
   right: 40%;
 }
 
@@ -704,12 +704,54 @@
     color: white;
   }
 
+  .black-bar
+  {
+    position: absolute;
+    top: 5%;
+    right: 0%;
+  }
+
+  #black-bar
+  {
+    width: 250px;
+    height: 60px;
+  }
+
+  .home-highlights-logo, .guest-highlights-logo
+  {
+    position: absolute;
+    top: 6%;
+    right: 37%;
+  }
+
+  #home-highlights-logo, #guest-highlights-logo
+  {
+    width: 40px;
+  }
+  
+  .home-highlight-text, .home-corner-text, .home-offside-text, .home-free_kick-text, .home-penalty-text,
+  .guest-highlight-text, .guest-corner-text, .guest-offside-text, .guest-free_kick-text, .guest-penalty-text 
+  {
+    position: absolute;
+    top: 6%;
+    right: 1%;
+  }
+  
+
+  .home-team-name, .guest-team-name
+  {
+    position: absolute;
+    top: 14%;
+    right: 1%;
+  }
+
    /* for small btn on screen board  */
   .small-container {
     position: absolute;
     top: 5%;
-    left: 5%;
+    left: 2%;
   }
+
   .small-bar-pic
   {
     height: 22px;
@@ -832,14 +874,14 @@
     left: 21%;
   }
 
-  .guest-small-logo-bw-card, .home-small-logo-bw-card, .player-small-logo-bw-card
+  .guest-small-logo-bw-card, .home-small-logo-bw-card, .player-small-logo-bw-card, .coach-small-logo-bw-card
   {
     position: absolute;
     top: 75%;
     right: 45%;
   }
 
-  #guest-small-logo-bw-card, #home-small-logo-bw-card, #player-small-logo-bw-card
+  #guest-small-logo-bw-card, #home-small-logo-bw-card, #player-small-logo-bw-card, #coach-small-logo-bw-card
   {
     width: 70%;
   }
@@ -922,11 +964,345 @@
   height: 40px;
 }
 
-/* for periods on screen board */
+/* for coach */
 
-.periods-div {
+.coach-pic-info-group
+{
+  position: absolute;
+  top: 62%;
+  left: 30%;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  [class="coach-pic-info-group"] {
+    left: 35%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  [class="coach-pic-info-group"] {
+    left: 18%;
+  }
+}
+
+#coach-pic-info-group
+{
+  width: 40px;
+}
+
+.coach-card
+{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coach-header
+{
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coach-name
+{
+  position: absolute;
+  top: 64%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+/* Stats */
+
+.stats-card-bg
+{
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  left: 20%;
+  right: 12%;
+  margin-bottom: 5%;
+}
+ 
+#stats-card-bg
+{
+  width: 90%;
+}
+
+.stats-header
+{
+  position: absolute;
+  top: 5%;
+  right: 43%;
+}
+
+.stats-team-name-1
+{
+  position: absolute;
+  top: 18%;
+  right: 23%;
+}
+
+.stats-team-name-2
+{
+  position: absolute;
+  top: 18%;
+  left: 24%;
+}
+
+.stats-team-logo-1
+{
+  position: absolute;
+  top: 28%;
+  right: 23%;
+}
+
+.stats-team-logo-2
+{
+  position: absolute;
+  top: 28%;
+  left: 24%;
+}
+
+#stats-team-logo-1
+{
+  width: 50px;
+}
+
+#stats-team-logo-2
+{
+  width: 50px;
+}
+
+.stats-team-text-1
+{
+  position: absolute;
+  top: 58%;
+  right: 23%;
+}
+
+.stats-team-text-2
+{
+  position: absolute;
+  top: 58%;
+  left: 25%;
+}
+
+.stats-small-logo-bw-card
+{
+  position: absolute;
+  top: 90%;
+  right: 37%;
+  transform: translate(-50%, -50%);
+}
+
+#stats-small-logo-bw-card
+{
+  width: 70%;
+}
+
+.stats-goal {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#stats-goal {
+  display: inline-block;
+  width: 80px; 
+  height: 40px;
+  background: silver; 
+  font-weight:bold;
+  padding-top: 2px;
+  font-size: x-large;
+  color: #000000;
+}
+
+/* full stats */
+.full-stats-team-logo-1
+{
   position: absolute;
   top: 8%;
+  right: 5%;
+}
+
+.full-stats-team-logo-2
+{
+  position: absolute;
+  top: 8%;
+  left: 5%;
+}
+
+#full-stats-team-logo-1
+{
+  width: 80px;
+}
+
+#full-stats-team-logo-2
+{
+  width: 80px;
+}
+
+.full-stats-team-name-1
+{
+  position: absolute;
+  top: 18%;
+  right: 23%;
+}
+
+.full-stats-team-name-2
+{
+  position: absolute;
+  top: 18%;
+  left: 24%;
+}
+
+.full-stats-goal {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#full-stats-goal {
+  display: inline-block;
+  width: 100px; 
+  height: 45px;
+  background: silver; 
+  font-weight:bold;
+  font-size: 30px;
+  color: #000000;
+}
+
+.full-stats-right-color-bar {
+  position: absolute;
+  top: 85%;
+  right: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.full-stats-left-color-bar {
+  position: absolute;
+  top: 85%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 1500px) {
+  /* For mobile phones: */
+  [class="full-stats-right-color-bar"] {
+    position: absolute;
+    top: 85%;
+    right: 31%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  /* For mobile phones: */
+  [class="full-stats-right-color-bar"] {
+    position: absolute;
+    top: 85%;
+    right: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  /* For mobile phones: */
+  [class="full-stats-left-color-bar"] {
+    position: absolute;
+    top: 85%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  /* For mobile phones: */
+  [class="full-stats-right-color-bar"] {
+    position: absolute;
+    top: 85%;
+    right: 36%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  /* For mobile phones: */
+  [class="full-stats-left-color-bar"] {
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  /* For mobile phones: */
+  [class="full-stats-right-color-bar"] {
+    position: absolute;
+    top: 85%;
+    right: 30%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  /* For mobile phones: */
+  [class="full-stats-left-color-bar"] {
+    position: absolute;
+    top: 85%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#full-stats-right-color-bar {
+  width: 25px;
+}
+
+#full-stats-left-color-bar {
+  width: 25px;
+}
+
+.full-stats-team-text-1
+{
+  position: absolute;
+  top: 40%;
+  right: 25%;
+}
+
+.full-stats-team-text-2
+{
+  position: absolute;
+  top: 40%;
+  left: 25%;
+}
+
+/* .full-stats-small-logo-bw-card
+{
+  position: absolute;
+  top: 90%;
+  right: 37%;
+  transform: translate(-50%, -50%);
+}
+
+#full-stats-small-logo-bw-card
+{
+  width: 70%;
+} */
+
+/* for periods on screen board */
+.periods-div {
+  position: absolute;
+  top: 13%;
   left: 15%;
 }
 
@@ -984,34 +1360,39 @@
   position: absolute;
   top: 38%;
   left: 42%;
-  font-size: x-large;
 }
 
  #score-on-board-large {
   font-size: 300px;
   height: 300px;
+  /*font-size: x-large; */
   /* color: #F90D0D;
   border: 1px solid white; */
 } 
 
-#minutes
+/* #minutes
 {
   font-size: 200px;
-}
+} */
 
 /* Countdown Timer */
 
-#countdown-container {
+.countdown-container {
   position: absolute;
   top: 40%;
-  left: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+#countdown-container {
   display: inline-block;
   width: 130px; 
   height: 40px;
   border-radius: 5px; 
   background: black; 
   font-weight:bold;
+  padding-top: 2px;
+  font-size: x-large;
 }
 
 /* /////////////////// */

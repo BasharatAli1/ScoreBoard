@@ -29,14 +29,28 @@
       .btn{
           font-size: smaller;
       }
-      #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th, #right-color-bar, #left-color-bar, #team-name, #team-name2, #left-team-logo, 
-      #team-logo-on-board-centre, #team-logo-on-board-right, #team-logo-on-board-left, #score-on-board-large, #countdown-container, #score-on-board-small,
-       #small-bar-team-name-1, #small-bar-team-name-2, #clock-container, #small-bar-logo, #small-right-color-bar, #small-left-color-bar, #fullscreen-clock-container,
-      #small-bar-pic, 
+      #pic-1st, #pic-2nd, #pic-3rd, #pic-4th, #pic-5th, 
+      #right-color-bar, #left-color-bar, #team-name, #team-name2, #left-team-logo, #team-logo-on-board-centre, #team-logo-on-board-right, 
+      #team-logo-on-board-left, #score-on-board-large, #countdown-container, #score-on-board-small,
+      #small-bar-team-name-1, #small-bar-team-name-2, #clock-container, #small-bar-logo, #small-right-color-bar, #small-left-color-bar, #fullscreen-clock-container, #small-bar-pic, 
       #guest-card-bg, #guest-team-header, #guest-team-some-text_1, #guest-team-some-text_2, #guest-team-some-text_3, #guest-team-logo, #guest-small-logo-bw-card,
       #home-card-bg, #home-team-header, #home-team-some-text_1, #home-team-some-text_2, #home-team-some-text_3, #home-team-logo, #home-small-logo-bw-card,
       #player-card-bg, #player-header, #player-some-text_1, #player-pic-info-group, #player-small-logo-bw-card,
-      #crew-card, #crew-header, #crew-name
+      #crew-card, #crew-header, #crew-name,
+      #coach-card, #coach-pic-info-group, #coach-header, #coach-name, #coach-small-logo-bw-card, 
+      #stats-card-bg, #stats-header, #stats-team-name-1, #stats-team-name-2, #stats-team-logo-1, #stats-team-logo-2, #stats-goal, #stats-team-text-1, #stats-team-text-2, #stats-small-logo-bw-card,
+      #full-stats-team-logo-1, #full-stats-team-logo-2, #full-stats-team-name-1, #full-stats-team-name-2, #full-stats-goal, #full-stats-left-color-bar, #full-stats-right-color-bar, #full-stats-team-text-1, #full-stats-team-text-2,
+      #black-bar, 
+      #home-highlight-text, #home-team-name, #home-highlights-logo,
+      #home-corner-text,
+      #home-offside-text,
+      #home-free_kick-text,
+      #home-penalty-text, 
+      #guest-highlight-text, #guest-team-name, #guest-highlights-logo,
+      #guest-corner-text,
+      #guest-offside-text,
+      #guest-free_kick-text,
+      #guest-penalty-text
       {
           display: none;
       }
@@ -116,6 +130,36 @@
                                         <!-- background pic on screen board -->
                                         <img src="../images/run-game-info/run-game-info-board.PNG" alt="screen" class="screen-img" id="screen-img">
                                         
+                                        <!-- Score -->
+                                        
+                                        <!-- Highlights (Home) -->
+                                        <div class="">
+                                            <div class="black-bar"><img src="../images/run-game-info/black.PNG" id="black-bar" alt=""></div>
+                                            <div class="home-highlights-logo"><img src="../images/run-game-info/team-logo.PNG" id="home-highlights-logo" alt="logo"></div>
+                                            <div class="home-highlight-text"><span id="home-highlight-text">Heighlights</span></div>
+                                            <div class="home-team-name"><span id="home-team-name">Team Name</span></div>
+
+                                            <div class="home-highlight-text"><span id="home-highlight-text">Heighlights</span></div>
+                                            <div class="home-corner-text"><span id="home-corner-text">corner</span></div>
+                                            <div class="home-offside-text"><span id="home-offside-text">offside</span></div>
+                                            <div class="home-free_kick-text"><span id="home-free_kick-text">free kick</span></div>
+                                            <div class="home-penalty-text"><span id="home-penalty-text">penalty</span></div>
+                                        </div>
+
+                                        <!-- Highlights (Guest) -->
+                                        <div class="">
+                                            <div class="black-bar"><img src="../images/run-game-info/black.PNG" id="black-bar" alt=""></div>
+                                            <div class="guest-highlights-logo"><img src="../images/run-game-info/team-logo.PNG" id="guest-highlights-logo" alt="logo"></div>
+                                            <div class="guest-highlight-text"><span id="guest-highlight-text">Heighlights</span></div>
+                                            <div class="guest-team-name"><span id="guest-team-name">Team Name</span></div>
+                                        
+                                            <div class="guest-highlight-text"><span id="guest-highlight-text">Heighlights</span></div>
+                                            <div class="guest-corner-text"><span id="guest-corner-text">corner</span></div>
+                                            <div class="guest-offside-text"><span id="guest-offside-text">offside</span></div>
+                                            <div class="guest-free_kick-text"><span id="guest-free_kick-text">free kick</span></div>
+                                            <div class="guest-penalty-text"><span id="guest-penalty-text">penalty</span></div>
+                                        </div>
+
                                         <!-- for small btn on screen board -->
                                         <div class="small-container"> 
                                             <img src="../images/run-game-info/small-bar.jpg" class="small-bar-pic" id="small-bar-pic" alt="">
@@ -145,7 +189,7 @@
                                             <div class="player-header"><span id="player-header">Some Text</span></div>
                                             <div class="player-some-text_1"><span id="player-some-text_1">Some Text</span></div>
                                             <div class="player-pic-info-group"><img id="player-pic-info-group" src="../images/run-game-info/player.PNG" alt=""></div>
-                                            <div class="player-small-logo-bw-card"><img id="player-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt=""></div>
+                                            <div class="player-small-logo-bw-card"><img id="player-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
                                         </div>
 
                                         <!-- Home Team -->
@@ -156,7 +200,7 @@
                                             <div class="home-team-some-text_2"><span id="home-team-some-text_2">Some Text</span></div>
                                             <div class="home-team-some-text_3"><span id="home-team-some-text_3">Some Text</span></div>
                                             <div class="home-team-logo"><img id="home-team-logo" src="../images/logo/team-logo.PNG" alt=""></div>
-                                            <div class="home-small-logo-bw-card"><img id="home-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt=""></div>
+                                            <div class="home-small-logo-bw-card"><img id="home-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
                                         </div>
                                    
                                         <!-- Guest Team -->
@@ -167,7 +211,7 @@
                                             <div class="guest-team-some-text_2"><span id="guest-team-some-text_2">Some Text</span></div>
                                             <div class="guest-team-some-text_3"><span id="guest-team-some-text_3">Some Text</span></div>
                                             <div class="guest-team-logo"><img id="guest-team-logo" src="../images/logo/team-logo.PNG" alt=""></div>
-                                            <div class="guest-small-logo-bw-card"><img id="guest-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt=""></div>
+                                            <div class="guest-small-logo-bw-card"><img id="guest-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
                                         </div>
 
                                         <!-- Crew -->
@@ -177,16 +221,56 @@
                                             <div class="crew-name"><span id="crew-name">Commentator <span>Name</span> </span> </div>
                                         </div>
 
+                                        <!-- coach -->
+                                        <div>
+                                            <div class="coach-card"><img id="coach-card" src="../images/run-game-info/card-small.PNG" alt=""></div>
+                                            <div class="coach-pic-info-group"><img id="coach-pic-info-group" src="../images/run-game-info/coach.PNG" alt="coach"></div>
+
+                                            <div class="coach-header"><span id="coach-header">Coach</span></div>
+                                            <div class="coach-name"><span id="coach-name">Some text</span> </div>                                            
+                                            <div class="home-small-logo-bw-card"><img id="home-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                            <div class="coach-small-logo-bw-card"><img id="coach-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                        </div>
+
                                         <!-- for periods on screen board -->
                                         <div class="periods-div"> <img src="../images/run-game-info/1st.PNG" class="run-game-info-pics"  id="pic-1st" alt="pic-1st"> </div>
                                         <div class="periods-div"> <img src="../images/run-game-info/2nd.PNG" class="run-game-info-pics"  id="pic-2nd" alt="pic-2nd"> </div>
                                         <div class="periods-div"> <img src="../images/run-game-info/3rd.PNG" class="run-game-info-pics"  id="pic-3rd" alt="pic-3rd"> </div>
                                         <div class="periods-div"> <img src="../images/run-game-info/4th.PNG" class="run-game-info-pics"  id="pic-4th" alt="pic-4th"> </div>
                                         <div class="periods-div"> <img src="../images/run-game-info/5th.PNG" class="run-game-info-pics"  id="pic-5th" alt="pic-5th"> </div>
-                                    
+
+                                        <!-- Stats -->
+                                        <div>
+                                            <div class="stats-card-bg"><img id="stats-card-bg" src="../images/run-game-info/card.PNG" alt=""></div>
+                                            <div class="stats-header"><span id="stats-header">Statistics</span></div>
+                                            <div class="stats-team-name-1"><span id="stats-team-name-1"><b>Team Name</b></span></div>
+                                            <div class="stats-team-name-2"><span id="stats-team-name-2"><b>Team Name</b></span></div>
+                                            <div class="stats-team-logo-1"><img id="stats-team-logo-1" src="../images/run-game-info/team-logo.PNG" alt="logo"></div>
+                                            <div class="stats-team-logo-2"><img id="stats-team-logo-2" src="../images/run-game-info/team-logo.PNG" alt="logo"></div>
+                                            <div class="stats-goal"><span id="stats-goal"></span></div>
+                                            <div class="stats-team-text-1"><span id="stats-team-text-1">Some Text</span></div>
+                                            <div class="stats-team-text-2"><span id="stats-team-text-2">Some Text</span></div>
+                                            <div class="stats-small-logo-bw-card"><img id="stats-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                        </div>
+
+
+                                        <!-- Full Stats -->
+                                        <div>
+                                            <div class="full-stats-team-logo-1"><img id="full-stats-team-logo-1" src="../images/run-game-info/team-logo.PNG" alt="logo"></div>
+                                            <div class="full-stats-team-logo-2"><img id="full-stats-team-logo-2" src="../images/run-game-info/team-logo.PNG" alt="logo"></div>
+                                            <div class="full-stats-team-name-1"><span id="full-stats-team-name-1"><b>Team 1 Name</b></span></div>
+                                            <div class="full-stats-team-name-2"><span id="full-stats-team-name-2"><b>Team 2 Name</b></span></div>
+                                            <div>
+                                                <div class="full-stats-goal"><span id="full-stats-goal"></span></div>
+                                                <div class="full-stats-left-color-bar"> <img src="../images/run-game-info/green.PNG" class="" id="full-stats-left-color-bar" alt="left-bar"> </div>
+                                                <div class="full-stats-right-color-bar"> <img src="../images/run-game-info/yellow.PNG" class="" id="full-stats-right-color-bar" alt="right-bar"> </div> 
+                                            </div>
+                                            <div class="full-stats-team-text-1"><span id="full-stats-team-text-1">Some Text 1</span></div>
+                                            <div class="full-stats-team-text-2"><span id="full-stats-team-text-2">Some Text 2</span></div>
+                                        </div>
 
                                         <!-- Count down on screen board -->
-                                        <div class="score-on-board-large" id="countdown-container"> <span id="minutes"></span>:<span id="seconds"></span> </div>  
+                                        <div class="countdown-container" id="countdown-container"> <span id="minutes"></span>:<span id="seconds"></span> </div>  
 
                                     </div>
 
@@ -237,7 +321,7 @@
                                             <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-home">Goal (Home)</button>
                                         </div>
                                         <div class="col-4 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="goal-player">Goal (Player)</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-player">Goal (Player)</button>
                                         </div>
                                         <div class="col-4 px-1">
                                             <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="goal-guest">Goal (Guest)</button>
@@ -252,19 +336,19 @@
                                     <h5>Highlights (Home)</h5> 
                                     <div class="row mt-2">
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="highlight-home">highlight</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="highlight-home-btn" onclick="highlightHomeFun();">highlight</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="corner-home">corner</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="corner-home-btn" onclick="cornerHomeFun();">corner</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="offside-home">offside</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="offside-home-btn" onclick="cornerOffsideHomeFun();">offside</button>
                                         </div>
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="free_kick-home">free kick</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="free_kick-home-btn" onclick="free_kickHomeFun();">free kick</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="penalty-home">penalty</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="penalty-home-btn" onclick="penaltyHomeFun();">penalty</button>
                                         </div>
                                     </div>
                                 </div>
@@ -274,19 +358,19 @@
                                     <h5>Highlights (Guest)</h5>
                                     <div class="row mt-2">
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="highlight-guest">highlight</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="highlight-guest-btn" onclick="highlightGuestFun();">highlight</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="corner-guest">corner</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="corner-guest-btn" onclick="cornerGuestFun();">corner</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="offside-guest">offside</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="offside-guest-btn" onclick="cornerOffsideGuestFun();">offside</button>
                                         </div>
                                         <div class="col-3 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="free_kick-guest">free kick</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="free_kick-guest-btn" onclick="free_kickGuestFun();">free kick</button>
                                         </div>
                                         <div class="col-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="penalty-guest">penalty</button>
+                                            <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="penalty-guest-btn" onclick="penaltyGuestFun();">penalty</button>
                                         </div>
                                     </div>
                                 </div>
@@ -366,7 +450,7 @@
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="lineup" onclick="lineUp();">LineUp</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block" id="player-btn" onclick="playerFun();">Player</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="player-btn" onclick="playerFun();">Player</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
@@ -377,7 +461,7 @@
                                     <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="guest-team-btn" onclick="guestTeamFun()">Guest Team</button>
                                 </div>
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block" id="coach-btn">Coach</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="coach-btn" onclick="coachFun()">Coach</button>
                                 </div>
                                 <div class="col-3 px-1">
                                     <button type="button" class="btn btn-sm btn-primary btn-block disabled" id="referee">Referee</button>
@@ -385,7 +469,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-3 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block" id="crew-btn" onclick="crewFun()">Crew</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="crew-btn" onclick="crewFun()">Crew</button>
                                 </div>
                             </div>
 
@@ -413,10 +497,10 @@
                             <h5 class="mt-3">Stats</h5>    <!-- Main Row, Col 2, 3rd block -->
                             <div class="row mt-2">
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="stats">Stats</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="stats-btn" onclick="statsFun()">Stats</button>
                                 </div>
                                 <div class="col-6 px-1">
-                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="full-stats">Full Stats</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-block btn-active-green" id="full-stats-btn" onclick="fullStatsFun()">Full Stats</button>
                                 </div>
                             </div>
 
@@ -473,24 +557,24 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(00,00,0)">00:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(00,00)">00:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(45,00,0)">45:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(45,00)">45:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(90,00,0)">90:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(90,00)">90:00</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(105,00,0)">105:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(105,00)">105:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(120,00,0)">120:00</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(120,00)">120:00</button>
                                 </div>
                                 <div class="col-4 px-1">
-                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(15,00,0)">Extra Time</button>
+                                    <button type="button" class="btn btn-sm btn-secondary btn-block" onclick="clockFun(15,00)">Extra Time</button>
                                 </div>
                             </div>
                             
