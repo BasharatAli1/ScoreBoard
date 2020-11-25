@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!--Favicon-->
     <link rel="icon" href="../images/favicon/icon.png" type="image/gif">
     <!-- Bootstrap -->
@@ -141,19 +141,19 @@
                                         
                                         <!-- Score -->
                                         
-                                        <div>
-                                            <div class="goal-home"><img id="goal-home" src="../images/run-game-info/goal-bg.PNG" alt=""></div>
-                                            <div class="goal-home-name"> <span id="goal-home-name">asd</span></div>
+                                        <div class="score-container">
+                                            <img class="goal-home" id="goal-home" src="../images/run-game-info/goal-bg.PNG" alt="">
+                                            <span class="goal-home-name" id="goal-home-name">Name</span>
                                             <div class="goal-home-logo"><img src="../images/run-game-info/team-logo.PNG" id="goal-home-logo" alt="logo"></div>
                                             <div class="goal-home-player"><img src="../images/run-game-info/player.PNG" id="goal-home-player" alt="logo"></div>
                                             
-                                            <div class="goal-guest"><img id="goal-guest" src="../images/run-game-info/goal-bg.PNG" alt=""></div>
-                                            <div class="goal-guest-name"> <span id="goal-guest-name">asd</span></div>
+                                            <img class="goal-guest" id="goal-guest" src="../images/run-game-info/goal-bg.PNG" alt="">
+                                            <span class="goal-guest-name" id="goal-guest-name">Name</span>
                                             <div class="goal-guest-logo"><img src="../images/run-game-info/team-logo.PNG" id="goal-guest-logo" alt="logo"></div>
                                             <div class="goal-guest-player"><img src="../images/run-game-info/player.PNG" id="goal-guest-player" alt="logo"></div>
                                             
-                                            <div class="goal-player"><img id="goal-player" src="../images/run-game-info/goal-bg.PNG" alt=""></div>
-                                            <div class="goal-player-name"> <span id="goal-player-name">asd</span></div>
+                                            <img class="goal-player" id="goal-player" src="../images/run-game-info/goal-bg.PNG" alt="">
+                                            <span class="goal-player-name" id="goal-player-name">Name</span>
                                             <div class="goal-player-logo"><img src="../images/run-game-info/team-logo.PNG" id="goal-player-logo" alt="logo"></div>
                                             <div class="goal-player-player"><img src="../images/run-game-info/player.PNG" id="goal-player-player" alt="logo"></div>
                                             
@@ -161,9 +161,10 @@
                                         </div>
 
                                         <!-- Highlights (Home) -->
-                                        <div class="">
-                                            <div class="black-bar"><img src="../images/run-game-info/black.PNG" id="black-bar" alt=""></div>
-                                            <div class="home-highlights-logo"><img src="../images/run-game-info/team-logo.PNG" id="home-highlights-logo" alt="logo"></div>
+                                        
+                                        <div class="highlights-container">
+                                            <img src="../images/run-game-info/black.PNG" class="black-bar" id="black-bar" alt="">
+                                            <img src="../images/run-game-info/team-logo.PNG" class="home-highlights-logo" id="home-highlights-logo" alt="logo">
                                             <div class="home-highlight-text"><span id="home-highlight-text">Heighlights</span></div>
                                             <div class="home-team-name"><span id="home-team-name">Team Name</span></div>
 
@@ -172,12 +173,10 @@
                                             <div class="home-offside-text"><span id="home-offside-text">offside</span></div>
                                             <div class="home-free_kick-text"><span id="home-free_kick-text">free kick</span></div>
                                             <div class="home-penalty-text"><span id="home-penalty-text">penalty</span></div>
-                                        </div>
 
                                         <!-- Highlights (Guest) -->
-                                        <div class="">
-                                            <div class="black-bar"><img src="../images/run-game-info/black.PNG" id="black-bar" alt=""></div>
-                                            <div class="guest-highlights-logo"><img src="../images/run-game-info/team-logo.PNG" id="guest-highlights-logo" alt="logo"></div>
+                                            <img src="../images/run-game-info/black.PNG" class="black-bar" id="black-bar" alt="">
+                                            <img src="../images/run-game-info/team-logo.PNG"class="guest-highlights-logo" id="guest-highlights-logo" alt="logo">
                                             <div class="guest-highlight-text"><span id="guest-highlight-text">Heighlights</span></div>
                                             <div class="guest-team-name"><span id="guest-team-name">Team Name</span></div>
                                         
@@ -191,7 +190,7 @@
                                         <!--Crawl-->
 
                                         <div class="crawl">
-                                            <p id="crawl">asd</p>
+                                            <p id="crawl"></p>
                                         </div>
 
                                         <!--Freetext-->
@@ -227,47 +226,47 @@
                                             <div class="player-header"><span id="player-header">Some Text</span></div>
                                             <div class="player-some-text_1"><span id="player-some-text_1">Some Text</span></div>
                                             <div class="player-pic-info-group"><img id="player-pic-info-group" src="../images/run-game-info/player.PNG" alt=""></div>
-                                            <div class="player-small-logo-bw-card"><img id="player-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                            <img class="player-small-logo-bw-card" id="player-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo">
                                         </div>
 
                                         <!-- Home Team -->
                                         <div>
                                             <div class="home-card-bg"><img id="home-card-bg" src="../images/run-game-info/card.PNG" alt=""></div>
-                                            <div class="home-team-header"><span id="home-team-header">Line Up - Home</span></div>
-                                            <div class="home-team-some-text_1"><span id="home-team-some-text_1"><b>Some Text</b></span></div>
-                                            <div class="home-team-some-text_2"><span id="home-team-some-text_2">Some Text</span></div>
-                                            <div class="home-team-some-text_3"><span id="home-team-some-text_3">Some Text</span></div>
-                                            <div class="home-team-logo"><img id="home-team-logo" src="../images/logo/team-logo.PNG" alt=""></div>
-                                            <div class="home-small-logo-bw-card"><img id="home-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                            <span class="home-team-header" id="home-team-header">Line Up - Home</span>
+                                            <span class="home-team-some-text_1" id="home-team-some-text_1"><b>Some Text</b></span>
+                                            <span class="home-team-some-text_2" id="home-team-some-text_2">Some Text</span>
+                                            <span class="home-team-some-text_3" id="home-team-some-text_3">Some Text</span>
+                                            <img id="home-team-logo" class="home-team-logo" src="../images/logo/team-logo.PNG" alt="logo">
+                                            <img class="home-small-logo-bw-card" id="home-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo">
                                         </div>
                                    
                                         <!-- Guest Team -->
                                         <div>
                                             <div class="guest-card-bg"><img id="guest-card-bg" src="../images/run-game-info/card.PNG" alt=""></div>
-                                            <div class="guest-team-header"><span id="guest-team-header">Line Up - Guest</span></div>
-                                            <div class="guest-team-some-text_1"><span id="guest-team-some-text_1"><b>Some Text</b></span></div>
-                                            <div class="guest-team-some-text_2"><span id="guest-team-some-text_2">Some Text</span></div>
-                                            <div class="guest-team-some-text_3"><span id="guest-team-some-text_3">Some Text</span></div>
-                                            <div class="guest-team-logo"><img id="guest-team-logo" src="../images/logo/team-logo.PNG" alt=""></div>
-                                            <div class="guest-small-logo-bw-card"><img id="guest-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                            <span class="guest-team-header" id="guest-team-header">Line Up - Guest</span>
+                                            <span class="guest-team-some-text_1" id="guest-team-some-text_1"><b>Some Text</b></span>
+                                            <span class="guest-team-some-text_2" id="guest-team-some-text_2">Some Text</span>
+                                            <span class="guest-team-some-text_3" id="guest-team-some-text_3">Some Text</span>
+                                            <img id="guest-team-logo" class="guest-team-logo" src="../images/logo/team-logo.PNG" alt="logo">
+                                            <img class="guest-small-logo-bw-card" id="guest-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo">
                                         </div>
 
                                         <!-- Crew -->
-                                        <div>
+                                        <div class="crew-container">
                                             <div class="crew-card"><img id="crew-card" src="../images/run-game-info/card-small.PNG" alt=""></div>
-                                            <div class="crew-header"><span id="crew-header">Crew</span></div>
-                                            <div class="crew-name"><span id="crew-name">Commentator <span>Name</span> </span> </div>
+                                            <span class="crew-header" id="crew-header">Crew</span>
+                                            <span class="crew-name" id="crew-name">Commentator <span>Name</span> </span>
                                         </div>
 
                                         <!-- coach -->
-                                        <div>
+                                        <div class="coach-container">
                                             <div class="coach-card"><img id="coach-card" src="../images/run-game-info/card-small.PNG" alt=""></div>
                                             <div class="coach-pic-info-group"><img id="coach-pic-info-group" src="../images/run-game-info/coach.PNG" alt="coach"></div>
 
-                                            <div class="coach-header"><span id="coach-header">Coach</span></div>
-                                            <div class="coach-name"><span id="coach-name">Some text</span> </div>                                            
+                                            <span class="coach-header" id="coach-header">Coach</span>
+                                            <span class="coach-name" id="coach-name">Some text</span>                                            
                                             <!-- <div class="home-small-logo-bw-card"><img id="home-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div> -->
-                                            <div class="coach-small-logo-bw-card"><img id="coach-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="logo"></div>
+                                            <img class="coach-small-logo-bw-card" id="coach-small-logo-bw-card" src="../images/run-game-info/logo.PNG" alt="coach-pic">
                                         </div>
 
                                         <!-- for periods on screen board -->
@@ -294,19 +293,26 @@
 
                                         <!-- Full Stats -->
                                         <div>
-                                            <div class="full-stats-team-logo-1"><img id="full-stats-team-logo-1" src="../images/run-game-info/team-logo.PNG" alt="logo"></div>
+                                            <img class="full-stats-team-logo-1" id="full-stats-team-logo-1" src="../images/run-game-info/team-logo.PNG" alt="logo">
                                             <div class="full-stats-team-logo-2"><img id="full-stats-team-logo-2" src="../images/run-game-info/team-logo.PNG" alt="logo"></div>
                                             <div class="full-stats-team-name-1"><span id="full-stats-team-name-1"><b>Team 1 Name</b></span></div>
                                             <div class="full-stats-team-name-2"><span id="full-stats-team-name-2"><b>Team 2 Name</b></span></div>
                                             <div>
-                                                <div class="full-stats-goal"><span id="full-stats-goal"></span></div>
+                                                <!-- <div class="full-stats-goal"><span id="full-stats-goal"></span></div>
                                                 <div class="full-stats-left-color-bar"> <img src="../images/run-game-info/green.PNG" class="" id="full-stats-left-color-bar" alt="left-bar"> </div>
-                                                <div class="full-stats-right-color-bar"> <img src="../images/run-game-info/yellow.PNG" class="" id="full-stats-right-color-bar" alt="right-bar"> </div> 
+                                                <div class="full-stats-right-color-bar"> <img src="../images/run-game-info/yellow.PNG" class="" id="full-stats-right-color-bar" alt="right-bar"> </div>  -->
                                             </div>
                                             <div class="full-stats-team-text-1"><span id="full-stats-team-text-1">Some Text</span></div>
                                             <div class="full-stats-team-text-2"><span id="full-stats-team-text-2">Some Text</span></div>
                                             <div class="full-stats-team-text-3"><span id="full-stats-team-text-3">Some Text</span></div>
                                             <div class="full-stats-team-text-4"><span id="full-stats-team-text-4">Some Text</span></div>
+                                            <div class="new-goal">
+                                                <div class="full-stats-goal">
+                                                    <span id="full-stats-goal"></span>
+                                                    <img src="../images/run-game-info/green.PNG" class="full-stats-left-color-bar" id="full-stats-left-color-bar" alt="left-bar"> 
+                                                    <img src="../images/run-game-info/green.PNG" class="full-stats-right-color-bar" id="full-stats-right-color-bar" alt="right-bar"> 
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- Count down on screen board -->

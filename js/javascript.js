@@ -364,28 +364,28 @@ function lineUp()
     }
 }
 
-// home team
-function homeTeamFun()
-{
-    var pic = document.getElementById('screen-img');
-    if (flagHomeTeam)
-    {
-        resetInfo();
+//// home team
+// function homeTeamFun()
+// {
+//     var pic = document.getElementById('screen-img');
+//     if (flagHomeTeam)
+//     {
+//         resetInfo();
         
-        pic.src="../images/run-game-info/green bg.PNG";
-        pic.style.display="block";
+//         pic.src="../images/run-game-info/green bg.PNG";
+//         pic.style.display="block";
         
-        $('#home-team-btn').removeClass('btn-primary').addClass('btn-success');
-        flagHomeTeam = false;
-    } 
-    else if (!flagHomeTeam)
-    {
-        resetInfo();
-        pic.src="../images/run-game-info/run-game-info-board.PNG";
-        pic.style.display = "block";
-        $('#home-team-btn').removeClass('btn-success').addClass('btn-primary');
-    }
-}
+//         $('#home-team-btn').removeClass('btn-primary').addClass('btn-success');
+//         flagHomeTeam = false;
+//     } 
+//     else if (!flagHomeTeam)
+//     {
+//         resetInfo();
+//         pic.src="../images/run-game-info/run-game-info-board.PNG";
+//         pic.style.display = "block";
+//         $('#home-team-btn').removeClass('btn-success').addClass('btn-primary');
+//     }
+// }
 
 // guest team
 function guestTeamFun()
@@ -507,7 +507,8 @@ function crewFun()
 
 // Highlights (Home) 
 function highlightHomeFun()
-{
+{           
+    resetHighlightsGuest();
         resetHighlightsHome();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -524,6 +525,7 @@ function highlightHomeFun()
 
 function cornerHomeFun()
 {
+    resetHighlightsGuest();
         resetHighlightsHome();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -540,6 +542,7 @@ function cornerHomeFun()
 
 function cornerOffsideHomeFun()
 {
+    resetHighlightsGuest();
         resetHighlightsHome();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -556,6 +559,7 @@ function cornerOffsideHomeFun()
 
 function free_kickHomeFun()
 {
+    resetHighlightsGuest();
         resetHighlightsHome();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -572,6 +576,7 @@ function free_kickHomeFun()
 
 function penaltyHomeFun()
 {
+    resetHighlightsGuest();
         resetHighlightsHome();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -720,6 +725,7 @@ function resetScoreGroup()
 // Highlights (Guest) 
 function highlightGuestFun()
 {
+    resetHighlightsHome();
         resetHighlightsGuest();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -736,6 +742,7 @@ function highlightGuestFun()
 
 function cornerGuestFun()
 {
+    resetHighlightsHome();
         resetHighlightsGuest();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -752,6 +759,7 @@ function cornerGuestFun()
 
 function cornerOffsideGuestFun()
 {
+    resetHighlightsHome();
         resetHighlightsGuest();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -768,6 +776,7 @@ function cornerOffsideGuestFun()
 
 function free_kickGuestFun()
 {
+    resetHighlightsHome();
         resetHighlightsGuest();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
@@ -784,6 +793,7 @@ function free_kickGuestFun()
 
 function penaltyGuestFun()
 {
+        resetHighlightsHome();
         resetHighlightsGuest();
         var pic = document.getElementById('black-bar');
         pic.style.display="block";
