@@ -271,13 +271,13 @@
                                                         <p>Color A</p>
                                                     </div>
                                                     <div class="col-lg-3 d-flex justify-content-center">
-                                                        <div class="color-a"></div>
+                                                        <input class="color-a" type="color" id="color-team-a" name="color-team-a" value="#ffffff" onchange="colorTeamAFunction()">
                                                     </div>
                                                     <div class="col-lg-2 d-flex justify-content-center">
                                                         <p>Color B</p>
                                                     </div>
                                                     <div class="col-lg-3 d-flex justify-content-center">
-                                                        <div class="color-b"></div>
+                                                        <input class="color-b" type="color" id="color-team-b" name="color-team-b" value="#ffffff" onchange="colorTeamBFunction()">
                                                     </div>
                                                     <div class="col-lg-1"> </div>
                                                 </div>
@@ -385,6 +385,16 @@
         $(this).addClass("current");
         showPage(parseInt($(this).text())) 
     });
+
+    // Team color picker
+    function colorTeamAFunction() {
+        document.getElementById('color-team-a').value;
+    }
+
+    function colorTeamBFunction() {
+        document.getElementById('color-team-b').value;
+    }
+
 </script>
 
 </html>
