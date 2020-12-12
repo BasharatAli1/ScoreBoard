@@ -208,17 +208,131 @@
                             </div>
                         </div>
                         <div class="row mine-border rounded mt-2 pt-1 pb-1 mb-2 mr-5">
+                            <!-- Basketball -->
                             <div class="col-sm-2">
                                 <label for="role" class="align-items-center">Role </label>
                             </div>
                             <div class="col-sm-10">
-                                <select id="role" name="role" class="form-control form-control-sm pl-0">
-                                    <option value="role1">Point Guard</option>
-                                    <option value="role2">Point Guard</option>
+                                <select id="basketball_role" name="basketball_role" class="form-control form-control-sm pl-0">
+                                    <option value="Center">Center</option>
+                                    <option value="PowerForward">Power Forward</option>
+                                    <option value="SmallForward">Small Forward</option>
+                                    <option value="PointGuard">Point Guard</option>
+                                    <option value="ShootingGuard">Shooting Guard</option>
                                 </select>                            
                             </div>
+                            
+                            <!-- Football -->
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="football_role" name="football_role" class="form-control form-control-sm pl-0">
+                                    <option value="Goalkeeper">Goalkeeper</option>
+                                    <option value="RightFullback">Right Fullback</option>
+                                    <option value="LeftFullback">Left Fullback</option>
+                                    <option value="CenterBack">Center Back</option>
+                                    <option value="HoldingMidfielder">Defending/Holding Midfielder</option>
+                                    <option value="RightMidfielder">Right Midfielder/Winger</option>
+                                    <option value="CentralMidfielder">Central/Box-to-Box Midfielder</option>
+                                    <option value="Striker">Striker</option>
+                                    <option value="Playmaker">Attacking Midfielder/Playmaker</option>
+                                    <option value="LeftMidfielder">Left Midfielder/Wingers</option>
+                                </select>                            
+                            </div>
+                            
+                            <!-- Rugby -->
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="rugby_role" name="rugby_role" class="form-control form-control-sm pl-0">
+                                    <option value="Loose-headProp">Loose-head Prop</option>
+                                    <option value="Hooker">Hooker</option>
+                                    <option value="Tight-headProp">Tight-head Prop</option>
+                                    <option value="Lock">Lock (second row)</option>
+                                    <option value="Blind-sideFlanker">Blind-side Flanker</option>
+                                    <option value="Open-sideFlanker">Open-side Flanker</option>
+                                    <option value="No.8">No.8</option>
+                                    <option value="ScrumHalf">Scrum Half</option>
+                                    <option value="FlyHalf">Fly Half</option>
+                                    <option value="Leftwing">(Left) wing</option>
+                                    <option value="InsideCentre">Inside Centre</option>
+                                    <option value="OutsideCentre">Outside Centre</option>
+                                    <option value="RightWing">(Right) Wing</option>
+                                    <option value="FullBack">Full Back</option>
+                                </select>                            
+                            </div>
+                            
+                            <!-- Field Hockey -->
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="field-hockey_role" name="field-hockey_role" class="form-control form-control-sm pl-0">
+                                    <option value="Goalkeeper">Goalkeeper</option>
+                                    <option value="RightHalf">Right Half</option>
+                                    <option value="LeftHalf">Left Half</option>
+                                    <option value="RightBack">Right Back</option>
+                                    <option value="LeftBack">Left Back</option>
+                                    <option value="InsideRight">Inside Right</option>
+                                    <option value="InsideLeft">Inside Left</option>
+                                    <option value="CentreHalf">Centre Half</option>
+                                    <option value="RightWing">Right Wing</option>
+                                    <option value="LeftWing">Left Wing</option>
+                                    <option value="CentreForward">Centre Forward</option>
+                                </select>                            
+                            </div>
+                            
+                            <!-- Volleyball -->
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="volleyball_role" name="volleyball_role" class="form-control form-control-sm pl-0">
+                                    <option value="OutsideHitter">Outside Hitter</option>
+                                    <option value="Right-sideHitter">Right side Hitter</option>
+                                    <option value="OppositeHitter">Opposite Hitter (attacker)</option>
+                                    <option value="Setter">Setter</option>
+                                    <option value="MiddleBlocker">Middle Blocker (center, middle hitter)</option>
+                                    <option value="Libero">Libero</option>
+                                    <option value="DefensiveSpecialist">Defensive Specialist</option>
+                                </select>                            
+                            </div>
+                            
+                            <!-- Handball -->
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="handball_role" name="handball_role" class="form-control form-control-sm pl-0">
+                                    <option value="Goalkeeper">Goalkeeper</option>
+                                    <option value="LeftFullback">Left Fullback</option>
+                                    <option value="RightFullback">Right Fullback</option>
+                                    <option value="CenterBackcourt">Center Backcourt</option>
+                                    <option value="LeftWinger">Left Winger</option>
+                                    <option value="RightWinger">Right Winger</option>
+                                    <option value="Pivot">Pivot</option>
+                                </select>                            
+                            </div>             
+
+                            <!-- Ice Hockey -->
+                            <div class="col-sm-2">
+                                <label for="role" class="align-items-center">Role </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select id="ice-hockey_role" name="ice-hockey_role" class="form-control form-control-sm pl-0">
+                                    <option value="Center">Center</option>
+                                    <option value="LeftWinger">Left Winger</option>
+                                    <option value="RightWinger">Right Winger</option>
+                                    <option value="LeftDefenseman">Left Defenseman</option>
+                                    <option value="LeftDefenseman">Left Defenseman</option>
+                                </select>                            
+                            </div>
+
                         </div>
                     </div>
+
                     
                     <div class="col-lg-3 pt-2"> </div>
                             
