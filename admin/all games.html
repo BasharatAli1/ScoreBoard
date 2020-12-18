@@ -67,10 +67,10 @@
                         <div class="col-lg-5 col-md-8">
                             <div class="row pl-3">
                                 <div class="column6">
-                                    <input class="form-control form-control-sm mine-border" type="text" id = "search-user" placeholder="SEARCH">
+                                    <input class="form-control form-control-sm mine-border" type="text" id = "search-game" placeholder="SEARCH">
                                 </div>  
                                 <div class = "column1">
-                                    <button type="submit" class="btn btn-sm border border-dark float-left" name="search">
+                                    <button type="button" class="btn btn-sm border border-dark float-left" name="search" onclick="searchFun()">
                                         <svg width="2em" height="1em" viewBox="2 0.5 16 14" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                                             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -82,9 +82,9 @@
                     </div>
                     
                     <div class="row"> <!-- Row 2 -->
-                        <div class="col-lg-6 mr-5">  <!-- Row 2, Col 1-->
+                        <div class="col-lg-6 mr-5" id="games">  <!-- Row 2, Col 1-->
                             
-                            <div class="row">   <!-- 1st Row -->
+                            <div class="row" id="game-content">   <!-- 1st Row -->
                                 <div class="col-lg-12 shadow ml-3 mt-3 line-content">     <!-- Main Col, which contains all rows -->
                                     <div class="row border-bottom">    <!-- Row 1 -->
                                         <div class="col-lg-6 pt-2 pb-2 pl-4">   <!-- Row 1, Col 1 -->
@@ -93,7 +93,7 @@
                                                     <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
                                                 </div>
                                                 <div class="column8 text-center">
-                                                    <span class="align-middle ml-3">Test Game : 01/01/2000 : 12:00 P.M</span> 
+                                                    <span class="align-middle ml-3">Test Game 1 : 01/01/2000 : 12:00 P.M</span> 
                                                 </div>
                                                 <div class="column1">
                                                     <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
@@ -130,7 +130,7 @@
                                 </div>  <!-- End of Main Col, which contains all rows -->
                             </div>
                             
-                            <div class="row">   <!-- 1st Row -->
+                            <div class="row" id="game-content">   <!-- 1st Row -->
                                 <div class="col-lg-12 shadow ml-3 mt-3 line-content">     <!-- Main Col, which contains all rows -->
                                     <div class="row border-bottom">    <!-- Row 1 -->
                                         <div class="col-lg-6 pt-2 pb-2 pl-4">   <!-- Row 1, Col 1 -->
@@ -139,7 +139,7 @@
                                                     <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
                                                 </div>
                                                 <div class="column8 text-center">
-                                                    <span class="align-middle ml-3">Test Game : 01/01/2000 : 12:00 P.M</span> 
+                                                    <span class="align-middle ml-3">Test Game 3 : 01/01/2000 : 12:00 P.M</span> 
                                                 </div>
                                                 <div class="column1">
                                                     <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
@@ -159,7 +159,7 @@
                                                     <img class="upcoming-game-img mr-3" src="../images/logo/pak.png" alt="Pakistan"> 
                                                 </div>
                                                 <div class="column8 text-center">
-                                                    <span class="align-middle ml-1">Test Game 2 : 01/01/2000 : 12:00 P.M</span> 
+                                                    <span class="align-middle ml-1">Test Game 4 : 01/01/2000 : 12:00 P.M</span> 
                                                 </div>
                                                 <div class="column1">
                                                     <img class="upcoming-game-img ml-3" src="../images/logo/Australia.png" alt="Pakistan">
@@ -462,6 +462,15 @@
         mainDIVV.insertBefore(imgParent, mainDIVV.childNodes[0]);
         }
         
+
+    //// Search function
+    function searchFun() 
+    {
+        var value = $("#search-game").val().toLowerCase();
+        $("#games #game-content").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    }
 </script>
 
 </html>
