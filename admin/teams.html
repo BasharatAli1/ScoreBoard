@@ -67,10 +67,10 @@
                         <div class="col-lg-5 col-md-8">
                             <div class="row pl-2">
                                 <div class="column6">
-                                    <input class="form-control form-control-sm mine-border" type="text" id = "search-user" placeholder="SEARCH">
+                                    <input class="form-control form-control-sm mine-border" type="text" id = "search-team" placeholder="SEARCH">
                                 </div>  
                                 <div class = "column1">
-                                    <button type="submit" class="btn btn-sm border border-dark float-left" name="search">
+                                    <button type="button" class="btn btn-sm border border-dark float-left" name="search" onclick="searchFun()">
                                         <svg width="2em" height="1em" viewBox="2 0.5 16 14" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                                             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -82,116 +82,43 @@
                     </div>
                     
                     <div class="row mr-3">   <!-- Row 2 -->
-                        <div class="col-lg-4 col-md-12">    <!-- Row 2, Col 1 -->
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                        <div class="col-lg-4 col-md-12" id="teams">    <!-- Row 2, Col 1 -->
+                            <div class="row line-content" id="team-content">    <!-- Row 2, Col 1, Row -->
                                 <div class="col-6 ml-2 mine-border mt-2">
                                     <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
+                                    <span class="float-right mt-2 ml-2">Team 1</span>
                                 </div>
                                 <div class="col-4 mt-3">
                                     <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                            <div class="row line-content" id="team-content">    <!-- Row 2, Col 1, Row -->
                                 <div class="col-6 ml-2 mine-border mt-2">
                                     <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
+                                    <span class="float-right mt-2 ml-2">Team 2</span>
                                 </div>
                                 <div class="col-4 mt-3">
                                     <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                            <div class="row line-content" id="team-content">    <!-- Row 2, Col 1, Row -->
                                 <div class="col-6 ml-2 mine-border mt-2">
                                     <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
+                                    <span class="float-right mt-2 ml-2">Team 3</span>
                                 </div>
                                 <div class="col-4 mt-3">
                                     <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
+                            <div class="row line-content" id="team-content">    <!-- Row 2, Col 1, Row -->
                                 <div class="col-6 ml-2 mine-border mt-2">
                                     <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
+                                    <span class="float-right mt-2 ml-2">Team 4</span>
                                 </div>
                                 <div class="col-4 mt-3">
                                     <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">    <!-- Row 2, Col 1, Row -->
-                                <div class="col-6 ml-2 mine-border mt-2">
-                                    <img class="club-logo my-1" src="../images/logo/team-logo.PNG" id="avatar" alt="avatar">
-                                    <span class="float-right mt-2 ml-2">Team</span>
-                                </div>
-                                <div class="col-4 mt-3">
-                                    <a href="#" type="button" class="btn btn-link btn-sm mine-border ml-2" id="remove"><b>REMOVE</b></a>
-                                </div>
-                            </div>
-
 
                             <!-- Pagination -->
                                                         
@@ -393,6 +320,15 @@
 
     function colorTeamBFunction() {
         document.getElementById('color-team-b').value;
+    }
+
+    //// Search function
+    function searchFun() 
+    {
+        var value = $("#search-team").val().toLowerCase();
+        $("#teams #team-content").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
     }
 
 </script>

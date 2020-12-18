@@ -78,7 +78,7 @@
                                     <input class="form-control form-control-sm mine-border" type="text" id = "search-user" placeholder="SEARCH">
                                 </div>  
                                 <div class = "column1">
-                                    <button type="submit" class="btn btn-sm border border-dark float-left" name="search">
+                                    <button type="button" class="btn btn-sm border border-dark float-left" name="search" onclick="searchFun()">
                                         <svg width="2em" height="1em" viewBox="2 0.5 16 14" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                                             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -90,12 +90,13 @@
                     </div>
                     
                     <div class="row">   <!-- Row 2 -->
-                        <div class="col-lg-7 col-md-12">
+                        <!-- Users Column -->
+                        <div class="col-lg-7 col-md-12" id = "users">
 
-                            <div class="row line-content">
+                            <div class="row line-content" id="user-content">
                                 <div class="col-3 ml-2 mine-border mt-2">
                                     <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
+                                    <span>Ali</span>
                                 </div>
                                 <div class="col-8 mt-3">
                                     <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
@@ -104,10 +105,10 @@
                                     <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">
+                            <div class="row line-content" id="user-content">
                                 <div class="col-3 ml-2 mine-border mt-2">
                                     <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
+                                    <span>Bilal</span>
                                 </div>
                                 <div class="col-8 mt-3">
                                     <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
@@ -116,10 +117,10 @@
                                     <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">
+                            <div class="row line-content" id="user-content">
                                 <div class="col-3 ml-2 mine-border mt-2">
                                     <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
+                                    <span>Shahid</span>
                                 </div>
                                 <div class="col-8 mt-3">
                                     <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
@@ -128,163 +129,7 @@
                                     <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
                                 </div>
                             </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
-                                <div class="col-3 ml-2 mine-border mt-2">
-                                    <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
-                                    <span>Nick Gers</span>
-                                </div>
-                                <div class="col-8 mt-3">
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="remove"><b>REMOVE</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="edit"><b>EDIT</b> </a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="active"><b>ACTIVE</b></a>
-                                    <a href="#" type="button" class="btn btn-link mt-1 btn-sm mine-border ml-2" id="inactive"><b>INACTIVE</b></a>
-                                </div>
-                            </div>
-                            <div class="row line-content">
+                            <div class="row line-content" id="user-content">
                                 <div class="col-3 ml-2 mine-border mt-2">
                                     <img class="user-img" src="../images/person.png" id="avatar" alt="avatar">
                                     <span>Nick Gers</span>
@@ -697,6 +542,15 @@
         $(this).addClass("current");
         showPage(parseInt($(this).text())) 
     });
+
+    //// Search function
+    function searchFun() 
+    {
+        var value = $("#search-user").val().toLowerCase();
+        $("#users #user-content").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    }
 </script>
 
 </html>
